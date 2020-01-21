@@ -1,6 +1,6 @@
 build/
 dist/
 nbproject/
-taget/
+target/
 build.xml
 manifest.mf
