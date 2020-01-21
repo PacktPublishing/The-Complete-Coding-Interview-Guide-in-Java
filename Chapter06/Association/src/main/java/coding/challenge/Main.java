@@ -10,7 +10,7 @@ public class Main {
         Address a1 = new Address("Banesti", "107050");
         Address a2 = new Address("Bucuresti", "229344");
 
-        // Association between both the  classes in main method 
+        // Association between the classes in the main method 
         System.out.println(p1.getName() + " lives at address "
                 + a2.getCity() + ", " + a2.getZip()
                 + " but it also has an address at "
