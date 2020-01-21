@@ -5,7 +5,7 @@ public class PetrolCar extends Car {
     public PetrolCar(String carType) {
         super(carType);
     }
-        
+         
     @Override
     public void speedUp() {
         System.out.println("Speed up the petrol car");
