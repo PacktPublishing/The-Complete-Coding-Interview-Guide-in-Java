@@ -4,11 +4,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Gearbox gearbox = new Gearbox("Manual", 6);
-        Car car = new Car("BMW", gearbox);
+        Racket racket = new Racket("Babolat Pure Aero", 100, 300);
+        TennisPlayer player = new TennisPlayer("Rafael Nadal", racket);
         
-        System.out.println("This " + car.getName() 
-                + " has " + car.getGearbox().getGears() + " gears");
+        System.out.println("Player " + player.getName() 
+                + " plays with " + player.getRacket().getType());
     }
 
 }
