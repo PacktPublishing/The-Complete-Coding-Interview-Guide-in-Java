@@ -16,6 +16,9 @@ public class RectangleAreaCalculator {
         return width * height;
     }
     
+    // this method is against SRP because now this class does two things
+    // it acts as an area calculator and as a converter as well
+    // so, we have two reasons to modify it
     public double metersToInches(int area) {
         return area / INCH_TERM;
     }
