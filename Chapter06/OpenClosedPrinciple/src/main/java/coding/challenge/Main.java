@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("\nApproach that doesn't follow OC:\n");
+        System.out.println("\nApproach that doesn't follow OCP:\n");
         
         coding.challenge.bad.Circle c1 = new coding.challenge.bad.Circle(4);
         coding.challenge.bad.Circle c2 = new coding.challenge.bad.Circle(3);
@@ -19,7 +19,7 @@ public class Main {
 
         System.out.println("Sum area: " + rac1.sum());
         
-        System.out.println("\nApproach that follow OC:\n");
+        System.out.println("\nApproach that follow OCP:\n");
         
         coding.challenge.good.Circle c11 = new coding.challenge.good.Circle(4);
         coding.challenge.good.Circle c21 = new coding.challenge.good.Circle(3);
