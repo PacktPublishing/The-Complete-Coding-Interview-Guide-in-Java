@@ -10,6 +10,6 @@ public class FreeMember implements TournamentJoiner {
 
     @Override
     public void joinTournament() {
-        System.out.println("Classic member joins tournament ...");
+        System.out.println("Free member joins tournament ...");
     }
 }

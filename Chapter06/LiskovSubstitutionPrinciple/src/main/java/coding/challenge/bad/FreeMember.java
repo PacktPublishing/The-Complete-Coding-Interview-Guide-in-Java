@@ -12,10 +12,10 @@ public class FreeMember extends Member {
     }
 
     // this method breaks Liskov’s Substitution Principle
-    // since a classic member cannot organize tournamens it cannot be
+    // since a free member cannot organize tournaments it cannot be
     // a substitute for the base class
     @Override
     public void organizeTournament() {
-        System.out.println("A classic member cannot organize tournaments");
+        System.out.println("A free member cannot organize tournaments");
     }
 }
