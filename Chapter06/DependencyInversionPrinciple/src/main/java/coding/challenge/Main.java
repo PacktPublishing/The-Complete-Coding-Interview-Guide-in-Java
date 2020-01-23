@@ -17,9 +17,13 @@ public class Main {
 
         coding.challenge.good.PostgreSQLJdbcUrl p2
                 = new coding.challenge.good.PostgreSQLJdbcUrl("my_db");
+        coding.challenge.good.MySQLJdbcUrl p3
+                = new coding.challenge.good.MySQLJdbcUrl("my_db");
+        
         coding.challenge.good.ConnectToDatabase c2
                 = new coding.challenge.good.ConnectToDatabase();
 
         c2.connect(p2);
+        c2.connect(p3);
     }
 }

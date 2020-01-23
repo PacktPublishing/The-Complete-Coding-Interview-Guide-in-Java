@@ -9,6 +9,6 @@ public class PostgreSQLJdbcUrl {
     }
 
     public String get() {
-        return "jdbc:// ... " + this.dbName;
+        return "jdbc:postgresql:// ... " + this.dbName;
     }
 }

@@ -10,6 +10,6 @@ public class PostgreSQLJdbcUrl implements JdbcUrl {
 
     @Override
     public String get() {
-        return "jdbc:// ... " + this.dbName;
+        return "jdbc:postgresql:// ... " + this.dbName;
     }
 }
