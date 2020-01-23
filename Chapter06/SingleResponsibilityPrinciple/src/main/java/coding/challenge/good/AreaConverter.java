@@ -9,7 +9,7 @@ public class AreaConverter {
         return area / INCH_TERM;
     }
     
-    public double metersToFeets(int area) {
+    public double metersToFeet(int area) {
         return area / FEET_TERM;
     }
 }

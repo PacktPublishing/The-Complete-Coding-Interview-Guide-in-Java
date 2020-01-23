@@ -27,6 +27,6 @@ public class Main {
         AreaConverter converter = new AreaConverter();
 
         System.out.println("Area in inches: " + converter.metersToInches(area2));
-        System.out.println("Area in feets: " + converter.metersToFeets(area2));
+        System.out.println("Area in feet: " + converter.metersToFeet(area2));
     }
 }
