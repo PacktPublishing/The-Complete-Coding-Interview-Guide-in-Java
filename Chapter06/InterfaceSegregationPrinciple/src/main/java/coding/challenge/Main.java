@@ -1,7 +1,5 @@
 package coding.challenge;
 
-import coding.challenge.good.AreaConverter;
-
 public class Main {
 
     public static void main(String[] args) {
