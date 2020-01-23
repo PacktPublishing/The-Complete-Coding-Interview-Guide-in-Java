@@ -1,6 +1,6 @@
 package coding.challenge.bad;
 
-public class WwwPingConnection implements Connectable {
+public class WwwPingConnection implements Connection {
 
     private final String www;
 

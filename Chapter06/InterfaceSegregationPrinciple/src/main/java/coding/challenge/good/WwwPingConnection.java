@@ -1,6 +1,6 @@
 package coding.challenge.good;
 
-public class WwwPingConnection implements HttpConnectable {
+public class WwwPingConnection implements HttpConnection {
 
     private final String www;
 

@@ -1,6 +1,6 @@
 package coding.challenge.good;
 
-public interface Connectable {
+public interface Connection {
 
     public void connect();
 }

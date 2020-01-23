@@ -1,6 +1,6 @@
 package coding.challenge.bad;
 
-public interface Connectable {
+public interface Connection {
 
     public void socket();
 
