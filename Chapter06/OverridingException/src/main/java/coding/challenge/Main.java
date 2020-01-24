@@ -1,21 +1,39 @@
 package coding.challenge;
 
+import java.sql.BatchUpdateException;
 import java.sql.SQLException;
 
 public class Main {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
 
         Parent p = new Parent();
         Child c = new Child();
 
-        p.foo();
-        c.foo();
-        p.buzz();
+        try {
+            p.foo();
+        } catch (SQLException ex) {
+            System.err.println(ex);
+        }
 
-        // pay attention when you run the code
-        // this call will cause a RuntimeException
-        // this is the exception thrown by Child#buzz()
-        c.buzz();
+        System.out.println();
+        
+        try {
+            c.foo();
+        } catch (BatchUpdateException ex) {
+            System.err.println(ex);
+        }
+        
+        System.out.println();
+
+        p.buzz();
+        
+        System.out.println();
+
+        try {
+            c.buzz();
+        } catch (RuntimeException ex) {
+            System.err.println(ex);
+        }
     }
 }

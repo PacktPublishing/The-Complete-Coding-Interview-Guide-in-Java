@@ -6,6 +6,7 @@ public class Parent {
 
     public void foo() throws SQLException {
         System.out.println("Executing Parent#foo() that throws SQLException");
+        throw new SQLException("Parent#foo() did this!");
     }     
     
     public void buzz() {

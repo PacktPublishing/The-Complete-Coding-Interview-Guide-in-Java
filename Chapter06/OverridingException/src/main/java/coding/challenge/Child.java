@@ -9,6 +9,7 @@ public class Child extends Parent {
     @Override
     public void foo() throws BatchUpdateException { 
         System.out.println("Executing Child#foo() that throws BatchUpdateException");
+        throw new BatchUpdateException("Child#foo() did this!", new int[0]);
     }        
 
     // we can throw and RuntimeException
