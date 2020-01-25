@@ -11,6 +11,6 @@ public interface Vehicle {
     }
     
     static void description() {
-        System.out.println("This interface control petrol and electric cars");
+        System.out.println("This interface control steam, petrol and electric cars");
     }
 }
