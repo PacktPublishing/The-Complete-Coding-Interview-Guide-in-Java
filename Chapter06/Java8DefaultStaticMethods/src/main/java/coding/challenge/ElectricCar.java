@@ -20,12 +20,12 @@ public class ElectricCar implements Vehicle {
 
     @Override
     public void speedUp() {
-        System.out.println("Speed up electric car ...");
+        System.out.println("Speed up the electric car ...");
     }
 
     @Override
     public void slowDown() {
-        System.out.println("Slow down electric car ...");
+        System.out.println("Slow down the electric car ...");
     }
 
     @Override

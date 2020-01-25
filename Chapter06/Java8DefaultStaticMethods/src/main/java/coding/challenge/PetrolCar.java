@@ -20,11 +20,11 @@ public class PetrolCar implements Vehicle {
     
     @Override
     public void speedUp() {
-        System.out.println("Speed up petrol car ...");
+        System.out.println("Speed up the petrol car ...");
     }
 
     @Override
     public void slowDown() {
-        System.out.println("Slow down petrol car ...");
+        System.out.println("Slow down the petrol car ...");
     }    
 }
