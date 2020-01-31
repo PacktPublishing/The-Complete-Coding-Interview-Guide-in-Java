@@ -16,7 +16,7 @@ public class Deck<T extends Card> implements Iterable<T> {
         Collections.shuffle(cards);
     }
 
-    public T[] dealHand(int numberOfCards) {
+    public List<T> dealHand(int numberOfCards) {
         // code for dealing a hand
         return null;
     }
