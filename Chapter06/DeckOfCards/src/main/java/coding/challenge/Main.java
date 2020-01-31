@@ -1,8 +1,10 @@
 package coding.challenge;
 
-import coding.challenge.card.ClassicalCard;
-import coding.challenge.card.ClassicalPack;
-import coding.challenge.card.ClassicalSuit;
+import coding.challenge.card.Card;
+import coding.challenge.card.Pack;
+import coding.challenge.card.StandardCard;
+import coding.challenge.card.StandardPack;
+import coding.challenge.card.StandardSuit;
 import coding.challenge.deck.Deck;
 
 public class Main {
@@ -10,10 +12,10 @@ public class Main {
     public static void main(String[] args) {
 
         // create a single classical card
-        ClassicalCard sevenHeart = new ClassicalCard(ClassicalSuit.HEARTS, 7);       
+        Card sevenHeart = new StandardCard(StandardSuit.HEARTS, 7);              
 
-        // create a complete deck of classical cards      
-        ClassicalPack cp = new ClassicalPack();                   
+        // create a complete deck of standard cards      
+        Pack cp = new StandardPack();                   
         Deck deck = new Deck(cp);
         
         System.out.println("Remaining cards: " + deck.remainingCards());

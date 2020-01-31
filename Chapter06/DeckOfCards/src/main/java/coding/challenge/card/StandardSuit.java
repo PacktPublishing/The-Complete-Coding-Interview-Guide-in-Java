@@ -1,6 +1,6 @@
 package coding.challenge.card;
 
-public enum ClassicalSuit {
+public enum StandardSuit {
     
     SPADES, HEARTS, DIAMONDS, CLUBS;
 }

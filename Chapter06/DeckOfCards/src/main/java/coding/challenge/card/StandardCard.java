@@ -1,11 +1,11 @@
 package coding.challenge.card;
 
-public class ClassicalCard extends Card {
-   
+public class StandardCard extends Card {
+
     private static final int MIN_VALUE = 1;
     private static final int MAX_VALUE = 13;
-    
-    public ClassicalCard(ClassicalSuit suit, int value) {
+
+    public StandardCard(StandardSuit suit, int value) {
         super(suit, value);
     }
 
@@ -15,5 +15,5 @@ public class ClassicalCard extends Card {
 
     public static int getMaxValue() {
         return MAX_VALUE;
-    }        
+    }
 }
