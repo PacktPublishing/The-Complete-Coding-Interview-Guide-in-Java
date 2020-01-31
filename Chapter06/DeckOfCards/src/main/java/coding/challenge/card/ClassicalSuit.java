@@ -1,4 +1,4 @@
-package coding.challenge.cards;
+package coding.challenge.card;
 
 public enum ClassicalSuit {
     

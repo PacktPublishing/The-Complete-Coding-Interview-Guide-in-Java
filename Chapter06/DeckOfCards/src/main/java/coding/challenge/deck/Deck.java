@@ -1,5 +1,7 @@
-package coding.challenge.cards;
+package coding.challenge.deck;
 
+import coding.challenge.card.Card;
+import coding.challenge.card.Pack;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -8,8 +10,8 @@ public class Deck<T extends Card> implements Iterable<T> {
 
     private final List<T> cards; // all cards    
 
-    public Deck(List<T> cards) {
-        this.cards = cards;
+    public Deck(Pack pack) {
+        this.cards = pack.getCards();
     }
 
     public void shuffle() {
@@ -21,7 +23,7 @@ public class Deck<T extends Card> implements Iterable<T> {
         return null;
     }
 
-    public T dealCard() {        
+    public T dealCard() {
         // code for dealing a single card
         return null;
     }
@@ -32,7 +34,7 @@ public class Deck<T extends Card> implements Iterable<T> {
 
     public void removeCards(List<T> cards) {
         // code for removing cards
-    };
+    }
 
     @Override
     public Iterator<T> iterator() {
