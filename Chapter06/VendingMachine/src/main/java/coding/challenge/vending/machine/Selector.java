@@ -5,10 +5,10 @@ import java.util.Map;
 
 public interface Selector {
 
-    public int checkPrice(Item item);
-    public void insertCoin(Coin coin);
-    public Map<Item, List<Coin>> getItemAndChange();
+    public int checkPriceBtn(Item item);
+    public void insertCoinBtn(Coin coin);
+    public Map<Item, List<Coin>> buyBtn();
 
-    public List<Coin> refund();
-    public void reset();    
+    public List<Coin> refundBtn();
+    public void resetBtn();    
 }

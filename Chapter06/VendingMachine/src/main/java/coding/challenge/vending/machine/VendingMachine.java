@@ -19,24 +19,24 @@ public class VendingMachine implements Selector {
     }   
     
     @Override
-    public int checkPrice(Item item) { return 0; }
+    public int checkPriceBtn(Item item) { return 0; }
 
     @Override
-    public void insertCoin(Coin coin) {}
+    public void insertCoinBtn(Coin coin) {}
 
     @Override
-    public Map<Item, List<Coin>> getItemAndChange() { 
+    public Map<Item, List<Coin>> buyBtn() { 
         return Collections.singletonMap(currentItem, collectChange()); 
     }
 
     @Override
-    public List<Coin> refund() { return null; }
+    public List<Coin> refundBtn() { return null; }
 
     @Override
-    public void reset() {}
+    public void resetBtn() {}
     
     private void initMachine() {
-        // init machine with coins and items
+        System.out.println("Initializing the vending machine with coins and items ...");
     }
     
     private Item collectItem() { return null; }
