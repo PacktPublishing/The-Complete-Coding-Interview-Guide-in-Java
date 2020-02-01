@@ -1,4 +1,4 @@
-package coding.challenge;
+package coding.challenge.jukebox;
 
 public interface Selector {
     

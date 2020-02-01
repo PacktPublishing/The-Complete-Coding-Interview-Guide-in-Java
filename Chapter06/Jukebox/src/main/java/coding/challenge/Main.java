@@ -1,5 +1,11 @@
 package coding.challenge;
 
+import coding.challenge.jukebox.CD;
+import coding.challenge.jukebox.CDPlayer;
+import coding.challenge.jukebox.Jukebox;
+import coding.challenge.jukebox.Playlist;
+import coding.challenge.jukebox.Song;
+import coding.challenge.user.User;
 import java.util.List;
 import java.util.Set;
 

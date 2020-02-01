@@ -1,4 +1,4 @@
-package coding.challenge;
+package coding.challenge.jukebox;
 
 import java.util.List;
 
