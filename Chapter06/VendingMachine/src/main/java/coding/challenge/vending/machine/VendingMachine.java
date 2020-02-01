@@ -41,11 +41,13 @@ public class VendingMachine implements Selector {
     
     private Item collectItem() { return null; }
     private List<Coin> collectChange() { return null; }
+    
     private boolean isFullPaid() { return false; }
     private List<Coin> getChange(int amount) { return null; }
     private boolean hasSufficientChange() { return false; }
     private boolean hasSufficientChangeForAmount(long amount) { return false; }
-    private void updateCoinInventory(List<Coin> change) {}
+    
+    private void updateCoinInventory(List<Coin> coins) {}
     private void updateItemInventory(List<Item> item) {}  
 
     public long getTotalSales() {
