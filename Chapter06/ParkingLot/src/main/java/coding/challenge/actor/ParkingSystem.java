@@ -19,10 +19,11 @@ public class ParkingSystem {
     }
     
     public void unparkVehicle(Vehicle vehicle) {}
-    public void unparkVehicle(Vehicle vehicle, ParkingTicket parkingTicket) {} 
-    public boolean isFull() { return parkingLot.isFull(); }
+    public void unparkVehicle(Vehicle vehicle, ParkingTicket parkingTicket) {}     
 
     public String getId() {
         return id;
     }        
+    
+    private boolean isFull() { return parkingLot.isFull(); }
 }
