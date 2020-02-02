@@ -19,22 +19,22 @@ public class ParkingLot {
     }    
 
     // delegate to the proper ParkingFloor
-    public String parkVehicle(Vehicle vehicle) {
+    public ParkingTicket parkVehicle(Vehicle vehicle) {
 
         for (ParkingFloor pf : floors) {
             if (!pf.isFull(vehicle.getType())) {
-                String location = pf.parkVehicle(vehicle);
-                if(!location.isBlank()) {
-                    return location;
+                ParkingTicket parkingTicket = pf.parkVehicle(vehicle);
+                if(parkingTicket != null) {
+                    return parkingTicket;
                 }
             }
         }
 
-        return "Sorry, no free spots!";
+        return null;
     }
     
-    protected boolean removeVehicle(Vehicle vehicle) { return false; } // we have to find vehicle by looping floors  
-    protected boolean removeVehicle(Vehicle vehicle, String location) { return false; } // we have the spots       
+    protected boolean unparkVehicle(Vehicle vehicle) { return false; } // we have to find vehicle by looping floors  
+    protected boolean unparkVehicle(Vehicle vehicle, String location) { return false; } // we have the spots       
 
     public boolean isFull(VehicleType type) { return false; }
     protected void addPArkingFloor(ParkingFloor floor) {}

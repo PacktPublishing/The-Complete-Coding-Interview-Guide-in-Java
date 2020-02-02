@@ -21,18 +21,18 @@ public class ParkingFloor {
         initialize();
     }
        
-    protected String parkVehicle(Vehicle vehicle) { 
+    protected ParkingTicket parkVehicle(Vehicle vehicle) { 
         
-        List<ParkingSpot> spots = findSpotsToFitVehicle(vehicle); 
-        if(spots.isEmpty()) { return ""; }
+        List<ParkingSpot> location = findSpotsToFitVehicle(vehicle); 
+        if(location.isEmpty()) { return null; } // returning null is not a good practice
         
-        spots.forEach(s -> s.assignVehicle(vehicle));
+        location.forEach(s -> s.assignVehicle(vehicle));
         
-        return name + ":[#1, #2]"; // this is like a parking ticket
+        return releaseParkingTicket(location);
     }     
     
-    protected boolean removeVehicle(Vehicle vehicle) { return false; } // we have to find vehicle by looping stops  
-    protected boolean removeVehicle(Vehicle vehicle, String location) { return false; } // we have the spots   
+    protected boolean unparkVehicle(Vehicle vehicle) { return false; } // we have to find vehicle by looping the floors  
+    protected boolean unparkVehicle(Vehicle vehicle, ParkingTicket parkingTicket) { return false; } // we have the ticket   
     protected boolean isFull(VehicleType type) { return false; }
     protected int countFreeSpots(VehicleType vehicleType) { return 0; }
     
@@ -40,10 +40,16 @@ public class ParkingFloor {
     private List<ParkingSpot> findSpotsToFitVehicle(Vehicle vehicle) {        
         return List.of(parkingSpots.get("#1"), parkingSpots.get("#2"));
     }
+    
+    private ParkingTicket releaseParkingTicket(List<ParkingSpot> location) {
+        return new ParkingTicket(this, location);
+    }
+    
+    private void destroyParkingTicket(ParkingTicket parkingTicker) {}
             
     private void initialize() {
         for(int i=1;i<=totalSpots;i++){
-            parkingSpots.put("#" + i, new ParkingSpot(this));                
+            parkingSpots.put("#" + i, new ParkingSpot(this, "#" + i));                
         }
     }
 

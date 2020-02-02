@@ -1,8 +1,8 @@
 package coding.challenge.actor;
 
 import coding.challenge.parking.ParkingLot;
+import coding.challenge.parking.ParkingTicket;
 import coding.challenge.vehicle.Vehicle;
-import java.util.List;
 
 public class ParkingSystem {
 
@@ -14,16 +14,16 @@ public class ParkingSystem {
         this.parkingLot = parkingLot;
     }
 
-    public String parkCar(Vehicle vehicle) {
+    public ParkingTicket parkVehicle(Vehicle vehicle) {
         if (!parkingLot.isFull(vehicle.getType())) {
             return parkingLot.parkVehicle(vehicle);
         }
 
-        return "Sorry, we are full!";
+        return null;
     }
     
-    public void takeCar(Vehicle vehicle) {}
-    public void takeCar(Vehicle vehicle, String location) {}   
+    public void unparkVehicle(Vehicle vehicle) {}
+    public void unparkVehicle(Vehicle vehicle, ParkingTicket parkingTicket) {}   
 
     public String getId() {
         return id;

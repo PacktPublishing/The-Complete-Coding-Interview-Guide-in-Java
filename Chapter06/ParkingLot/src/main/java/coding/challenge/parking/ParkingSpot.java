@@ -3,18 +3,20 @@ package coding.challenge.parking;
 import coding.challenge.vehicle.Vehicle;
 
 public class ParkingSpot {
-
-    private String label;
+    
     private boolean free;
     private Vehicle vehicle;
+    
+    private final String label;
     private final ParkingFloor parkingFloor;
 
     public boolean isFree() {
         return free;
     }
 
-    public ParkingSpot(ParkingFloor parkingFloor) {
+    public ParkingSpot(ParkingFloor parkingFloor, String label) {
         this.parkingFloor = parkingFloor;
+        this.label = label;
     }
 
     protected boolean assignVehicle(Vehicle vehicle) { return false; }
@@ -32,4 +34,9 @@ public class ParkingSpot {
     protected ParkingFloor getParkingFloor() {
         return parkingFloor;
     }
+        
+    @Override
+    public String toString() {
+        return "ParkingSpot{" + "label=" + label + '}';
+    }        
 }

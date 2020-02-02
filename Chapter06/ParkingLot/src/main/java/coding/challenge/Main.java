@@ -4,6 +4,7 @@ import coding.challenge.actor.Driver;
 import coding.challenge.actor.ParkingSystem;
 import coding.challenge.parking.ParkingFloor;
 import coding.challenge.parking.ParkingLot;
+import coding.challenge.parking.ParkingTicket;
 import coding.challenge.vehicle.Van;
 import coding.challenge.vehicle.Vehicle;
 import java.util.List;
@@ -22,11 +23,11 @@ public class Main {
         ParkingSystem parkingSystem = new ParkingSystem("1", parkingLot);
         
         // driverVan parks a car via ParkingSystem
-        String location = parkingSystem.parkCar(van);
+        ParkingTicket parkingTicket = parkingSystem.parkVehicle(van);
         
-        System.out.println("Parking spots: " + location);
+        System.out.println("Parking ticket: " + parkingTicket);
         
         // driverVan take its car via ParkingSystem
-        parkingSystem.takeCar(van, location);
+        parkingSystem.unparkVehicle(van, parkingTicket);
     }
 }
