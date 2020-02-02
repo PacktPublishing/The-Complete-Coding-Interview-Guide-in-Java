@@ -14,12 +14,8 @@ public class ParkingSystem {
         this.parkingLot = parkingLot;
     }
 
-    public ParkingTicket parkVehicle(Vehicle vehicle) {
-        if (!parkingLot.isFull(vehicle.getType())) {
-            return parkingLot.parkVehicle(vehicle);
-        }
-
-        return null; // returning null is a bad practice, there is room to improve
+    public ParkingTicket parkVehicle(Vehicle vehicle) {        
+        return parkingLot.parkVehicle(vehicle);        
     }
     
     public void unparkVehicle(Vehicle vehicle) {}
