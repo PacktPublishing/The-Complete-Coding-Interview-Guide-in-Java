@@ -25,5 +25,7 @@ public class ParkingSystem {
         return id;
     }        
     
+    // if this flag is true then the parking system will 
+    // show it by lighting a red bulb
     private boolean isFull() { return parkingLot.isFull(); }
 }
