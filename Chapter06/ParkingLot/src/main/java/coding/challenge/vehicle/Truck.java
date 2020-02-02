@@ -1,10 +1,8 @@
 package coding.challenge.vehicle;
 
 public class Truck extends Vehicle {
-    
-    private final static int SPOTS_NEEDED = 5;
-    
-    public Truck(String licenseNumber) {
-        super(licenseNumber, SPOTS_NEEDED, VehicleType.TRUCK);
+        
+    public Truck(String licensePlate) {
+        super(licensePlate, VehicleType.TRUCK.getSpotsNeeded(), VehicleType.TRUCK);
     }    
 }
