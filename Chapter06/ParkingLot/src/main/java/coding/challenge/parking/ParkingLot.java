@@ -36,7 +36,7 @@ public class ParkingLot {
     public boolean isFull() { return false; }
     
     protected boolean unparkVehicle(Vehicle vehicle) { return false; } // we have to find vehicle by looping floors  
-    protected boolean unparkVehicle(Vehicle vehicle, String location) { return false; } // we have the spots       
+    protected boolean unparkVehicle(Vehicle vehicle, ParkingTicket parkingTicket) { return false; } // we have the ticket, so we know the parking spots  
     
     protected boolean isFull(VehicleType type) { return false; }
     protected void addPArkingFloor(ParkingFloor floor) {}

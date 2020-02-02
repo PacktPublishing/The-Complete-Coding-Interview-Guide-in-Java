@@ -31,10 +31,22 @@ public class ParkingFloor {
         return releaseParkingTicket(location);
     }     
     
-    protected boolean unparkVehicle(Vehicle vehicle) { return false; } // we have to find vehicle by looping the floors  
-    protected boolean unparkVehicle(Vehicle vehicle, ParkingTicket parkingTicket) { return false; } // we have the ticket   
+    protected boolean unparkVehicle(Vehicle vehicle) { return false; } // we have to find vehicle by looping the parking spots  
+    protected boolean unparkVehicle(Vehicle vehicle, ParkingTicket parkingTicket) { return false; } // we have the ticket, so we know the parking spots  
     protected boolean isFull(VehicleType type) { return false; }
     protected int countFreeSpots(VehicleType vehicleType) { return 0; }
+    
+    protected int getTotalSpots() {
+        return totalSpots;
+    }
+
+    protected int getTotalFreeSpots() {
+        return totalFreeSpots;
+    }    
+
+    protected String getName() {
+        return name;
+    }
     
     // e.g., we need a List because for a van it returns two ParkingSpot, for truck it returns five
     private List<ParkingSpot> findSpotsToFitVehicle(Vehicle vehicle) {        
@@ -52,17 +64,4 @@ public class ParkingFloor {
             parkingSpots.put("#" + i, new ParkingSpot(this, "#" + i));                
         }
     }
-
-    protected int getTotalSpots() {
-        return totalSpots;
-    }
-
-    protected int getTotalFreeSpots() {
-        return totalFreeSpots;
-    }    
-
-    protected String getName() {
-        return name;
-    }
-       
 }
