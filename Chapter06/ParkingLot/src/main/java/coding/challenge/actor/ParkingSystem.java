@@ -19,7 +19,7 @@ public class ParkingSystem {
             return parkingLot.parkVehicle(vehicle);
         }
 
-        return null;
+        return null; // returning null is a bad practice, there is room to improve
     }
     
     public void unparkVehicle(Vehicle vehicle) {}
