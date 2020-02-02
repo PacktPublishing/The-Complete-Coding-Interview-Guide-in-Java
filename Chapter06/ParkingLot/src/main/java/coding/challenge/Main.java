@@ -21,9 +21,12 @@ public class Main {
         
         ParkingSystem parkingSystem = new ParkingSystem("1", parkingLot);
         
-        // driverTruck at ParkingSystem
-        String parkingSpotLabels = parkingSystem.parkCar(van);
+        // driverVan parks a car via ParkingSystem
+        String location = parkingSystem.parkCar(van);
         
-        System.out.println("Parking spots: " + parkingSpotLabels);
+        System.out.println("Parking spots: " + location);
+        
+        // driverVan take its car via ParkingSystem
+        parkingSystem.takeCar(van, location);
     }
 }

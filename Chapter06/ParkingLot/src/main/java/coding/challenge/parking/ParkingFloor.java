@@ -24,18 +24,20 @@ public class ParkingFloor {
     protected String parkVehicle(Vehicle vehicle) { 
         
         List<ParkingSpot> spots = findSpotsToFitVehicle(vehicle); 
+        if(spots.isEmpty()) { return ""; }
+        
         spots.forEach(s -> s.assignVehicle(vehicle));
         
         return name + ":[#1, #2]"; // this is like a parking ticket
     }     
     
     protected boolean removeVehicle(Vehicle vehicle) { return false; } // we have to find vehicle by looping stops  
-    protected boolean removeVehicle(Vehicle vehicle, List<String> spots) { return false; } // we have the spots   
+    protected boolean removeVehicle(Vehicle vehicle, String location) { return false; } // we have the spots   
     protected boolean isFull(VehicleType type) { return false; }
     protected int countFreeSpots(VehicleType vehicleType) { return 0; }
     
     // e.g., we need a List because for a van it returns two ParkingSpot, for truck it returns five
-    private List<ParkingSpot> findSpotsToFitVehicle(Vehicle vehicle) { 
+    private List<ParkingSpot> findSpotsToFitVehicle(Vehicle vehicle) {        
         return List.of(parkingSpots.get("#1"), parkingSpots.get("#2"));
     }
             
