@@ -33,6 +33,7 @@ public class ParkingFloor {
     
     protected boolean unparkVehicle(Vehicle vehicle) { return false; } // we have to find vehicle by looping the parking spots  
     protected boolean unparkVehicle(Vehicle vehicle, ParkingTicket parkingTicket) { return false; } // we have the ticket, so we know the parking spots  
+    
     protected boolean isFull(VehicleType type) { return false; }
     protected int countFreeSpots(VehicleType vehicleType) { return 0; }
     
