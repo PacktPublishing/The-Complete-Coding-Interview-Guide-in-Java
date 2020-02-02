@@ -15,11 +15,12 @@ public class ParkingSystem {
     }
 
     public ParkingTicket parkVehicle(Vehicle vehicle) {        
-        return parkingLot.parkVehicle(vehicle);        
+        return isFull() ? null : parkingLot.parkVehicle(vehicle);        
     }
     
     public void unparkVehicle(Vehicle vehicle) {}
-    public void unparkVehicle(Vehicle vehicle, ParkingTicket parkingTicket) {}   
+    public void unparkVehicle(Vehicle vehicle, ParkingTicket parkingTicket) {} 
+    public boolean isFull() { return parkingLot.isFull(); }
 
     public String getId() {
         return id;
