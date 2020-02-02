@@ -18,7 +18,7 @@ public class ParkingFloor {
         this.name = name;
         this.totalSpots = totalSpots;
         
-        initialize();
+        initialize(); // create the parking spots
     }
        
     protected ParkingTicket parkVehicle(Vehicle vehicle) { 
