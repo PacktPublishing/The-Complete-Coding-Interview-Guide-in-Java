@@ -8,11 +8,7 @@ public class ParkingSpot {
     private Vehicle vehicle;
     
     private final String label;
-    private final ParkingFloor parkingFloor;
-
-    public boolean isFree() {
-        return free;
-    }
+    private final ParkingFloor parkingFloor;    
 
     public ParkingSpot(ParkingFloor parkingFloor, String label) {
         this.parkingFloor = parkingFloor;
@@ -33,6 +29,10 @@ public class ParkingSpot {
 
     protected ParkingFloor getParkingFloor() {
         return parkingFloor;
+    }
+    
+    protected boolean isFree() {
+        return free;
     }
         
     @Override
