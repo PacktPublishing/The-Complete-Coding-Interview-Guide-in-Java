@@ -4,7 +4,7 @@ import coding.challenge.vehicle.Vehicle;
 
 public class ParkingSpot {
     
-    private boolean free;
+    private boolean free = true;
     private Vehicle vehicle;
     
     private final String label;
