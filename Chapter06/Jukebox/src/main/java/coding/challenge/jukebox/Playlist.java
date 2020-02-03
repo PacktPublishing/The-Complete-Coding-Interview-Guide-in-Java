@@ -5,7 +5,8 @@ import java.util.List;
 public class Playlist {
     
     private Song song;
-    private List<Song> songs; // or Queue
+    
+    private final List<Song> songs; // or Queue
 
     public Playlist(List<Song> songs) {
         this.songs = songs;

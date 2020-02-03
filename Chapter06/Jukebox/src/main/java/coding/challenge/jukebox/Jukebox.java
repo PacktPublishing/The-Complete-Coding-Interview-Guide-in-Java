@@ -2,14 +2,14 @@ package coding.challenge.jukebox;
 
 public class Jukebox implements Selector {
 
-    private CDPlayer cdPlayer;   
+    private final CDPlayer cdPlayer;   
 
     public Jukebox(CDPlayer cdPlayer) {
         this.cdPlayer = cdPlayer;        
     }            
 
     @Override
-    public void nextSongBtn() {
+    public void nextSongBtn() {        
         System.out.println("Playing next song ...");             
     }
 

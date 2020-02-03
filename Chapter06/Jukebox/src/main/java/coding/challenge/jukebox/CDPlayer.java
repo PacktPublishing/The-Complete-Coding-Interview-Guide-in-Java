@@ -5,8 +5,9 @@ import java.util.Set;
 public class CDPlayer {
         
     private CD cd;
-    private Set<CD> cds;  
-    private Playlist playlist;       
+    
+    private final Set<CD> cds;  
+    private final Playlist playlist;       
 
     public CDPlayer(Playlist playlist, Set<CD> cds) {
         this.playlist = playlist;
