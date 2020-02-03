@@ -4,7 +4,7 @@ public class Seat {
     
     private final CinemaRoom room;
     private final String number;
-    private final boolean free = true;
+    private boolean free = true;
 
     public Seat(CinemaRoom room, String number) {
         this.room = room;
@@ -22,4 +22,7 @@ public class Seat {
     protected boolean isFree() {
         return free;
     }            
+    
+    protected void assignSeat() { free = false; }
+    protected void releaseSeat() { free = true; }
 }
