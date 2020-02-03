@@ -10,7 +10,7 @@ public class ParkingSpot {
     private final String label;
     private final ParkingFloor parkingFloor;    
 
-    public ParkingSpot(ParkingFloor parkingFloor, String label) {
+    protected ParkingSpot(ParkingFloor parkingFloor, String label) {
         this.parkingFloor = parkingFloor;
         this.label = label;
     }

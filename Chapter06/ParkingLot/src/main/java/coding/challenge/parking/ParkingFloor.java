@@ -23,12 +23,12 @@ public class ParkingFloor {
        
     protected ParkingTicket parkVehicle(Vehicle vehicle) { 
         
-        List<ParkingSpot> location = findSpotsToFitVehicle(vehicle); 
-        if(location.isEmpty()) { return null; } // returning null is not a good practice
+        List<ParkingSpot> spots = findSpotsToFitVehicle(vehicle); 
+        if(spots.isEmpty()) { return null; } // returning null is not a good practice
         
-        location.forEach(s -> s.assignVehicle(vehicle));
+        assignVehicleToParkingSpots(spots, vehicle);
         
-        return releaseParkingTicket(location);
+        return releaseParkingTicket(spots, vehicle);
     }     
     
     protected boolean unparkVehicle(Vehicle vehicle) { return false; } // we have to find vehicle by looping the parking spots  
@@ -54,12 +54,16 @@ public class ParkingFloor {
         return List.of(parkingSpots.get("#1"), parkingSpots.get("#2"));
     }
     
-    private ParkingTicket releaseParkingTicket(List<ParkingSpot> location) {
-        return new ParkingTicket(this, location);
+    private void assignVehicleToParkingSpots(List<ParkingSpot> spots, Vehicle vehicle) {
+        spots.forEach(s -> s.assignVehicle(vehicle));
+    }
+    
+    private ParkingTicket releaseParkingTicket(List<ParkingSpot> spots, Vehicle vehicle) {
+        return new ParkingTicket(this, spots, vehicle);
     }
     
     private void destroyParkingTicket(ParkingTicket parkingTicker) {}
-            
+                
     private void initialize() {
         for(int i=1;i<=totalSpots;i++){
             parkingSpots.put("#" + i, new ParkingSpot(this, "#" + i));                

@@ -1,10 +1,10 @@
 package coding.challenge;
 
 import coding.challenge.actor.Driver;
-import coding.challenge.actor.ParkingSystem;
 import coding.challenge.parking.ParkingFloor;
 import coding.challenge.parking.ParkingLot;
 import coding.challenge.parking.ParkingTicket;
+import coding.challenge.parking.system.ParkingSystem;
 import coding.challenge.vehicle.Van;
 import coding.challenge.vehicle.Vehicle;
 import java.util.List;

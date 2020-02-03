@@ -23,6 +23,10 @@ public abstract class Vehicle {
     public VehicleType getType() {
         return type;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Vehicle{" + "licensePlate=" + licensePlate 
+                + ", spotsNeeded=" + spotsNeeded + ", type=" + type + '}';
+    }        
 }

@@ -21,20 +21,20 @@ public class ParkingLot {
     // delegate to the proper ParkingFloor
     public ParkingTicket parkVehicle(Vehicle vehicle) {
 
-        for (ParkingFloor pf : floors) {
+        for (ParkingFloor pf : floors) {            
             if (!pf.isFull(vehicle.getType())) {
-                ParkingTicket parkingTicket = pf.parkVehicle(vehicle);
-                if(parkingTicket != null) {
-                    return parkingTicket;
+                ParkingTicket booked = pf.parkVehicle(vehicle);
+                if(booked != null) {
+                    return booked;
                 }
             }
         }
 
-        return null;
+        return null; // returning null is not a good practice
     }
     
     public boolean unparkVehicle(Vehicle vehicle) { return false; } // we have to find vehicle by looping floors  
-    public boolean unparkVehicle(Vehicle vehicle, ParkingTicket parkingTicket) { return false; } // we have the ticket, so we know the parking spots  
+    public boolean unparkVehicle(Vehicle vehicle, ParkingTicket booked) { return false; } // we have the ticket, so we know the parking spots  
     
     public boolean isFull() { return false; }
         

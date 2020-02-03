@@ -1,4 +1,4 @@
-package coding.challenge.actor;
+package coding.challenge.parking.system;
 
 import coding.challenge.parking.ParkingLot;
 import coding.challenge.parking.ParkingTicket;
