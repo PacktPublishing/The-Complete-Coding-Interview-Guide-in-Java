@@ -15,9 +15,9 @@ public class ParkingSpot {
         this.label = label;
     }
 
-    protected boolean assignVehicle(Vehicle vehicle) { return false; }
+    protected boolean assignVehicle(Vehicle vehicle) { free = false; return true; }
 
-    protected boolean removeVehicle() { return false; }
+    protected boolean removeVehicle() { free = true; return true; }
 
     protected String getLabel() {
         return label;
