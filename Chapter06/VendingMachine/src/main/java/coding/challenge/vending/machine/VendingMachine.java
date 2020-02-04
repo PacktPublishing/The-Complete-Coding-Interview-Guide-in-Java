@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class VendingMachine implements Selector {
 
-    private Inventory<Coin> coinInventory = new Inventory<>();
-    private Inventory<Item> itemInventory = new Inventory<>();
+    private final Inventory<Coin> coinInventory = new Inventory<>();
+    private final Inventory<Item> itemInventory = new Inventory<>();
     
     private int totalSales;    
     private int currentBalance;
@@ -50,11 +50,11 @@ public class VendingMachine implements Selector {
     private void updateCoinInventory(List<Coin> coins) {}
     private void updateItemInventory(List<Item> item) {}  
 
-    public long getTotalSales() {
+    protected long getTotalSales() {
         return totalSales;
     }
 
-    public long getCurrentBalance() {
+    protected long getCurrentBalance() {
         return currentBalance;
     }
         
