@@ -21,9 +21,9 @@ public class ParkingLot {
 
         for (ParkingFloor pf : floors.values()) {            
             if (!pf.isFull(vehicle.getType())) {
-                ParkingTicket booked = pf.parkVehicle(vehicle);
-                if(booked != null) {
-                    return booked;
+                ParkingTicket parkingTicket = pf.parkVehicle(vehicle);
+                if(parkingTicket != null) {
+                    return parkingTicket;
                 }
             }
         }
