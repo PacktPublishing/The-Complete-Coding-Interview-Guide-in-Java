@@ -51,8 +51,7 @@ public class ParkingLot {
     
     public boolean isFull() { return false; }
         
-    protected boolean isFull(VehicleType type) { return false; }
-    protected void addPArkingFloor(ParkingFloor floor) {}
+    protected boolean isFull(VehicleType type) { return false; } 
 
     protected String getName() {
         return name;
