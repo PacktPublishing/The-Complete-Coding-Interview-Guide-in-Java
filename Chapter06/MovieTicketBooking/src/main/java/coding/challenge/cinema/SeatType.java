@@ -1,4 +1,4 @@
-package coding.challenge.movie;
+package coding.challenge.cinema;
 
 public enum SeatType {
 
@@ -10,7 +10,7 @@ public enum SeatType {
         this.price = price;
     }
 
-    public int getPrice() {
+    protected int getPrice() {
         return price;
     }
 }
