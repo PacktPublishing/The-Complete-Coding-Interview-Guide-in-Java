@@ -17,21 +17,21 @@ public class Playlist {
         this.songs = songs;
     }        
     
-    public void addSong(Song song) {}
-    public void removeSong(Song song) {}
-    public void shuffle() {}    
-    public Song getNextSong() { return null; };
-    public Song getPrevSong() { return null; };
+    protected void addSong(Song song) {}
+    protected void removeSong(Song song) {}
+    protected void shuffle() {}    
+    protected Song getNextSong() { return null; };
+    protected Song getPrevSong() { return null; };
 
-    public Song getSong() {
+    protected Song getSong() {
         return song;
     }
 
-    public void setSong(Song song) {
+    protected void setSong(Song song) {
         this.song = song;
     }       
 
-    public List<Song> getSongs() {
+    protected List<Song> getSongs() {
         return songs;
     }        
 }

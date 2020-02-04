@@ -22,7 +22,7 @@ public class Main {
         Song s3 = new Song("Song 3", cd2);
         Song s4 = new Song("Song 4", cd2);
         cd2.setSongs(List.of(s3, s4));               
-        
+       
         Playlist pl = new Playlist(List.of(s1, s2, s3, s4));
         
         CDPlayer cdp = new CDPlayer(pl, Set.of(cd1, cd2));

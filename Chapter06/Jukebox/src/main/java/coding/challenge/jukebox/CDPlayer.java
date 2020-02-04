@@ -14,20 +14,20 @@ public class CDPlayer {
         this.cds = cds;
     }                
             
-    public void playNextSong() {}
-    public void playPrevSong() {}   
-    public void addCD(CD cd) {}
-    public void removeCD(CD cd) {}
+    protected void playNextSong() {}
+    protected void playPrevSong() {}   
+    protected void addCD(CD cd) {}
+    protected void removeCD(CD cd) {}
 
-    public Playlist getPlaylist() {
+    protected Playlist getPlaylist() {
         return playlist;
     }
 
-    public CD getCd() {
+    protected CD getCd() {
         return cd;
     }                
 
-    public Set<CD> getCds() {
+    protected Set<CD> getCds() {
         return cds;
     }        
 }
