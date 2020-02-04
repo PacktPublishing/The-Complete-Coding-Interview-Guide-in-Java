@@ -32,7 +32,7 @@ public class Main {
         System.out.println("Parking ticket: " + parkingTicket3);
         System.out.println("Parking ticket: " + parkingTicket4);
         
-        // driverVan take its car via ParkingSystem
+        // drivers un-park their vehicles via ParkingSystem
         System.out.println("\n\n");
         System.out.println("Un-parking done: " + parkingSystem.unparkVehicleBtn(parkingTicket1));
         System.out.println("Un-parking done: " + parkingSystem.unparkVehicleBtn("123-333", VehicleType.CAR));
