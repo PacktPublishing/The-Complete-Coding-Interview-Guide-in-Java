@@ -6,24 +6,28 @@ import java.util.List;
 public final class ParkingTicket {
     
     private final Vehicle vehicle;
-    private final LocalDateTime releaseDate;
+    private final LocalDateTime releaseDate;    
+    private final List<String> parkingSpotsLabels;
+    private final String floorName;
 
-    protected ParkingTicket(Vehicle vehicle) {       
+    protected ParkingTicket(Vehicle vehicle, List<String> parkingSpotsLabels, String floorName) {       
         this.vehicle = vehicle;
+        this.parkingSpotsLabels = parkingSpotsLabels;
+        this.floorName = floorName;
         this.releaseDate = LocalDateTime.now();
-    }
-
-    protected List<String> getSpotsLabels() {
-        return vehicle.getParkingSpotsLabels();
-    }
+    }    
 
     protected LocalDateTime getReleaseDate() {
         return releaseDate;
     }
 
-    protected String getFloorName() {
-        return vehicle.getParkingFloorName();
+    public List<String> getParkingSpotsLabels() {
+        return parkingSpotsLabels;
     }
+
+    public String getFloorName() {
+        return floorName;
+    }   
 
     protected Vehicle getVehicle() {
         return vehicle;
@@ -31,7 +35,7 @@ public final class ParkingTicket {
 
     @Override
     public String toString() {
-        return "ParkingTicket{" + "floor=" + getFloorName() + ", spots=" + getSpotsLabels() 
+        return "ParkingTicket{" + "floor=" + getFloorName() + ", spots=" + getParkingSpotsLabels() 
                 + ", vehicle=" + vehicle + ", releaseDate=" + releaseDate + '}';
     }          
 }

@@ -1,17 +1,18 @@
 package coding.challenge.parking;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import static java.util.stream.Collectors.toList;
 
 public class ParkingFloor {
 
     private final String name;
     private final int totalSpots;    
-    private final Map<String, ParkingSpot> parkingSpots = new HashMap<>();
+    private final Map<String, ParkingSpot> parkingSpots = new LinkedHashMap<>();
     private final Set<ParkingTicket> parkingTickets = new HashSet<>();
     
     private int totalFreeSpots;    
@@ -27,11 +28,10 @@ public class ParkingFloor {
         
         List<ParkingSpot> spots = findSpotsToFitVehicle(vehicle); 
         if(spots.isEmpty()) { return null; } // returning null is not a good practice
-        
-        vehicle.setParkingFloorName(name);       
+                
         assignVehicleToParkingSpots(spots, vehicle);        
         
-        ParkingTicket parkingTicket = releaseParkingTicket(vehicle);        
+        ParkingTicket parkingTicket = releaseParkingTicket(vehicle, spots);        
         registerParkingTicket(parkingTicket);
         
         return parkingTicket;
@@ -46,11 +46,16 @@ public class ParkingFloor {
             return false;
         }
         
-        for(ParkingSpot pl: parkingSpots.values()) {
+        int countSpots = 0;        
+        for(ParkingSpot pl: parkingSpots.values()) {            
             if(pl.getVehicle()!= null && pl.getVehicle().equals(vehicle)) {
                 boolean success = pl.removeVehicle();
                 if(!success) {
                     return false;
+                }
+                
+                if(++countSpots == vehicle.getSpotsNeeded()) {                    
+                    break;
                 }
             }
         }
@@ -67,7 +72,7 @@ public class ParkingFloor {
             throw new RuntimeException("This ticket is not in our system!");
         }
         
-        List<String> spots = parkingTicket.getSpotsLabels();
+        List<String> spots = parkingTicket.getParkingSpotsLabels();
         for(String spot: spots) {            
             boolean success = parkingSpots.get(spot).removeVehicle();
             if(!success) {
@@ -122,11 +127,17 @@ public class ParkingFloor {
     }
     
     private void assignVehicleToParkingSpots(List<ParkingSpot> spots, Vehicle vehicle) {
-        spots.forEach(s -> s.assignVehicle(vehicle));
+        for(ParkingSpot spot: spots) {
+            spot.assignVehicle(vehicle);
+        }
     }
     
-    private ParkingTicket releaseParkingTicket(Vehicle vehicle) {
-        return new ParkingTicket(vehicle);
+    private ParkingTicket releaseParkingTicket(Vehicle vehicle, List<ParkingSpot> spots) {
+        List<String> spotsLabels = spots.stream()
+                .map(ParkingSpot::getLabel)
+                .collect(toList());
+        
+        return new ParkingTicket(vehicle, spotsLabels, name);
     }
     
     private void registerParkingTicket(ParkingTicket parkingTicket) {

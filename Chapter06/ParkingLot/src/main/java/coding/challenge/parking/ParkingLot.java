@@ -60,12 +60,11 @@ public class ParkingLot {
     protected void setName(String name) {
         this.name = name;
     }
-
-    protected Map<String, ParkingFloor> getFloors() {
-        return floors;
-    }
-
+    
     protected void setFloors(Map<String, ParkingFloor> floors) {
         this.floors = floors;
     }
+    
+    protected boolean addFloor(ParkingFloor floor) { return false; }
+    protected boolean removeFloor(ParkingFloor floor) { return false; }
 }

@@ -1,7 +1,5 @@
 package coding.challenge.parking;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class Vehicle {
@@ -9,10 +7,7 @@ public class Vehicle {
     private final String licensePlate;
     private final int spotsNeeded;
     private final VehicleType type;
-    
-    private String parkingFloorName;
-    private List<String> parkingSpotsLabels = new ArrayList<>();
-
+        
     public Vehicle(String licensePlate, int spotsNeeded, VehicleType type) {
         this.licensePlate = licensePlate;
         this.spotsNeeded = spotsNeeded;
@@ -29,22 +24,6 @@ public class Vehicle {
 
     public VehicleType getType() {
         return type;
-    }
-
-    public String getParkingFloorName() {
-        return parkingFloorName;
-    }    
-
-    public List<String> getParkingSpotsLabels() {
-        return parkingSpotsLabels;
-    }
-    
-    protected void setParkingFloorName(String parkingFloorName) {
-        this.parkingFloorName = parkingFloorName;
-    }
-
-    protected void setParkingSpotsLabels(List<String> parkingSpotsLabels) {
-        this.parkingSpotsLabels = parkingSpotsLabels;
     }
         
     @Override

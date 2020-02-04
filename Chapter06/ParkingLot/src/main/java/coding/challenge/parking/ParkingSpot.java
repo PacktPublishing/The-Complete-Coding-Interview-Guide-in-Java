@@ -16,9 +16,7 @@ public class ParkingSpot {
     protected boolean assignVehicle(Vehicle vehicle) { 
                      
         System.out.println("Assign " + label + " at floor "
-                + parkingFloor.getName() +  " to " + vehicle);
-        
-        vehicle.getParkingSpotsLabels().add(label);
+                + parkingFloor.getName() +  " to " + vehicle);                
         
         this.free = false; 
         this.vehicle = vehicle;
@@ -43,10 +41,6 @@ public class ParkingSpot {
 
     protected Vehicle getVehicle() {
         return vehicle;
-    }
-
-    protected ParkingFloor getParkingFloor() {
-        return parkingFloor;
     }
     
     protected boolean isFree() {
