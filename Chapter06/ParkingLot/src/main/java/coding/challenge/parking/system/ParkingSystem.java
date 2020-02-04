@@ -2,9 +2,10 @@ package coding.challenge.parking.system;
 
 import coding.challenge.parking.ParkingLot;
 import coding.challenge.parking.ParkingTicket;
-import coding.challenge.vehicle.Vehicle;
+import coding.challenge.parking.Vehicle;
+import coding.challenge.parking.VehicleType;
 
-public class ParkingSystem {
+public class ParkingSystem implements Parking {
 
     private final String id;
     private final ParkingLot parkingLot;
@@ -14,12 +15,31 @@ public class ParkingSystem {
         this.parkingLot = parkingLot;
     }
 
-    public ParkingTicket parkVehicle(Vehicle vehicle) {        
-        return isFull() ? null : parkingLot.parkVehicle(vehicle);        
+    @Override
+    public ParkingTicket parkVehicleBtn(String licensePlate, VehicleType type) {        
+        
+        if (isFull()) {
+            throw new RuntimeException("The parking is full! This is why the red light is on!");
+        }
+         
+        Vehicle vehicle = new Vehicle(licensePlate, type.getSpotsNeeded(), type);
+        
+        return parkingLot.parkVehicle(vehicle);        
     }
     
-    public void unparkVehicle(Vehicle vehicle) {}
-    public void unparkVehicle(Vehicle vehicle, ParkingTicket parkingTicket) {}     
+    @Override
+    public boolean unparkVehicleBtn(String licensePlate, VehicleType type) {
+        
+        Vehicle vehicle = new Vehicle(licensePlate, type.getSpotsNeeded(), type);
+        
+        return parkingLot.unparkVehicle(vehicle);
+    }
+    
+    @Override
+    public boolean unparkVehicleBtn(ParkingTicket parkingTicket) {
+        
+        return parkingLot.unparkVehicle(parkingTicket);
+    }     
 
     public String getId() {
         return id;

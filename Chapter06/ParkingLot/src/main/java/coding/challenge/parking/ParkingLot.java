@@ -1,19 +1,17 @@
 package coding.challenge.parking;
 
-import coding.challenge.vehicle.Vehicle;
-import coding.challenge.vehicle.VehicleType;
-import java.util.List;
+import java.util.Map;
 
 public class ParkingLot {
 
     private String name;
-    private List<ParkingFloor> floors;
+    private Map<String, ParkingFloor> floors;        
 
     public ParkingLot(String name) {
         this.name = name;
     }
 
-    public ParkingLot(String name, List<ParkingFloor> floors) {
+    public ParkingLot(String name, Map<String, ParkingFloor> floors) {
         this.name = name;
         this.floors = floors;
     }    
@@ -21,7 +19,7 @@ public class ParkingLot {
     // delegate to the proper ParkingFloor
     public ParkingTicket parkVehicle(Vehicle vehicle) {
 
-        for (ParkingFloor pf : floors) {            
+        for (ParkingFloor pf : floors.values()) {            
             if (!pf.isFull(vehicle.getType())) {
                 ParkingTicket booked = pf.parkVehicle(vehicle);
                 if(booked != null) {
@@ -33,8 +31,23 @@ public class ParkingLot {
         return null; // returning null is not a good practice
     }
     
-    public boolean unparkVehicle(Vehicle vehicle) { return false; } // we have to find vehicle by looping floors  
-    public boolean unparkVehicle(Vehicle vehicle, ParkingTicket booked) { return false; } // we have the ticket, so we know the parking spots  
+    // we have to find vehicle by looping floors  
+    public boolean unparkVehicle(Vehicle vehicle) {  
+        for (ParkingFloor pf : floors.values()) {            
+            boolean success = pf.unparkVehicle(vehicle);
+            if(success) {
+                return true;
+            }
+        }
+        
+        return false;
+    } 
+    
+    // we have the ticket, so we have all the needed information
+    public boolean unparkVehicle(ParkingTicket parkingTicket) { 
+        
+        return floors.get(parkingTicket.getFloorName()).unparkVehicle(parkingTicket);        
+    } 
     
     public boolean isFull() { return false; }
         
@@ -49,11 +62,11 @@ public class ParkingLot {
         this.name = name;
     }
 
-    protected List<ParkingFloor> getFloors() {
+    protected Map<String, ParkingFloor> getFloors() {
         return floors;
     }
 
-    protected void setFloors(List<ParkingFloor> floors) {
+    protected void setFloors(Map<String, ParkingFloor> floors) {
         this.floors = floors;
     }
 }

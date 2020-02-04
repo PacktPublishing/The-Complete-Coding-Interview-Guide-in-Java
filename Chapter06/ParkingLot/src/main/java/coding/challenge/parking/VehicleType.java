@@ -1,4 +1,4 @@
-package coding.challenge.vehicle;
+package coding.challenge.parking;
 
 public enum VehicleType {
 

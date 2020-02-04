@@ -1,33 +1,28 @@
 package coding.challenge.parking;
 
-import coding.challenge.vehicle.Vehicle;
 import java.time.LocalDateTime;
 import java.util.List;
 
 public final class ParkingTicket {
     
-    private final ParkingFloor floor;
-    private final List<ParkingSpot> spots;
     private final Vehicle vehicle;
     private final LocalDateTime releaseDate;
 
-    protected ParkingTicket(ParkingFloor floor, List<ParkingSpot> spots, Vehicle vehicle) {
-        this.floor = floor;
-        this.spots = spots;
+    protected ParkingTicket(Vehicle vehicle) {       
         this.vehicle = vehicle;
         this.releaseDate = LocalDateTime.now();
     }
 
-    protected List<ParkingSpot> getSpots() {
-        return spots;
+    protected List<String> getSpotsLabels() {
+        return vehicle.getParkingSpotsLabels();
     }
 
     protected LocalDateTime getReleaseDate() {
         return releaseDate;
     }
 
-    protected ParkingFloor getFloor() {
-        return floor;
+    protected String getFloorName() {
+        return vehicle.getParkingFloorName();
     }
 
     protected Vehicle getVehicle() {
@@ -36,7 +31,7 @@ public final class ParkingTicket {
 
     @Override
     public String toString() {
-        return "ParkingTicket{" + "floor=" + floor.getName() + ", spots=" + spots 
+        return "ParkingTicket{" + "floor=" + getFloorName() + ", spots=" + getSpotsLabels() 
                 + ", vehicle=" + vehicle + ", releaseDate=" + releaseDate + '}';
     }          
 }

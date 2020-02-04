@@ -1,7 +1,5 @@
 package coding.challenge.parking;
 
-import coding.challenge.vehicle.Vehicle;
-
 public class ParkingSpot {
     
     private boolean free = true;
@@ -15,9 +13,29 @@ public class ParkingSpot {
         this.label = label;
     }
 
-    protected boolean assignVehicle(Vehicle vehicle) { free = false; return true; }
+    protected boolean assignVehicle(Vehicle vehicle) { 
+                     
+        System.out.println("Assign " + label + " at floor "
+                + parkingFloor.getName() +  " to " + vehicle);
+        
+        vehicle.getParkingSpotsLabels().add(label);
+        
+        this.free = false; 
+        this.vehicle = vehicle;
+        
+        return true; 
+    }
 
-    protected boolean removeVehicle() { free = true; return true; }
+    protected boolean removeVehicle() { 
+        
+        System.out.println("Free " + label
+                + " at floor " + parkingFloor.getName() +" of " + vehicle);
+        
+        this.free = true; 
+        this.vehicle = null;
+        
+        return true; 
+    }
 
     protected String getLabel() {
         return label;
