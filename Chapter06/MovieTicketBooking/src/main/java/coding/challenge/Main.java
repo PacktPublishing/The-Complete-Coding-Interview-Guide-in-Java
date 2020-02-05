@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         
-        System.out.println("This is the main design of a cinema with the following coordinates:");
+        System.out.println("This is the main design (!not implementation!) of a cinema with the following coordinates:");
         System.out.println("\t - multiple cinema rooms (see CinemaRoom)");
         System.out.println("\t - a room has three types of seats (see Seat and SeatType)");
         System.out.println("\t - a movie can run multiple times in a day in the same cinema room");
