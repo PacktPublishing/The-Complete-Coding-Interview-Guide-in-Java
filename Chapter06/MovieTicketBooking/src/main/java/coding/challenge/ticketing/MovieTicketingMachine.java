@@ -2,6 +2,7 @@ package coding.challenge.ticketing;
 
 import coding.challenge.cinema.Cinema;
 import coding.challenge.cinema.CinemaRoom;
+import coding.challenge.cinema.CinemaRoom.Cartridge;
 import coding.challenge.cinema.Movie;
 import coding.challenge.cinema.MovieTicket;
 import coding.challenge.cinema.Seat;
@@ -12,21 +13,24 @@ public class MovieTicketingMachine implements MovieTicketing {
     
     private final Cinema cinema;
     
+    private Cartridge cartridge;
     private Movie movie;
     private LocalTime startTime;
     private CinemaRoom room;
     private List<Seat> seats;
 
     public MovieTicketingMachine(Cinema cinema) {
-        this.cinema = cinema;        
-        //display list of movies: this.cinema.getMovies();
+        this.cinema = cinema;    
+        
+        //display list of movies via cinema.getCartridges(); cartridge.getMovie();
     }        
 
     // step 1
     @Override
     public boolean selectMovieBtn(Movie movie) { 
-                
-        // this.movie = movie;
+               
+        // this.cartridge = cartridge
+        // this.movie = movie; 
         
         return true; 
     }    
@@ -34,8 +38,8 @@ public class MovieTicketingMachine implements MovieTicketing {
     // Step 2
     @Override
     public boolean selectStartTimeBtn() { 
-        
-        // this.movie.getUniqueStartTimes();
+                
+        // this.cartridge.fetchUniqueStartTimes();
         // select start time from a list of radio buttons
         // this.startTime = selected start time
         
@@ -45,8 +49,8 @@ public class MovieTicketingMachine implements MovieTicketing {
     // Step 3
     @Override
     public boolean selectCinemaRoom() {
-        
-        // this.movie.getRoomsForStartTime(startTime);
+                
+        // this.cartridge.fetchRooms();
         // select room from a list of radio buttons
         // this.room = selected cinema room
         
