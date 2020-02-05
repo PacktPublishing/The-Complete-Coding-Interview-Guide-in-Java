@@ -2,6 +2,7 @@ package coding.challenge;
 
 public class Staircase {
 
+    // 100% recursive
     int count(int n) {
         if (n == 0) {
             return 1;
