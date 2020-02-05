@@ -39,6 +39,8 @@ public class Cinema {
         return false; 
     }
     
+    protected boolean addNewMovie(List<CinemaRoom> room, Movie movie) { return false; }
+    
     protected boolean removeMovie(Movie movie) {
         
         // check if this movie has a cartridge
