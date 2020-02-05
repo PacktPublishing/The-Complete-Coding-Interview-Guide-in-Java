@@ -138,11 +138,7 @@ public class ParkingFloor {
                 .collect(toList());
         
         return new ParkingTicket(vehicle, spotsLabels, name);
-    }
-    
-    private void registerParkingTicket(ParkingTicket parkingTicket) {
-        this.parkingTickets.add(parkingTicket);                
-    }
+    }       
        
     private ParkingTicket findParkingTicket(Vehicle vehicle) {
         for(ParkingTicket pt: parkingTickets) {
@@ -152,6 +148,10 @@ public class ParkingFloor {
         }
         
         return null;
+    }
+    
+    private void registerParkingTicket(ParkingTicket parkingTicket) {
+        this.parkingTickets.add(parkingTicket);                
     }
     
     private boolean unregisterParkingTicket(ParkingTicket parkingTicket) {
