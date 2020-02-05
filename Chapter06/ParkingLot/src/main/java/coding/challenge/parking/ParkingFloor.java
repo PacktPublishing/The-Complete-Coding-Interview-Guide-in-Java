@@ -13,6 +13,9 @@ public class ParkingFloor {
     private final String name;
     private final int totalSpots;    
     private final Map<String, ParkingSpot> parkingSpots = new LinkedHashMap<>();
+    
+    // here, I use a Set, but you may want to hold the parking 
+    // tickets is a certain order to optimize search
     private final Set<ParkingTicket> parkingTickets = new HashSet<>();
     
     private int totalFreeSpots;    
