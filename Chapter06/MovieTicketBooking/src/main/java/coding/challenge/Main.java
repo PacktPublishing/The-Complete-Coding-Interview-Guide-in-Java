@@ -8,7 +8,7 @@ public class Main {
         System.out.println("\t - multiple cinema rooms (see CinemaRoom)");
         System.out.println("\t - a room has three types of seats (see Seat and SeatType)");
         System.out.println("\t - a movie can run multiple times in a day in the same cinema room");
-        System.out.println("\t - a movie can run in multiple cinema rooms");
+        System.out.println("\t - a movie can run in multiple cinema rooms in the same time");
         System.out.println("\t - a movie can be added in a certain room at a certain time");
         System.out.println("\t - a movie can be removed from a certain room at a certain time");
         System.out.println("\t - each cinema room holds its schedule");
