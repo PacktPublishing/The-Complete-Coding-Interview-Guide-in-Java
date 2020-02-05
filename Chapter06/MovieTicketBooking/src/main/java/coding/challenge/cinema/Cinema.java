@@ -39,6 +39,7 @@ public class Cinema {
         return false; 
     }
     
+    protected boolean addNewMovie(Movie movie) { return false; } // add in all rooms
     protected boolean addNewMovie(List<CinemaRoom> room, Movie movie) { return false; }
     
     protected boolean removeMovie(Movie movie) {
