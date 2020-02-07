@@ -13,12 +13,12 @@ public class Hanoi {
             return;
         }
 
-        // move top n - 1 disks from origin to intermediate, using trget as a intermediate
+        // move top n - 1 disks from origin to intermediate, using target as a intermediate
         moveDisks(n - 1, origin, intermediate, target);
 
         System.out.println("Move disk " + n + " from rod " + origin + " to rod " + target);        
         
-        // move top n - 1 disks from intermediate to trget, using origin as an intermediate
+        // move top n - 1 disks from intermediate to target, using origin as an intermediate
         moveDisks(n - 1, intermediate, target, origin);
     }
 }
