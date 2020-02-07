@@ -19,9 +19,9 @@ public class RobotGrid {
             return false;
         }
 
-        if (((m == 0) && (n == 0))                      // we reached the target (this is the top-left corner)
-                || computePath(m, n - 1, maze, path)    // try to go to the up (remember that we go backward)
-                || computePath(m - 1, n, maze, path)) { // try to go to left (remember that we go backward) 
+        if (((m == 0) && (n == 0))                      // we reached the target (this is the bottom-right corner)
+                || computePath(m, n - 1, maze, path)    // try to go to the right
+                || computePath(m - 1, n, maze, path)) { // try to go to down
 
             // we add the cell to the path
             path.add(new Point(m, n));
@@ -53,9 +53,9 @@ public class RobotGrid {
             return false;
         }
 
-        if (((m == 0) && (n == 0))                               // we reached the target (this is the top-left corner)
-                || computePath(m, n - 1, maze, path, visited)    // try to go to the left (remember that we go backward)
-                || computePath(m - 1, n, maze, path, visited)) { // try to go to up (remember that we go backward) 
+        if (((m == 0) && (n == 0))                               // we reached the target (this is the bottom-right corner)
+                || computePath(m, n - 1, maze, path, visited)    // try to go to the right
+                || computePath(m - 1, n, maze, path, visited)) { // try to go to down
 
             // we add the cell to the path
             path.add(cell);

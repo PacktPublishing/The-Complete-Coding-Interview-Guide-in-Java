@@ -10,14 +10,14 @@ public class Main {
     public static void main(String[] args) {
        
         /* 0 - robot, # - maze, X - target
-        +           +
+ (m, n) +           +
         |0| | | | | |
         |0|0| | | | |
         |#|0|0|0|0| | 
         |#|#|#|#|0| |        
         | | | | |0| | 
         | | | | |0|X|
-        +           +
+        +           + (0, 0)
         */       
 
         RobotGrid rg = new RobotGrid();
