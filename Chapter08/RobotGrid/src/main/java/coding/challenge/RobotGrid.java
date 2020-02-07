@@ -34,7 +34,7 @@ public class RobotGrid {
     
     // Memoization
     // we go recursively from [m, n](top-left corner) and try to reach [0, 0] (bottom-right corner)
-    boolean computePath(int m, int n, boolean[][] maze, Set<Point> path, Set<Point> visited) {
+    boolean computePath(int m, int n, boolean[][] maze, Set<Point> path, Set<Point> visitFailed) {
 
         // we fell off the grid so we return
         if (m < 0 || n < 0) {
@@ -49,13 +49,13 @@ public class RobotGrid {
         Point cell = new Point(m, n);
         
         // Check if we've already visited this cell
-        if (visited.contains(cell)) {            
+        if (visitFailed.contains(cell)) {            
             return false;
         }
 
-        if (((m == 0) && (n == 0))                               // we reached the target (this is the bottom-right corner)
-                || computePath(m, n - 1, maze, path, visited)    // try to go to the right
-                || computePath(m - 1, n, maze, path, visited)) { // try to go to down
+        if (((m == 0) && (n == 0))                                   // we reached the target (this is the bottom-right corner)
+                || computePath(m, n - 1, maze, path, visitFailed)    // try to go to the right
+                || computePath(m - 1, n, maze, path, visitFailed)) { // try to go to down
 
             // we add the cell to the path
             path.add(cell);
@@ -63,7 +63,7 @@ public class RobotGrid {
             return true;
         }
 
-        visited.add(cell);
+        visitFailed.add(cell);
         return false;
     }
 }
