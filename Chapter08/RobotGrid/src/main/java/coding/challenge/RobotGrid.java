@@ -6,7 +6,7 @@ import java.util.Set;
 public class RobotGrid {
 
     // Plain recursion
-    // we go recursively from [m, n](bottom-right corner) and try to reach [0, 0] (up-left corner)
+    // we go recursively from [m, n] (bottom-right corner) and try to reach [0, 0] (up-left corner)
     boolean computePath(int m, int n, boolean[][] maze, Set<Point> path) {
 
         // we fell off the grid so we return
