@@ -32,5 +32,5 @@ public class Main {
         BiggestColorSpot spots = new BiggestColorSpot();
         spots.determineBiggestColorSpot(cols, rows, a);                
     }
-
+ 
 }
