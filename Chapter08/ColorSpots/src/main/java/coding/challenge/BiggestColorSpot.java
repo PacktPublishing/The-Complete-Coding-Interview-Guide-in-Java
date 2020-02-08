@@ -34,12 +34,15 @@ public class BiggestColorSpot {
         if (i > 1 && a[i - 1][j] == color) {
             computeBiggestColorSpot(i - 1, j, cols, rows, a, color);
         }
+        
         if ((i + 1) < rows && a[i + 1][j] == color) {
             computeBiggestColorSpot(i + 1, j, cols, rows, a, color);
         }
+        
         if (j > 1 && a[i][j - 1] == color) {
             computeBiggestColorSpot(i, j - 1, cols, rows, a, color);
         }
+        
         if ((j + 1) < cols && a[i][j + 1] == color) {
             computeBiggestColorSpot(i, j + 1, cols, rows, a, color);
         }
