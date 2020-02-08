@@ -14,7 +14,9 @@ public class BiggestColorSpot {
                 
                 if (a[i][j] > 0) {
                     currentColorSpot = 0;
-                    computeBiggestColorSpot(i, j, cols, rows, a, a[i][j]);
+                    
+                    computeColorSpot(i, j, cols, rows, a, a[i][j]);
+                    
                     if (currentColorSpot > biggestColorSpot) {
                         biggestColorSpot = currentColorSpot;
                         color = a[i][j] * (-1);
@@ -26,25 +28,25 @@ public class BiggestColorSpot {
         System.out.println("\nColor: " + color + " Bigest spot: " + biggestColorSpot);
     }
 
-    private void computeBiggestColorSpot(int i, int j, int cols, int rows, int a[][], int color) {
+    private void computeColorSpot(int i, int j, int cols, int rows, int a[][], int color) {
 
         a[i][j] = -a[i][j];
         currentColorSpot++;
 
         if (i > 1 && a[i - 1][j] == color) {
-            computeBiggestColorSpot(i - 1, j, cols, rows, a, color);
+            computeColorSpot(i - 1, j, cols, rows, a, color);
         }
         
         if ((i + 1) < rows && a[i + 1][j] == color) {
-            computeBiggestColorSpot(i + 1, j, cols, rows, a, color);
+            computeColorSpot(i + 1, j, cols, rows, a, color);
         }
         
         if (j > 1 && a[i][j - 1] == color) {
-            computeBiggestColorSpot(i, j - 1, cols, rows, a, color);
+            computeColorSpot(i, j - 1, cols, rows, a, color);
         }
         
         if ((j + 1) < cols && a[i][j + 1] == color) {
-            computeBiggestColorSpot(i, j + 1, cols, rows, a, color);
+            computeColorSpot(i, j + 1, cols, rows, a, color);
         }
     }
 }
