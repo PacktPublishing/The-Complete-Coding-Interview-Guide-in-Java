@@ -4,7 +4,7 @@ public class BiggestColorSpot {
 
     private int currentColorSpot;
 
-    void printBiggestColorSpot(int cols, int rows, int a[][]) {
+    void determineBiggestColorSpot(int cols, int rows, int a[][]) {
 
         int biggestColorSpot = 0;
         int color = 0;

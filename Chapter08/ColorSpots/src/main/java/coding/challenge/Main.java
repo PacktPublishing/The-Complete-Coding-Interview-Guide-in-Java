@@ -30,7 +30,7 @@ public class Main {
         }
 
         BiggestColorSpot spots = new BiggestColorSpot();
-        spots.printBiggestColorSpot(cols, rows, a);                
+        spots.determineBiggestColorSpot(cols, rows, a);                
     }
 
 }
