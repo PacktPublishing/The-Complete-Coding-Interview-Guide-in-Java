@@ -11,13 +11,14 @@ public class BiggestColorSpot {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
+                
                 if (a[i][j] > 0) {
                     currentColorSpot = 0;
                     computeBiggestColorSpot(i, j, cols, rows, a, a[i][j]);
-                }
-                if (currentColorSpot > biggestColorSpot) {
-                    biggestColorSpot = currentColorSpot;
-                    color = a[i][j] * (-1);
+                    if (currentColorSpot > biggestColorSpot) {
+                        biggestColorSpot = currentColorSpot;
+                        color = a[i][j] * (-1);
+                    }
                 }
             }
         }
