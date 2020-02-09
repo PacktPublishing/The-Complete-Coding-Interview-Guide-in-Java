@@ -15,7 +15,7 @@ public class FiveTower {
 
                 if (canBuild(columns, row, col)) {
 
-                    // place this tower
+                    // build this tower
                     columns[row] = col;
                     
                     // go to the next row
@@ -30,7 +30,7 @@ public class FiveTower {
         for (int currentRow = 0; currentRow < nextRow; currentRow++) {
             int currentColumn = columns[currentRow];
 
-            // cannot place on the same column
+            // cannot build on the same column
             if (currentColumn == nextColumn) {
                 return false;
             }
@@ -38,7 +38,7 @@ public class FiveTower {
             int columnsDistance = Math.abs(currentColumn - nextColumn);
             int rowsDistance = nextRow - currentRow;
             
-            // cannot place on the same diagonal
+            // cannot build on the same diagonal
             if (columnsDistance == rowsDistance) {
                 return false;
             }
