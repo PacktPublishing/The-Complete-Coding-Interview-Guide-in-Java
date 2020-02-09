@@ -12,7 +12,7 @@ public class MagicIndex {
             return -1; // return an invalid index
         }
 
-        int middleIndex = (startIndex + endIndex) / 2;   // halved the indexes
+        int middleIndex = (startIndex + endIndex) / 2;   // halved the indexes        
         int value = arr[middleIndex];                    // value of middle index        
         if (value == middleIndex) {                      // if the value and index are equal then this is a magic index
             return middleIndex;
