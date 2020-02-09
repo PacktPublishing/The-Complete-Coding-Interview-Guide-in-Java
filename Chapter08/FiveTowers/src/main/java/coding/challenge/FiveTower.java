@@ -13,7 +13,7 @@ public class FiveTower {
         } else {
             for (int col = 0; col < GRID_SIZE; col++) {
 
-                if (success(columns, row, col)) {
+                if (canBuild(columns, row, col)) {
 
                     // place this tower
                     columns[row] = col;
@@ -25,7 +25,7 @@ public class FiveTower {
         }
     }
 
-    private boolean success(Integer[] columns, int nextRow, int nextColumn) {
+    private boolean canBuild(Integer[] columns, int nextRow, int nextColumn) {
 
         for (int currentRow = 0; currentRow < nextRow; currentRow++) {
             int currentColumn = columns[currentRow];
