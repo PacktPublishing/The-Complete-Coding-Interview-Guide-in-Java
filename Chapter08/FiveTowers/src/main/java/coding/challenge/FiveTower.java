@@ -15,7 +15,7 @@ public class FiveTower {
 
                 if (success(columns, row, col)) {
 
-                    // place this queen
+                    // place this tower
                     columns[row] = col;
                     
                     // go to the next row
