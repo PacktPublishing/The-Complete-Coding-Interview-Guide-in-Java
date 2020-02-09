@@ -2,11 +2,11 @@ package coding.challenge;
 
 import java.util.Set;
 
-public class Queens {
+public class FiveTower {
 
     protected static final int GRID_SIZE = 5; // (5x5)
 
-    void arrangeQueens(int row, Integer[] columns, Set<Integer[]> solutions) {
+    void buildTowers(int row, Integer[] columns, Set<Integer[]> solutions) {
         
         if (row == GRID_SIZE) {
             solutions.add(columns.clone());
@@ -19,7 +19,7 @@ public class Queens {
                     columns[row] = col;
                     
                     // go to the next row
-                    arrangeQueens(row + 1, columns, solutions);
+                    buildTowers(row + 1, columns, solutions);
                 }
             }
         }
