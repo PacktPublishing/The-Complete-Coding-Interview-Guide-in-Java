@@ -25,7 +25,7 @@ public class Main {
         System.out.println("Initial grid:");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                System.out.print(elevations[i][j] + "  ");
+                System.out.format("%2s", elevations[i][j]);
             }
             System.out.println();
         }
@@ -37,7 +37,7 @@ public class Main {
         System.out.println("Result grid:");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                System.out.print(elevations[i][j] + "  ");
+                System.out.format("%2s", elevations[i][j]);
             }
             System.out.println();
         }
