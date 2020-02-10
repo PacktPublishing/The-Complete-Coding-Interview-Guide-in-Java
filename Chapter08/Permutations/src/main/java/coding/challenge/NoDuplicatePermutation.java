@@ -16,10 +16,10 @@ public class NoDuplicatePermutation {
             return Collections.emptyList();
         }
 
-        return permuteAndStore("", str.length(), charactersMap(str));
+        return permute("", str.length(), charactersMap(str));
     }
 
-    private List<String> permuteAndStore(String prefix, int strlength,
+    private List<String> permute(String prefix, int strlength,
             Map<Character, Integer> characters) {
 
         List<String> permutations = new ArrayList<>();
@@ -34,7 +34,7 @@ public class NoDuplicatePermutation {
                 
                 if (count > 0) {
                     characters.put(c, count - 1);
-                    permutations.addAll(permuteAndStore(prefix + c, strlength - 1, characters));
+                    permutations.addAll(permute(prefix + c, strlength - 1, characters));
                     characters.put(c, count);
                 }
             }

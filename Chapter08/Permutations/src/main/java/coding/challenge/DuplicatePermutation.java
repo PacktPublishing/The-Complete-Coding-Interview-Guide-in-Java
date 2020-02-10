@@ -13,10 +13,10 @@ public class DuplicatePermutation {
             return Collections.emptySet();
         }
 
-        return permuteAndStore("", str);
+        return permute("", str);
     }
 
-    private Set<String> permuteAndStore(String prefix, String str) {
+    private Set<String> permute(String prefix, String str) {
 
         Set<String> permutations = new HashSet<>();
 
@@ -26,7 +26,7 @@ public class DuplicatePermutation {
             permutations.add(prefix);
         } else {
             for (int i = 0; i < n; i++) {
-                permutations.addAll(permuteAndStore(prefix + str.charAt(i),
+                permutations.addAll(permute(prefix + str.charAt(i),
                         str.substring(i + 1, n) + str.substring(0, i)));
             }
         }
