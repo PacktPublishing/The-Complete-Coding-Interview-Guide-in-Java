@@ -20,7 +20,8 @@ public class Main {
         Tower tower = new Tower();
         int highest = tower.build(boxes);
 
-        System.out.println("\nThe highest tower of colored boxes has a high of: " + highest);
+        System.out.println("\nThe highest tower of colored boxes has a high of (plain recursion): " + highest);
+        System.out.println("\nThe highest tower of colored boxes has a high of (Memoization): " + highest);
     }
 
 }
