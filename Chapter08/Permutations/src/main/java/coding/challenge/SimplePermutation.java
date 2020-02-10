@@ -2,7 +2,7 @@ package coding.challenge;
 
 public class SimplePermutation {
 
-    public void permuteAndPrint(String str) {
+    public void permute(String str) {
 
         if (str == null || str.isBlank()) {
             // or throw IllegalArgumentException

@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class DuplicatePermutation {
 
-    public Set<String> permuteAndStore(String str) {
+    public Set<String> permute(String str) {
 
         if (str == null || str.isBlank()) {
             // or throw IllegalArgumentException

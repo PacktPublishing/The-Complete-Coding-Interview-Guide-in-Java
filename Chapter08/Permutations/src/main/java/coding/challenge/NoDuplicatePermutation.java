@@ -9,7 +9,7 @@ import java.util.function.BiFunction;
 
 public class NoDuplicatePermutation {
 
-    public List<String> permuteNoDuplicates(String str) {
+    public List<String> permute(String str) {
 
         if (str == null || str.isBlank()) {
             // or throw IllegalArgumentException
