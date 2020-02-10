@@ -1,0 +1,52 @@
+package coding.challenge;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class Tower {
+
+    int build(List<Box> boxes) {
+
+        // sorting boxes by width (you can do it by height as well)
+        Collections.sort(boxes, new Comparator<Box>() {
+            @Override
+            public int compare(Box b1, Box b2) {
+                return Integer.compare(b2.getWidth(), b1.getWidth());
+            }
+        });
+
+        // the boxes after sorting them descending by width
+        boxes.forEach(System.out::println);
+
+        // place each box as the base (bottom box) and
+        // try to arrange the rest of the boxes
+        int highest = 0;
+        for (int i = 0; i < boxes.size(); i++) {
+            int height = build(boxes, i);
+
+            highest = Math.max(highest, height);
+        }
+
+        return highest;
+    }
+
+    int build(List<Box> boxes, int base) {
+
+        Box current = boxes.get(base);
+
+        int highest = 0;
+        // since the boxes are sorted we don't look in [0, base + 1)
+        for (int i = base + 1; i < boxes.size(); i++) {
+            if (boxes.get(i).canBeNext(current)) {
+
+                int height = build(boxes, i);
+                highest = Math.max(height, highest);
+            }
+        }
+
+        highest = highest + current.getHeight();
+
+        return highest;
+    }
+}
