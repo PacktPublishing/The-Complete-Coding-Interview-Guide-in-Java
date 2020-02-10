@@ -1,5 +1,6 @@
 package coding.challenge;
 
+import java.util.List;
 import java.util.Set;
 
 public class Main {
@@ -8,13 +9,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Permutation permutation = new Permutation();
+        SimplePermutation sp = new SimplePermutation();
         System.out.println("\nDuplicates are printed: ");
-        permutation.permuteAndPrint(TEXT);
+        sp.permuteAndPrint(TEXT);
 
-        Set<String> permutations = permutation.permuteAndStore(TEXT);
-        System.out.println("\n\nDuplicates are eliminated: ");
-        System.out.println(permutations);
+        DuplicatePermutation dp = new DuplicatePermutation();
+        Set<String> permutationSet = dp.permuteAndStore(TEXT);
+        System.out.println("\n\nDuplicates are generated but they are eliminated via Set: ");
+        System.out.println(permutationSet);
+
+        NoDuplicatePermutation ndp = new NoDuplicatePermutation();
+        List<String> permutationList = ndp.permuteNoDuplicates(TEXT);
+        System.out.println("\n\nDuplicates are  not generated: ");
+        System.out.println(permutationList);
     }
 
 }
