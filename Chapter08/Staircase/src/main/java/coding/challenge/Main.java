@@ -2,14 +2,16 @@ package coding.challenge;
 
 public class Main {
 
-    public static void main(String[] args) {
-
+    private static final int STEPS = 3;
+    
+    public static void main(String[] args) {        
+        
         Staircase staircase = new Staircase();
         
-        int count = staircase.count(10);                
+        int count = staircase.count(STEPS);                
         System.out.println("Count: " + count);
         
-        int countMemo = staircase.countViaMemoization(10);
+        int countMemo = staircase.countViaMemoization(STEPS);
         System.out.println("Count via memo: " + countMemo);
     }
 
