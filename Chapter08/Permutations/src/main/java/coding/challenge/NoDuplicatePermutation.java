@@ -28,6 +28,7 @@ public class NoDuplicatePermutation {
             permutations.add(prefix);
         } else {
 
+            // fetch next char and generate remaining permutations
             for (Character c : characters.keySet()) {
 
                 int count = characters.get(c);
