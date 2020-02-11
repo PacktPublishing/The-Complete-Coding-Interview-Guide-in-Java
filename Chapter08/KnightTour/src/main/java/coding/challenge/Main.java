@@ -15,7 +15,7 @@ public class Main {
         int cell = 1;
 
         // start knight tour from corner square (0, 0)
-        knightTour.knightTour(0, 0, cell, visited);       
+        knightTour.knightTour(2, 2, cell, visited);       
     }
 
 }

@@ -14,7 +14,7 @@ public class KnightTour {
   
     public void knightTour(int r, int c, int cell, int visited[][]) {
         
-        // mark current square as visited
+        // mark current cell as visited
         visited[r][c] = cell;
 
         // we have a solution
@@ -37,7 +37,7 @@ public class KnightTour {
             }
         }
 
-        // backtrack from current square and remove it from current path
+        // backtrack from current cell and remove it from current path
         visited[r][c] = 0;
     }
 
