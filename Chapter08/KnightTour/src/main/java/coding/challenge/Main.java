@@ -8,14 +8,13 @@ public class Main {
 
         KnightTour knightTour = new KnightTour(GRID_SIZE);
         
-        // visited[][] serves two purpose -
-        // 1. It keep track of squares involved the Knight's tour.
-        // 2. It stores the order in which the squares are visited
+        // visited[][] stores the current path
         int visited[][] = new int[GRID_SIZE][GRID_SIZE];
+        
         int cell = 1;
 
-        // start knight tour from corner square (0, 0)
-        knightTour.knightTour(2, 2, cell, visited);       
+        // start knight tour from corner cell (0, 0)
+        knightTour.knightTour(0, 0, cell, visited);       
     }
 
 }
