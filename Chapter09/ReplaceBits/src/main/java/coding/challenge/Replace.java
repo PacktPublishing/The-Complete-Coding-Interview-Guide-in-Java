@@ -1,8 +1,8 @@
 package coding.challenge;
 
-public class Insertion {
+public class Replace {
 
-    int updateBits(int q, int p, int i, int j) {
+    int replaceBits(int q, int p, int i, int j) {
         int ones = ~0; // 11111111 11111111 11111111 11111111          
         
         int leftShiftJ = ones << (j + 1); 
