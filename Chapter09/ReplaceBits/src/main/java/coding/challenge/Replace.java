@@ -11,8 +11,8 @@ public class Replace {
         int mask = leftShiftJ | leftShiftI; 
         
         int applyMaskToQ = q & mask;                        
-        int bringQInPlace = p << i;        
+        int bringPInPlace = p << i;        
 
-        return applyMaskToQ | bringQInPlace; 
+        return applyMaskToQ | bringPInPlace; 
     }
 }
