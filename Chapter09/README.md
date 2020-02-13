@@ -1,2 +1,2 @@
-# Recursion and Dynamic Programming
+# Bit manipulation
 This chapter...
