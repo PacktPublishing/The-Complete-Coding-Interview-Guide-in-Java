@@ -11,7 +11,7 @@ public class Main {
 
         Replace replace = new Replace();
 
-        System.out.println("Q (in Q we replace the bits between positions " + I + " to " + J + "): "
+        System.out.println("Q (in Q, we replace the bits between positions " + I + " to " + J + "): "
                 + Integer.toString(Q, 2) + "(" + Q + ")");
         System.out.println("P (new bits that will be inserted in positions " + I + " to " + J + "): "
                 + Integer.toString(P, 2) + "(" + P + ")");
