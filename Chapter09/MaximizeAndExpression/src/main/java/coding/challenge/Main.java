@@ -9,7 +9,7 @@ public class Main {
 
         Maximize maximize = new Maximize();
 
-        int result = maximize.maximizeExpression(Q, P);
+        int result = maximize.maximizeAndExpression(Q, P);
         System.out.println("Result: " + result + "(" + Integer.toString(result, 2) + ")");
     }
 

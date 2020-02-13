@@ -4,7 +4,7 @@ public class Maximize {
 
     private final static int MAX_INT_BIT = 32;
 
-    int maximizeExpression(int p, int q) {
+    int maximizeAndExpression(int p, int q) {
 
         int s = 0;
 
