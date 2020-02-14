@@ -4,12 +4,15 @@ public class Sum {
 
     public int sumBits(int q, int p) {
         
+        int copyQ = q;
+        int copyP = p;
+        
         int xor;
         int and;
         int t;
         
-        and = q & p;
-        xor = q ^ p;
+        and = copyQ & copyP;
+        xor = copyQ ^ copyP;
 
         while (and != 0) {
             
