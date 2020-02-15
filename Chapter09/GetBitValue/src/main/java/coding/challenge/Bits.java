@@ -13,6 +13,7 @@ public final class Bits {
         }
 
         int result = n & (1 << position);
+        // or, int result = 1 & (n >> position);
 
         if (result == 0) {
             return '0';
