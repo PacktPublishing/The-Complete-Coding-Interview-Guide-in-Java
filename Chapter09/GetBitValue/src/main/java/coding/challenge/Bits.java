@@ -12,8 +12,8 @@ public final class Bits {
             throw new IllegalArgumentException("The position must be between 0 and 32");
         }
 
-        int result = n & (1 << k);
-        // or, int result = 1 & (n >> k);
+        int result = 1 & (n >> k);
+        // or, int result = n & (1 << k);
 
         if (result == 0) {
             return '0';
