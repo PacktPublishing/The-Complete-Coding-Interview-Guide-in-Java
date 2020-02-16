@@ -1,13 +1,19 @@
 package coding.challenge;
 
-public class Main {   
+public class Main {
 
-    public static void main(String[] args) {   
-        
-        Sum sum = new Sum();
-        int result = sum.sumBits(23, 45);
-        
-        System.out.println("Result: " + result + "(" + Integer.toString(result, 2) + ")");
+    public static void main(String[] args) {
+
+        int q = 23;
+        int p = 45;
+
+        int result = Bits.sum(q, p);
+
+        System.out.println(q + "(" + Integer.toBinaryString(q) + ")" + " + "
+                + p + "(" + Integer.toBinaryString(p) + ")" + " = " + result
+                + "(" + Integer.toBinaryString(result) + ")");
+
+        System.out.println();
     }
 
 }
