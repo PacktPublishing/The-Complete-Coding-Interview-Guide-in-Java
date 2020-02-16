@@ -17,8 +17,7 @@ public final class Bits {
             // where at least one of the bits is not set
             q = q ^ p;
             
-            // Left shift borrow by one position
-            // so that subtracting borrow from q gives the sum 
+            // left shift borrow by one position            
             p = borrow << 1;
         }
 
