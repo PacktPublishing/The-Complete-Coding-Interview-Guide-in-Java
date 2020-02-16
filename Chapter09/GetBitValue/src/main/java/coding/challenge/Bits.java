@@ -6,7 +6,7 @@ public final class Bits {
         throw new AssertionError("Cannot be instantiated");
     }
 
-    public static char getBitValue(int n, int k) {
+    public static char getValue(int n, int k) {
 
         if (k < 0 || k > 32) {
             throw new IllegalArgumentException("The position must be between 0 and 32");

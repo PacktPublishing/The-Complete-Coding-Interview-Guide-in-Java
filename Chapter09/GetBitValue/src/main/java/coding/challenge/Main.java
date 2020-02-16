@@ -7,7 +7,7 @@ public class Main {
         int number = 423;
         int position = 7;
 
-        char result = Bits.getBitValue(number, position);
+        char result = Bits.getValue(number, position);
 
         System.out.println("Bit at position " + position + " of binary "
                 + Integer.toBinaryString(number) + " is: " + result);
