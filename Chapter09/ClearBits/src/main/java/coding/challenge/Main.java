@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         int number = 423;
-        int position = 5;
+        int position = 6;
 
         int result1 = Bits.clearFromMsb(number, position);
         int result2 = Bits.clearFromPosition(number, position);
