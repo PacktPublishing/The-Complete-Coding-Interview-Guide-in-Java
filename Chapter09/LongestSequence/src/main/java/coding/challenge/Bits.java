@@ -21,7 +21,7 @@ public final class Bits {
                 currentSequence++;
                 flag = false;
             } else if ((n & 1) == 0) {
-                currentSequence = ((n & 0b10) == 0) 
+                currentSequence = ((n & 0b10) == 0) // 0b10 = 2
                         ? 0 : flag 
                         ? 0 : ++currentSequence;
                 flag = true;

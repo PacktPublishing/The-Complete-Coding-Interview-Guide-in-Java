@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int n = 67534;
+        int n = 67;
 
         int result = Bits.sequence(n);
 
