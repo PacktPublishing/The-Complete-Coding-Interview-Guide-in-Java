@@ -8,9 +8,7 @@ public class Main {
     private static final int J = 9;
 
     public static void main(String[] args) {
-
-        Replace replace = new Replace();
-
+       
         System.out.println("Q (in Q, we replace the bits between positions " + I + " to " + J + "): "
                 + Integer.toString(Q, 2) + "(" + Q + ")");
         System.out.println("P (new bits that will be inserted in positions " + I + " to " + J + "): "
@@ -18,7 +16,7 @@ public class Main {
 
         System.out.println();
 
-        int result = replace.replaceBits(Q, P, I, J);
+        int result = Bits.replace(Q, P, I, J);
 
         System.out.println("Result: " + Integer.toString(result, 2));
     }

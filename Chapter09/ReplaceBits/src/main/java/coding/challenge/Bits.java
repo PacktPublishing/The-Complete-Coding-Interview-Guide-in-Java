@@ -1,8 +1,12 @@
 package coding.challenge;
 
-public class Replace {
-
-    int replaceBits(int q, int p, int i, int j) {
+public final class Bits {   
+    
+    private Bits() {
+        throw new AssertionError("Cannot be instantiated");
+    }
+    
+    public static int replace(int q, int p, int i, int j) {
         int ones = ~0; // 11111111 11111111 11111111 11111111          
         
         int leftShiftJ = ones << (j + 1); 
