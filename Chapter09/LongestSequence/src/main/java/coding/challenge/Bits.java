@@ -14,14 +14,19 @@ public final class Bits {
 
         int currentSequence = 0;
         int longestSequence = 0;
+        boolean flag = true;
 
         while (n != 0) {
             if ((n & 1) == 1) {
                 currentSequence++;
+                flag = false;
             } else if ((n & 1) == 0) {
-                currentSequence = ((n & 0b10) == 0) ? 0 : ++currentSequence;
+                currentSequence = ((n & 0b10) == 0) 
+                        ? 0 : flag 
+                        ? 0 : ++currentSequence;
+                flag = true;
             }
-
+            
             longestSequence = Math.max(currentSequence, longestSequence);
 
             n >>>= 1;
