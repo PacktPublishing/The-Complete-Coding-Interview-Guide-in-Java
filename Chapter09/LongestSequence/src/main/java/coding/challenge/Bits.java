@@ -19,7 +19,7 @@ public final class Bits {
             if ((n & 1) == 1) {
                 currentSequence++;
             } else if ((n & 1) == 0) {
-                currentSequence = (n & 0b10) == 0 ? 0 : ++currentSequence;
+                currentSequence = ((n & 0b10) == 0) ? 0 : ++currentSequence;
             }
 
             longestSequence = Math.max(currentSequence, longestSequence);
