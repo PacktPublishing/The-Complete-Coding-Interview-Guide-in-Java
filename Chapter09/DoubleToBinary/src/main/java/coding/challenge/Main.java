@@ -6,9 +6,9 @@ public class Main {
 
         Converter converter = new Converter();
 
-        System.out.println(converter.toBinary(34.890625f));
+        System.out.println(Integer.toBinaryString(converter.DoubleToBinary32(-404.0324f)));
    //     
-     // System.out.println("Qqq="+Long.toBinaryString(Float.floatToRawIntBits(0.72f)));
+      System.out.println(Integer.toBinaryString(Float.floatToRawIntBits(-404.0324f)));
      // System.out.println("Qqq="+Long.toBinaryString(Double.doubleToRawLongBits(0.72d)));
         
     }
