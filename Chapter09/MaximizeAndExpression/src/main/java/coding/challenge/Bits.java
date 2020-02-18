@@ -1,10 +1,14 @@
 package coding.challenge;
 
-public class Maximize {
+public final class Bits {
 
     private final static int MAX_INT_BIT = 32;
 
-    int maximizeAndExpression(int p, int q) {
+    private Bits() {
+        throw new AssertionError("Cannot be instantiated");
+    }
+
+    public static int maximizeAndExpression(int p, int q) {
 
         int s = 0;
 
@@ -21,7 +25,7 @@ public class Maximize {
             // add the computation result to total
             s += computed;
         }
-        
+
         return s;
     }
 }
