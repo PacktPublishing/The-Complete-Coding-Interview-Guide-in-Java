@@ -19,7 +19,7 @@ public final class Bits {
             copyn = copyn >> 1;
         }
 
-        // count trailing 1s
+        // count all 1s until first 0
         while ((copyn & 1) == 1) {
             ones++;
             copyn = copyn >> 1;
@@ -56,17 +56,17 @@ public final class Bits {
         if (copyn == 0) {
             return -1;
         }
-
-        // count trailing 0s
+        
+        // count all 0s until first 1
         while ((copyn != 0) && ((copyn & 1) == 0)) {
             zeros++;
             copyn >>= 1;
         }
 
         int marker = zeros + ones;
-
+        
         n = n & (-1 << (marker + 1));
-        int mask = (1 << (ones + 1)) - 1;
+        int mask = (1 << (ones + 1)) - 1; 
         n = n | mask << (zeros - 1);
 
         return n;
