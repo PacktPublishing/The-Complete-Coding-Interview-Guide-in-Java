@@ -19,8 +19,6 @@ public class Main {
         | | | | |0|X|
         +           + (0, 0)
         */       
-
-        RobotGrid rg = new RobotGrid();
         
         // we store the path in a LinkedHashSet
         Set<Point> path = new LinkedHashSet<>();
@@ -34,7 +32,7 @@ public class Main {
         maze[3][3]=true;
         
         // we compute and display the path
-        rg.computePath(5, 5, maze, path);
+        RobotGrid.computePath(5, 5, maze, path);
         
         System.out.println("Computed path (plain recursion):");
         path.forEach(System.out::println);
@@ -43,7 +41,7 @@ public class Main {
         Set<Point> visited = new HashSet<>();
         
         // we compute and display the path
-        rg.computePath(5, 5, maze, path, visited);
+        RobotGrid.computePath(5, 5, maze, path, visited);
         
         System.out.println("\nComputed path (Memoization):");
         path.forEach(System.out::println);
