@@ -10,6 +10,10 @@ public final class Bits {
 
     public static int leftRotate(int n, int bits) {
 
+        if (n < 0) {
+            return -1;
+        }
+
         int fallBits = n << bits;
         int fallBitsShiftToRight = n >> (MAX_INT_BITS - bits);
 
@@ -17,6 +21,10 @@ public final class Bits {
     }
 
     public static int rightRotate(int n, int bits) {
+
+        if (n < 0) {
+            return -1;
+        }
 
         int fallBits = n >> bits;
         int fallBitsShiftToLeft = n << (MAX_INT_BITS - bits);
