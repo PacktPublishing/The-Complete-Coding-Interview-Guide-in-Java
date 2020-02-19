@@ -1,15 +1,24 @@
 package coding.challenge;
 
-public class Coins {
+public final class Coins {
+
+    private Coins() {
+        throw new AssertionError("Cannot be instantiated");
+    }
 
     // plain recursion
-    int calculateChange(int n) {
+    public static int calculateChange(int n) {
+
+        if (n <= 0) {
+            return -1;
+        }
+
         int[] coins = {25, 10, 5, 1};
         return calculateChange(n, coins, 0);
     }
 
     // plain recursion
-    int calculateChange(int amount, int[] coins, int position) {
+    private static int calculateChange(int amount, int[] coins, int position) {
 
         if (position >= coins.length - 1) {
             return 1;
@@ -26,14 +35,19 @@ public class Coins {
     }
 
     // Memoization
-    int calculateChangeMemoization(int n) {
+    public static int calculateChangeMemoization(int n) {
+        
+        if (n <= 0) {
+            return -1;
+        }
+        
         int[] coins = {25, 10, 5, 1};
         int[][] cache = new int[n + 1][coins.length];
         return calculateChangeMemoization(n, coins, 0, cache);
     }
 
     // Memoization
-    int calculateChangeMemoization(int amount, int[] coins, int position, int[][] cache) {
+    private static int calculateChangeMemoization(int amount, int[] coins, int position, int[][] cache) {
 
         if (cache[amount][position] > 0) {
             return cache[amount][position];
