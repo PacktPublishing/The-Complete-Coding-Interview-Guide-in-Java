@@ -3,10 +3,19 @@ package coding.challenge;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class Josephus {
+public final class Josephus {
+
+    private Josephus() {
+        throw new AssertionError("Cannot be instantiated");
+    }
 
     // plain recursive 
-    int josephus(int n, int k) {
+    public static int josephus(int n, int k) {
+
+        if (k <= 0 || n <= 0) {
+            return -1;
+        }
+
         if (n == 1) {
             return 1;
         } else {
@@ -15,7 +24,11 @@ public class Josephus {
     }
 
     // using Queue
-    public void printJosephus(int n, int k) {
+    public static void printJosephus(int n, int k) {
+
+        if (n <= 0 || k <= 0) {
+            throw new IllegalArgumentException("The n and k numbers must be > 0");
+        }
 
         Queue<Integer> circle = new ArrayDeque<>();
 

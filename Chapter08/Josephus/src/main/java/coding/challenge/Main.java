@@ -8,12 +8,10 @@ public class Main {
         // the survivor should be number 5        
         int n = 15;
         int k = 3;
+     
+        System.out.println("Using recursion! Survivor: " + Josephus.josephus(n, k) + "\n");
 
-        Josephus josephus = new Josephus();
-        System.out.println("Using recursion! Survivor: " + josephus.josephus(n, k) + "\n");
-
-        josephus.printJosephus(n, k);
-
+        Josephus.printJosephus(n, k);
     }
 
 }
