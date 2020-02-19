@@ -8,6 +8,10 @@ public final class Bits {
 
     public static int replace(int q, int p, int i, int j) {
 
+        if (q < 0 || p < 0) {
+            throw new IllegalArgumentException("The q and p numbers must be positive");
+        }
+
         if (i < 0 || j < 0 || i > 31 || j > 31 || i >= j) {
             throw new IllegalArgumentException("The i and j values don't follow the problem instructions");
         }
