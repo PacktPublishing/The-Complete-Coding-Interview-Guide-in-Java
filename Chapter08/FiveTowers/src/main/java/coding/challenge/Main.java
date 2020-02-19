@@ -9,9 +9,8 @@ public class Main {
     public static void main(String[] args) {
 
         Set<Integer[]> solutions = new HashSet<>();
-
-        FiveTower fiveTower = new FiveTower();
-        fiveTower.buildTowers(0, new Integer[FiveTower.GRID_SIZE], solutions);
+       
+        FiveTower.buildTowers(0, new Integer[FiveTower.GRID_SIZE], solutions);
 
         System.out.println("Solutions:");
         for (Integer[] solution : solutions) {
