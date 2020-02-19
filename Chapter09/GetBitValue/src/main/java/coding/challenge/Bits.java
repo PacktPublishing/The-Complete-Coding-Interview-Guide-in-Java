@@ -9,7 +9,7 @@ public final class Bits {
     public static char getValue(int n, int k) {
 
         if (k < 0 || k > 31) {
-            throw new IllegalArgumentException("The position must be between 0 and 32");
+            throw new IllegalArgumentException("The position must be between 0 and 31");
         }
 
         int result = 1 & (n >> k);
