@@ -1,9 +1,17 @@
 package coding.challenge;
 
-public class RobotGrid {
+public final class RobotGrid {
+
+    private RobotGrid() {
+        throw new AssertionError("Cannot be instantiated");
+    }
 
     // Plain recursion    
-    int countPaths(int m, int n) {
+    public static int countPaths(int m, int n) {
+        
+        if (m <= 0 || n <= 0) {
+            return -1;
+        }
 
         // go in any cell of the first column/row is 1
         if (m == 1 || n == 1) {
@@ -15,7 +23,12 @@ public class RobotGrid {
     }
 
     // Memoization
-    int countPathsBottomUp(int m, int n) {
+    public static int countPathsBottomUp(int m, int n) {
+
+        if (m <= 1 || n <= 1) {
+            return -1;
+        }
+
         // cache the results of subproblems
         int[][] count = new int[m][n];
 
@@ -32,7 +45,7 @@ public class RobotGrid {
         // determine the paths for other cells in bottom-up manner
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
-                count[i][j] = count[i - 1][j] + count[i][j - 1]; 
+                count[i][j] = count[i - 1][j] + count[i][j - 1];
                 // if diagonal movements are allowed then add: + count[i-1][j-1];
             }
         }
