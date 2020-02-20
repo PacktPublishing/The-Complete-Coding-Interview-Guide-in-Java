@@ -4,10 +4,18 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Tower {
+public final class Tower {
+
+    private Tower() {
+        throw new AssertionError("Cannot be instantiated");
+    }
 
     // plain recursion
-    int build(List<Box> boxes) {
+    public static int build(List<Box> boxes) {
+
+        if (boxes == null) {
+            return -1;
+        }
 
         // sorting boxes by width (you can do it by height as well)
         Collections.sort(boxes, new Comparator<Box>() {
@@ -33,7 +41,7 @@ public class Tower {
     }
 
     // plain recursion
-    int build(List<Box> boxes, int base) {
+    private static int build(List<Box> boxes, int base) {
 
         Box current = boxes.get(base);
 
@@ -53,7 +61,11 @@ public class Tower {
     }
 
     // Memoization
-    int buildViaMemoization(List<Box> boxes) {
+    public static int buildViaMemoization(List<Box> boxes) {
+
+        if (boxes == null) {
+            return -1;
+        }
 
         // sorting boxes by width (you can do it by height as well)
         Collections.sort(boxes, new Comparator<Box>() {
@@ -80,7 +92,7 @@ public class Tower {
     }
 
     // Memoization
-    int buildMemoization(List<Box> boxes, int base, int[] cache) {
+    private static int buildMemoization(List<Box> boxes, int base, int[] cache) {
 
         if (base < boxes.size() && cache[base] > 0) {
             return cache[base];

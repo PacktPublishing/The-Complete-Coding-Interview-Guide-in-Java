@@ -16,12 +16,12 @@ public class Main {
         Box b7 = new Box(2, 8, 1);
 
         List<Box> boxes = Arrays.asList(b1, b2, b3, b4, b5, b6, b7);
+        
+        int highest1 = Tower.build(boxes);
+        int highest2 = Tower.buildViaMemoization(boxes);
 
-        Tower tower = new Tower();
-        int highest = tower.build(boxes);
-
-        System.out.println("\nThe highest tower of colored boxes has a high of (plain recursion): " + highest);
-        System.out.println("\nThe highest tower of colored boxes has a high of (Memoization): " + highest);
+        System.out.println("\nThe highest tower of colored boxes has a high of (plain recursion): " + highest1);
+        System.out.println("\nThe highest tower of colored boxes has a high of (Memoization): " + highest2);
     }
 
 }
