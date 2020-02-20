@@ -8,18 +8,15 @@ public class Main {
     private static final String TEXT = "test";
 
     public static void main(String[] args) {
-
-        SimplePermutation sp = new SimplePermutation();
+        
         System.out.println("\nDuplicates are printed: ");
-        sp.permute(TEXT);
-
-        DuplicatePermutation dp = new DuplicatePermutation();
-        Set<String> permutationSet = dp.permute(TEXT);
+        SimplePermutation.permute(TEXT);
+        
+        Set<String> permutationSet = DuplicatePermutation.permute(TEXT);
         System.out.println("\n\nDuplicates are generated but they are eliminated via Set: ");
         System.out.println(permutationSet);
-
-        NoDuplicatePermutation ndp = new NoDuplicatePermutation();
-        List<String> permutationList = ndp.permute(TEXT);
+      
+        List<String> permutationList = NoDuplicatePermutation.permute(TEXT);
         System.out.println("\n\nDuplicates are  not generated: ");
         System.out.println(permutationList);
     }

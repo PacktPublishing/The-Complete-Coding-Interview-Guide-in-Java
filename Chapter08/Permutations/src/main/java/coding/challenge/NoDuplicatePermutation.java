@@ -7,9 +7,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 
-public class NoDuplicatePermutation {
+public final class NoDuplicatePermutation {
 
-    public List<String> permute(String str) {
+    private NoDuplicatePermutation() {
+        throw new AssertionError("Cannot be instantiated");
+    }
+
+    public static List<String> permute(String str) {
 
         if (str == null || str.isBlank()) {
             // or throw IllegalArgumentException
@@ -19,7 +23,7 @@ public class NoDuplicatePermutation {
         return permute("", str.length(), charactersMap(str));
     }
 
-    private List<String> permute(String prefix, int strlength,
+    private static List<String> permute(String prefix, int strlength,
             Map<Character, Integer> characters) {
 
         List<String> permutations = new ArrayList<>();
@@ -32,7 +36,7 @@ public class NoDuplicatePermutation {
             for (Character c : characters.keySet()) {
 
                 int count = characters.get(c);
-                
+
                 if (count > 0) {
                     characters.put(c, count - 1);
                     permutations.addAll(permute(prefix + c, strlength - 1, characters));
@@ -44,7 +48,7 @@ public class NoDuplicatePermutation {
         return permutations;
     }
 
-    private Map<Character, Integer> charactersMap(String str) {
+    private static Map<Character, Integer> charactersMap(String str) {
 
         Map<Character, Integer> characters = new HashMap<>();
 

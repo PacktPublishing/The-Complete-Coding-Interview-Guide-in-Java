@@ -4,9 +4,13 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DuplicatePermutation {
+public final class DuplicatePermutation {
+    
+    private DuplicatePermutation() {
+        throw new AssertionError("Cannot be instantiated");
+    }
 
-    public Set<String> permute(String str) {
+    public static Set<String> permute(String str) {
 
         if (str == null || str.isBlank()) {
             // or throw IllegalArgumentException
@@ -16,7 +20,7 @@ public class DuplicatePermutation {
         return permute("", str);
     }
 
-    private Set<String> permute(String prefix, String str) {
+    private static Set<String> permute(String prefix, String str) {
 
         Set<String> permutations = new HashSet<>();
 
