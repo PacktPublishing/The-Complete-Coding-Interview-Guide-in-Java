@@ -7,6 +7,7 @@ public final class Bits {
     private static final int TWO_AT_22 = 4194304;         // 2 ^ 22 = 4194304
     private static final int TWO_AT_22_MINUS_1 = 4194303; // (2 ^ 22) - 1 = 4194303
     private static final int EXPONENT_BIAS = 127;
+    private static final int MAX_EXPONENT = 255;
    
     private Bits() {
         throw new AssertionError("Cannot be instantiated");
@@ -32,7 +33,7 @@ public final class Bits {
             n -= Math.floor(n);
         }
 
-        while ((integerPart != 1) && (exponent > 0) && (exponent < 255)) {
+        while ((integerPart != 1) && (exponent > 0) && (exponent < MAX_EXPONENT)) {
             
             if (integerPart > 1) {
             
@@ -45,7 +46,7 @@ public final class Bits {
                 exponent++;
             } else {
                 
-                integerPart = (fractionPart & TWO_AT_22) >> 22;
+                integerPart = (fractionPart & TWO_AT_22) >> MANTISSA_MINUS_1;
                 fractionPart = (fractionPart & TWO_AT_22_MINUS_1) << 1;
 
                 n += n;
@@ -77,6 +78,7 @@ public final class Bits {
         
         // 0x7F800000 = 1111111100000000000000000000000
         // 0x7FFFFF   = 0000000011111111111111111111111
+        // 0x800000   = 0000000100000000000000000000000
         exponent = ((value & 0x7F800000) >> MANTISSA) - EXPONENT_BIAS;
         fractionPart = (value & 0x7FFFFF) + 0x800000;
         fractionPart = fractionPart / 0x800000;
