@@ -1,11 +1,20 @@
 package coding.challenge;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class Braces {
+public final class Braces {
 
-    public List<String> embrace(int nr) {
+    private Braces() {
+        throw new AssertionError("Cannot be instantiated");
+    }
+
+    public static List<String> embrace(int nr) {
+
+        if (nr <= 0) {
+            return Collections.emptyList();
+        }
 
         List<String> results = new ArrayList<>();
         embrace(nr, nr, new char[nr * 2], 0, results);
@@ -13,7 +22,7 @@ public class Braces {
         return results;
     }
 
-    public void embrace(int leftHand, int rightHand, 
+    private static void embrace(int leftHand, int rightHand,
             char[] str, int index, List<String> results) {
 
         if (rightHand < leftHand || leftHand < 0) {
