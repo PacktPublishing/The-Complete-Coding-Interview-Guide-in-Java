@@ -1,12 +1,21 @@
 package coding.challenge;
 
-public class MagicIndex {
+public final class MagicIndex {
 
-    int findMagicIndex(int[] arr) {
-        return findMagicIndex(arr, 0, arr.length - 1);
+    private MagicIndex() {
+        throw new AssertionError("Cannot be instantiated");
     }
 
-    private int findMagicIndex(int[] arr, int startIndex, int endIndex) {
+    public static int find(int[] arr) {
+
+        if (arr == null) {
+            return -1;
+        }
+
+        return find(arr, 0, arr.length - 1);
+    }
+
+    private static int find(int[] arr, int startIndex, int endIndex) {
 
         if (startIndex > endIndex) {
             return -1; // return an invalid index
@@ -19,12 +28,12 @@ public class MagicIndex {
         }
 
         // search from middle of the array to the left       
-        int leftIndex = findMagicIndex(arr, startIndex, Math.min(middleIndex - 1, value));
+        int leftIndex = find(arr, startIndex, Math.min(middleIndex - 1, value));
         if (leftIndex >= 0) {
             return leftIndex;
         }
 
         // search from middle of the array to the right               
-        return findMagicIndex(arr,  Math.max(middleIndex + 1, value), endIndex);
+        return find(arr, Math.max(middleIndex + 1, value), endIndex);
     }
 }
