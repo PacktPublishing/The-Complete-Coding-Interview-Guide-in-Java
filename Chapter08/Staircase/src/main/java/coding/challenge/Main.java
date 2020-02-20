@@ -5,13 +5,11 @@ public class Main {
     private static final int STEPS = 3;
     
     public static void main(String[] args) {        
-        
-        Staircase staircase = new Staircase();
-        
-        int count = staircase.count(STEPS);                
+                
+        int count = Staircase.count(STEPS);                
         System.out.println("Count: " + count);
         
-        int countMemo = staircase.countViaMemoization(STEPS);
+        int countMemo = Staircase.countViaMemoization(STEPS);
         System.out.println("Count via memo: " + countMemo);
     }
 

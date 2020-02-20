@@ -1,9 +1,13 @@
 package coding.challenge;
 
-public class Staircase {
+public final class Staircase {
+
+    private Staircase() {
+        throw new AssertionError("Cannot be instantiated");
+    }
 
     // 100% recursive
-    int count(int n) {
+    public static int count(int n) {
         if (n == 0) {
             return 1;
         } else if (n < 0) {
@@ -14,13 +18,13 @@ public class Staircase {
     }
 
     // optimize the recursive algorithm via Memoization
-    int countViaMemoization(int n) {
-        
-        int[] cache = new int[n + 1];  
+    public static int countViaMemoization(int n) {
+
+        int[] cache = new int[n + 1];
         return count(n, cache);
     }
 
-    int count(int n, int[] cache) {
+    private static int count(int n, int[] cache) {
         if (n == 0) {
             return 1;
         } else if (n < 0) {
