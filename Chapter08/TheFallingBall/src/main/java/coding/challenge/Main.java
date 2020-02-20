@@ -29,10 +29,11 @@ public class Main {
             }
             System.out.println();
         }
-
-        FallingBall ball = new FallingBall();
-        System.out.println("Middle cell has elevation: " + elevations[rows / 2][cols / 2]);
-        ball.computePath(elevations[rows / 2][cols / 2], rows / 2, cols / 2, rows, cols, elevations);
+        
+        System.out.println("Middle cell has elevation: " 
+                + elevations[rows / 2][cols / 2]);
+        FallingBall.computePath(elevations[rows / 2][cols / 2], 
+                rows / 2, cols / 2, rows, cols, elevations);
 
         System.out.println("Result grid:");
         for (int i = 0; i < rows; i++) {
