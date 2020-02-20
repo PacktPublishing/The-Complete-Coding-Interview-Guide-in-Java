@@ -1,8 +1,12 @@
 package coding.challenge;
 
-public class SimplePermutation {
+public final class SimplePermutation {
 
-    public void permute(String str) {
+    private SimplePermutation() {
+        throw new AssertionError("Cannot be instantiated");
+    }
+
+    public static void permute(String str) {
 
         if (str == null || str.isBlank()) {
             // or throw IllegalArgumentException
@@ -12,7 +16,7 @@ public class SimplePermutation {
         permute("", str);
     }
 
-    private void permute(String prefix, String str) {
+    private static void permute(String prefix, String str) {
 
         int n = str.length();
         if (n == 0) {
