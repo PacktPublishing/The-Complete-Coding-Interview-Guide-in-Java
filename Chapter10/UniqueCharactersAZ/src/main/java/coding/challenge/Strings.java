@@ -18,8 +18,8 @@ public final class Strings {
         int marker = 0;
         for (int i = 0; i < str.length(); i++) {
 
-            int val = str.charAt(i) - A_CHAR;
-            int mask = 1 << val;
+            int s = str.charAt(i) - A_CHAR;
+            int mask = 1 << s;
 
             if ((marker & mask) > 0) {
                 return false;
