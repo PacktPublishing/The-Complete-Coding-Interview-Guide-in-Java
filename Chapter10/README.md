@@ -1,2 +1,2 @@
-# Bit manipulation
+# Arrays and strings
 This chapter...
