@@ -5,6 +5,8 @@ import java.util.Map;
 
 public final class Strings {
 
+    private static final int MAX_CODE = 65535;
+
     private Strings() {
         throw new AssertionError("Cannot be instantiated");
     }
@@ -20,12 +22,17 @@ public final class Strings {
 
         // or use for(char ch: str.toCharArray()) { ... }
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
 
-            if (!Character.isWhitespace(ch)) {
-                if (chars.putIfAbsent(ch, 1) != null) {
-                    return false;
+            if (str.codePointAt(i) <= MAX_CODE) {                
+                char ch = str.charAt(i);
+                if (!Character.isWhitespace(ch)) {
+                    if (chars.putIfAbsent(ch, 1) != null) {
+                        return false;
+                    }
                 }
+            } else {
+                System.out.println("The given string contains unallowed characters");
+                return false;
             }
         }
 
