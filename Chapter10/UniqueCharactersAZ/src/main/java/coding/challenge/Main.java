@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String text1 = "a b c d e f g h z q o i";
-        String text2 = "a b c d e f g h z q o c";
+        String text1 = "abcdefhzqoc";
+        String text2 = "abcdefhzqow";
 
         boolean resultText1 = Strings.isUnique(text1);
         boolean resultText2 = Strings.isUnique(text2);

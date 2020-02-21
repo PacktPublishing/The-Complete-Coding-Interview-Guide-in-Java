@@ -25,7 +25,7 @@ public final class Strings {
                 return false;
             }
 
-            marker = marker | mask;
+            marker = marker | mask;            
         }
 
         return true;
