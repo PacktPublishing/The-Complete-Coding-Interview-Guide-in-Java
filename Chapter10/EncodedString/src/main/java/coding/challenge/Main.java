@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        char[] str = "  String   with spaces  ".toCharArray();                
+        char[] str = "x ".toCharArray();                
 
         System.out.println("Before: " + Arrays.toString(str));        
         

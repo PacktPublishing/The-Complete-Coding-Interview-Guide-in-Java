@@ -12,6 +12,7 @@ public final class Strings {
             throw new IllegalArgumentException("The given string cannot be null");
         }
 
+        // count whitespaces (step 1)
         int countWhitespaces = 0;
         for (int i = 0; i < str.length; i++) {
             if (Character.isWhitespace(str[i])) {
@@ -21,8 +22,10 @@ public final class Strings {
         
         if (countWhitespaces > 0) {
 
+            // create the encoded char[] (step 2)
             char[] encodedStr = new char[str.length + countWhitespaces * 2];
 
+            // populate the encoded char[] (step 3)
             int index = 0;
             for (int i = 0; i < str.length; i++) {
                 if (Character.isWhitespace(str[i])) {
