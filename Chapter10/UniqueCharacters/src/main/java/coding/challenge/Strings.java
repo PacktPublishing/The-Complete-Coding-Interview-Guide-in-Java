@@ -18,15 +18,15 @@ public final class Strings {
             return false;
         }
 
-        Map<Character, Integer> chars = new HashMap<>();
+        Map<Character, Boolean> chars = new HashMap<>();
 
         // or use for(char ch: str.toCharArray()) { ... }
         for (int i = 0; i < str.length(); i++) {
 
-            if (str.codePointAt(i) <= MAX_CODE) {                
+            if (str.codePointAt(i) <= MAX_CODE) {
                 char ch = str.charAt(i);
                 if (!Character.isWhitespace(ch)) {
-                    if (chars.putIfAbsent(ch, 1) != null) {
+                    if (chars.put(ch, true) != null) {
                         return false;
                     }
                 }
