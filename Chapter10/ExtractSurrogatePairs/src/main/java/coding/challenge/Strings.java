@@ -17,20 +17,23 @@ public final class Strings {
         }
 
         List<Integer> result = new ArrayList<>();
-        StringBuilder temp = new StringBuilder(String.valueOf(Integer.MAX_VALUE).length());
 
         for (int i = 0; i < str.length(); i++) {
 
-            char ch = str.charAt(i);
-
-            if (Character.isDigit(ch)) { // or, if (((int) ch) >= 48 && ((int) ch) <= 57)
-                temp.append(ch);
-            } else {
-                if (temp.length() > 0) {
-                    result.add(Integer.parseInt(temp.toString()));
-                    temp.delete(0, temp.length());
-                }
+            int cp = str.codePointAt(i);
+            if (i < str.length() - 1 && str.codePointCount(i, i + 2) == 1) {
+                result.add(cp);
+                i++;
             }
+
+            /*
+            // or, like this 
+            int cp = str.codePointAt(i);               
+            if (Character.charCount(cp) == 2) { // 2 means a suroggate pair
+                result.add(cp);
+                i++;
+            } 
+             */
         }
 
         return result;

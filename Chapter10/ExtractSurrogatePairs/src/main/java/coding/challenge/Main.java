@@ -1,13 +1,25 @@
 package coding.challenge;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        String str = "cv dd 4 k 2321 2 11 k4k2 66 4d";        
+        char[] musicalScore = new char[]{'\uD83C', '\uDFBC'}; // code point: 127932
+        char[] smileyFace = new char[]{'\uD83D', '\uDE0D'};   // code point: 128525
+        char[] twoHearts = new char[]{'\uD83D', '\uDC95'};    // code point: 128149
+        char[] cyrillicZhe = new char[]{'\u04DC'};            // code point: 1244
 
-        System.out.println("String: " + str);                
-        System.out.println("Integers : " + Strings.extract(str));                
+        String str = "is" + String.valueOf(cyrillicZhe) + "zhe"
+                + String.valueOf(twoHearts) + "two hearts"
+                + String.valueOf(smileyFace) + "smiley face and, "
+                + String.valueOf(musicalScore) + "musical score";
+
+        List<Integer> result = Strings.extract(str);
+        
+        System.out.println("The extracted surrogate pairs have the following code points:");
+        System.out.println(result);
     }
 
 }
