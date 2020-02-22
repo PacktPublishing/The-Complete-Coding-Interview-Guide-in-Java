@@ -23,6 +23,7 @@ public final class Strings {
             int cp = str.codePointAt(i);
             if (i < str.length() - 1 && str.codePointCount(i, i + 2) == 1) {
                 result.add(cp);
+                result.add(str.codePointAt(i+1));
                 i++;
             }
 
@@ -31,6 +32,7 @@ public final class Strings {
             int cp = str.codePointAt(i);               
             if (Character.charCount(cp) == 2) { // 2 means a suroggate pair
                 result.add(cp);
+                result.add(str.codePointAt(i+1));
                 i++;
             } 
              */
