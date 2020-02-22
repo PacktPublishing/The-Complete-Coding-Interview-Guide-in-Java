@@ -17,8 +17,7 @@ public final class Strings {
         }
 
         List<Integer> result = new ArrayList<>();
-        StringBuilder temp = new StringBuilder(
-                String.valueOf(Integer.MAX_VALUE).length());
+        StringBuilder temp = new StringBuilder(String.valueOf(Integer.MAX_VALUE).length());
 
         for (int i = 0; i < str.length(); i++) {
 
