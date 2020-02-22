@@ -6,22 +6,22 @@ public final class Strings {
         throw new AssertionError("Cannot be instantiated");
     }
 
-    public static boolean isOneEditAway(String first, String second) {
+    public static boolean isOneEditAway(String q, String p) {
 
-        if (first == null || second == null
-                || first.isBlank() || second.isBlank()) {
+        if (q == null || p == null
+                || q.isBlank() || p.isBlank()) {
             return false;
         }
 
         // if the difference between the strings is bigger than 1 
         // then they are at more than one edit away
-        if (Math.abs(first.length() - second.length()) > 1) {
+        if (Math.abs(q.length() - p.length()) > 1) {
             return false;
         }
 
         // get shorter and longer string
-        String shorter = first.length() < second.length() ? first : second;
-        String longer = first.length() < second.length() ? second : first;
+        String shorter = q.length() < p.length() ? q : p;
+        String longer = q.length() < p.length() ? p : q;
 
         int is = 0;
         int il = 0;
