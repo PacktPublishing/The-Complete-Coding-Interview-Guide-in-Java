@@ -35,7 +35,7 @@ public final class Strings {
                 result.add(str.codePointAt(i+1));
                 i++;
             } 
-             */
+            */
         }
 
         return result;
