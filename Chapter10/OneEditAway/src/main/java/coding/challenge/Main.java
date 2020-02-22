@@ -1,15 +1,13 @@
 package coding.challenge;
 
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        String first = "tank";
-        String second = "tlank";
+        String q = "tank";
+        String p = "tlank";
 
-        System.out.println("Result: " + Strings.isOneEditAway(first, second));                
+        System.out.println("Result: " + Strings.isOneEditAway(q, p));                
     }
 
 }
