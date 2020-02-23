@@ -18,10 +18,6 @@ public final class Strings {
             return false;
         }
 
-        return contains((str1 + str1), str2);
-    }
-
-    private static boolean contains(String text, String subtext) {
-        return text.matches("(?i).*" + Pattern.quote(subtext) + ".*");
+        return (str1 + str1).matches("(?i).*" + Pattern.quote(str2) + ".*");
     }
 }
