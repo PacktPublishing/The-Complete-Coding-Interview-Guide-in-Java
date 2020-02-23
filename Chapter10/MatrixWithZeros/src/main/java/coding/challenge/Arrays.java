@@ -41,14 +41,14 @@ public final class Arrays {
             }
         }
 
-        // Loop first column and propagate each found zero on the row
+        // Loop the first column and propagate each found zero on the row
         for (int i = 1; i < m.length; i++) {
             if (m[i][0] == 0) {
                 setRowOfZero(m, i);
             }
         }
 
-        // Loop first row and propagate each found zero on the column
+        // Loop the first row and propagate each found zero on the column
         for (int j = 1; j < m[0].length; j++) {
             if (m[0][j] == 0) {
                 setColumnOfZero(m, j);
