@@ -10,54 +10,63 @@ public class ThreeStack {
     private int size;                               // stack size
     private int nextFreeSlot;                       // next free slot in array
 
-    private StackNode[] nodes;                      // the stacks
+    private final StackNode[] theArray;                // the array of stacks 
 
-    private final int[] pointers = {-1, -1, -1};    // maintain the parent for each node
+    private final int[] backLinks = {-1, -1, -1};   // maintain the parent for each node
 
     ThreeStack() {
-        nodes = new StackNode[STACK_CAPACITY];
-        initialize();
+        theArray = new StackNode[STACK_CAPACITY];
+        initializeSlots();
     }
 
     public void push(int stackNumber, int value) throws OverflowException {
+        
+        if(stackNumber < 1 || stackNumber > 3) {
+            throw new IllegalArgumentException("Choose between stack number 1, 2 or 3");
+        }
 
         int stack = stackNumber - 1;
         int free = fetchIndexOfFreeSlot();
-        int top = pointers[stack];
-        StackNode node = nodes[free];
+        int top = backLinks[stack];
+        StackNode node = theArray[free];
 
         // link the free node to the current stack
         node.value = value;
-        node.link = top;
+        node.backLink = top;
 
         // set new top
-        pointers[stack] = free;
+        backLinks[stack] = free;
     }
 
     public StackNode pop(int stackNumber) throws UnderflowException {
+        
+        if(stackNumber < 1 || stackNumber > 3) {
+            throw new IllegalArgumentException("Choose between stack number 1, 2 or 3");
+        }
 
         int stack = stackNumber - 1;
-        int top = pointers[stack];
+        int top = backLinks[stack];
 
         if (top == -1) {
             throw new UnderflowException("Stack Underflow");
         }
 
-        StackNode node = nodes[top]; // get the top node
+        StackNode node = theArray[top]; // get the top node
 
-        pointers[stack] = node.link;
-        freeNode(top);
+        backLinks[stack] = node.backLink;
+        freeSlot(top);
 
         return node;
     }
 
-    public void printStacks() {
+    public void printStacks() {                
         for (int i = 0; i < 3; i++) {
+            
             System.out.println("\nStack number: " + (i + 1));
-            int s = pointers[i];
+            int s = backLinks[i];
             while (s != -1) {
-                System.out.println(nodes[s]);
-                s = nodes[s].link;
+                System.out.println(theArray[s]);
+                s = theArray[s].backLink;
             }
         }
     }
@@ -72,23 +81,23 @@ public class ThreeStack {
         int free = nextFreeSlot;
 
         // set next free slot in array and increase size
-        nextFreeSlot = nodes[free].link;
+        nextFreeSlot = theArray[free].backLink;
         size++;
 
         return free;
     }
 
-    private void freeNode(int index) {
+    private void freeSlot(int index) {
 
-        nodes[index].link = nextFreeSlot;
+        theArray[index].backLink = nextFreeSlot;
         nextFreeSlot = index;
 
         size--;
     }
 
-    private void initialize() {
+    private void initializeSlots() {
         for (int i = 0; i < STACK_CAPACITY; i++) {
-            nodes[i] = new StackNode(0, i + 1);
+            theArray[i] = new StackNode(0, i + 1);
         }
     }
 }

@@ -3,16 +3,16 @@ package coding.challenge;
 public class StackNode {
 
     int value;
-    int link;
+    int backLink;
 
-    StackNode(int value, int link) {
+    StackNode(int value, int backLink) {
         this.value = value;
-        this.link = link;
+        this.backLink = backLink;
     }
 
     @Override
     public String toString() {
-        return value + "(link: " + link + ")";
+        return value + "(back link: " + backLink + ")";
     }
 
 }

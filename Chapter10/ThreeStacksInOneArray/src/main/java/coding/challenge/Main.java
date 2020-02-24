@@ -20,6 +20,8 @@ public class Main {
         ts.push(2, 5);
         ts.printStacks();
         
+        System.out.println("----------------------------------------");
+        
         // push 91, 21 in the third stack and pop from the second stack
         ts.push(3, 91);
         ts.push(3, 21);
@@ -27,11 +29,15 @@ public class Main {
         System.out.println("\nPop from second stack: " + sn.value);
         ts.printStacks();
         
-        // push 100, 11 and 3 in the first stack
-        ts.push(1, 100);
+        System.out.println("----------------------------------------");
+        
+        // push 23, 11 and 3 in the first stack
+        ts.push(1, 23);
         ts.push(1, 11);
         ts.push(1, 3);
         ts.printStacks();
+        
+        System.out.println("----------------------------------------");
         
         // pop one node from each stack
         StackNode sn1 = ts.pop(1);
