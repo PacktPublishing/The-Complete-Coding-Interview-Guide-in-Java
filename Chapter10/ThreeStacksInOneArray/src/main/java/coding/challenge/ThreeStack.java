@@ -10,7 +10,7 @@ public class ThreeStack {
     private int size;                               // stack size
     private int nextFreeSlot;                       // next free slot in array
 
-    private final StackNode[] theArray;                // the array of stacks 
+    private final StackNode[] theArray;             // the array of stacks 
 
     private final int[] backLinks = {-1, -1, -1};   // maintain the parent for each node
 
