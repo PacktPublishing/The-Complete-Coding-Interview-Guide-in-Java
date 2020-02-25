@@ -8,6 +8,10 @@ public final class Arrays {
 
     public static float median(int[] q, int[] p) {
 
+        if (q == null || p == null) {
+            return -1;
+        }
+
         int lenQ = q.length;
         int lenP = p.length;
 
@@ -24,7 +28,7 @@ public final class Arrays {
 
         while (qPointerMin <= qPointerMax) {
 
-            qPointer = (qPointerMin + qPointerMax) / 2; 
+            qPointer = (qPointerMin + qPointerMax) / 2;
             pPointer = midLength - qPointer;
 
             // perform binary search
@@ -35,9 +39,9 @@ public final class Arrays {
                 // qPointer must be decreased
                 qPointerMax = qPointer - 1;
             } else { // we found the poper qPointer    
-                
+
                 int maxLeft = 0;
-                                
+
                 if (qPointer == 0) { // first element on array 'q'?
                     maxLeft = p[pPointer - 1];
                 } else if (pPointer == 0) { // first element of array 'p'?
@@ -52,7 +56,7 @@ public final class Arrays {
                 }
 
                 int minRight = 0;
-                
+
                 if (qPointer == q.length) { // last element on array 'q'?
                     minRight = p[pPointer];
                 } else if (pPointer == p.length) { // last element on array 'p'?
