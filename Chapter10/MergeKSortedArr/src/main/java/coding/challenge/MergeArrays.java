@@ -46,15 +46,15 @@ public class MergeArrays {
     private static void heapify(MinHeap[] heap, int root, int len) {
 
         int smallest = root;
-        int indexAtTwoNPlusOne = 2 * root + 1;
-        int indexAtTwoNPlusTwo = 2 * root + 2;
+        int indexAtTwoRootPlusOne = 2 * root + 1;
+        int indexAtTwoRootPlusTwo = 2 * root + 2;
 
-        if (indexAtTwoNPlusOne < len && heap[smallest].data > heap[indexAtTwoNPlusOne].data) {
-            smallest = indexAtTwoNPlusOne;
+        if (indexAtTwoRootPlusOne < len && heap[smallest].data > heap[indexAtTwoRootPlusOne].data) {
+            smallest = indexAtTwoRootPlusOne;
         }
 
-        if (indexAtTwoNPlusTwo < len && heap[smallest].data > heap[indexAtTwoNPlusTwo].data) {
-            smallest = indexAtTwoNPlusTwo;
+        if (indexAtTwoRootPlusTwo < len && heap[smallest].data > heap[indexAtTwoRootPlusTwo].data) {
+            smallest = indexAtTwoRootPlusTwo;
         }
 
         // swap smallest with root
