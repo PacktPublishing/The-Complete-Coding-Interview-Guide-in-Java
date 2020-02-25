@@ -23,8 +23,8 @@ public final class Arrays {
         int qPointerMax = q.length;
         int midLength = (q.length + p.length + 1) / 2;
 
-        int qPointer = 0;
-        int pPointer = 0;
+        int qPointer;
+        int pPointer;
 
         while (qPointerMin <= qPointerMax) {
 
