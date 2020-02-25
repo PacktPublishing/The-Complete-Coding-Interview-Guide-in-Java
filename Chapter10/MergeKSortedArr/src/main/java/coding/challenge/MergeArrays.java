@@ -1,10 +1,16 @@
 package coding.challenge;
 
-import java.util.Arrays;
-
 public class MergeArrays {
 
     public static int[] merge(int[][] arrs, int k) {
+
+        if (arrs == null) {
+            throw new IllegalArgumentException("The given arrays cannot be null");
+        }
+
+        if (k <= 0) {
+            throw new IllegalArgumentException("The number of given arrays cannot be less or equal to 0");
+        }
 
         // compute the total length of the resulting array
         int len = 0;
@@ -23,7 +29,7 @@ public class MergeArrays {
             heap[i] = new MinHeap(arrs[i][0], i, 0);
         }
 
-        //
+        // perform merging
         for (int i = 0; i < result.length; i++) {
 
             heapify(heap, 0, k);
@@ -43,6 +49,7 @@ public class MergeArrays {
         return result;
     }
 
+    // removes the minimum element from the heap, O(log n)
     private static void heapify(MinHeap[] heap, int root, int len) {
 
         int smallest = root;
