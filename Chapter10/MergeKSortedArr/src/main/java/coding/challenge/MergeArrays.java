@@ -46,24 +46,37 @@ public class MergeArrays {
     private static void heapify(MinHeap[] heap, int root, int len) {
 
         int smallest = root;
-        int indexAtTwoRootPlusOne = 2 * root + 1;
-        int indexAtTwoRootPlusTwo = 2 * root + 2;
+        int leftIndex = left(root);
+        int rightIndex = right(root);
 
-        if (indexAtTwoRootPlusOne < len && heap[smallest].data > heap[indexAtTwoRootPlusOne].data) {
-            smallest = indexAtTwoRootPlusOne;
+        if (leftIndex < len && heap[smallest].data > heap[leftIndex].data) {
+            smallest = leftIndex;
         }
 
-        if (indexAtTwoRootPlusTwo < len && heap[smallest].data > heap[indexAtTwoRootPlusTwo].data) {
-            smallest = indexAtTwoRootPlusTwo;
+        if (rightIndex < len && heap[smallest].data > heap[rightIndex].data) {
+            smallest = rightIndex;
         }
 
         // swap smallest with root
         if (smallest != root) {
-            MinHeap aux = heap[smallest];
-            heap[smallest] = heap[root];
-            heap[root] = aux;
-
+            swap(heap, smallest, root);
             heapify(heap, smallest, len);
         }
+    }
+
+    private static void swap(MinHeap[] heap, int i, int j) {
+        MinHeap aux = heap[i];
+        heap[i] = heap[j];
+        heap[j] = aux;
+    }
+
+    // to get index of left child of node at index i 
+    private static int left(int i) {
+        return (2 * i + 1);
+    }
+
+    // to get index of right child of node at index i 
+    private static int right(int i) {
+        return (2 * i + 2);
     }
 }
