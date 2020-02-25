@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[][] arr = {
+        int[][] arrs = {
             {1, 2, 32, 46}, 
             {-4, 5, 15, 18, 20}, 
             {3}, 
@@ -14,7 +14,7 @@ public class Main {
             {-2, -1, 0}
         };
 
-        int[] result = MergeArrays.merge(arr, arr.length);
+        int[] result = MergeArrays.merge(arrs, arrs.length);
         System.out.println(Arrays.toString(result));
     }
 }

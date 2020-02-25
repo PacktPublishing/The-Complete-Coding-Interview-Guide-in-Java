@@ -4,12 +4,12 @@ import java.util.Arrays;
 
 public class MergeArrays {
 
-    public static int[] merge(int[][] m, int k) {
+    public static int[] merge(int[][] arrs, int k) {
 
         // compute the total length of the resulting array
         int len = 0;
-        for (int i = 0; i < m.length; i++) {
-            len += m[i].length;
+        for (int i = 0; i < arrs.length; i++) {
+            len += arrs[i].length;
         }
 
         // create the result array
@@ -20,13 +20,11 @@ public class MergeArrays {
 
         // add in the heap first element from each array
         for (int i = 0; i < k; i++) {
-            heap[i] = new MinHeap(m[i][0], i, 0);
+            heap[i] = new MinHeap(arrs[i][0], i, 0);
         }
 
         //
         for (int i = 0; i < result.length; i++) {
-
-            System.out.println("Before:" + Arrays.toString(heap));
 
             heapify(heap, 0, k);
 
@@ -34,7 +32,7 @@ public class MergeArrays {
             result[i] = heap[0].data;
 
             heap[0].currentIndex++;
-            int[] subarray = m[heap[0].heapIndex];
+            int[] subarray = arrs[heap[0].heapIndex];
             if (heap[0].currentIndex >= subarray.length) {
                 heap[0].data = Integer.MAX_VALUE;
             } else {
