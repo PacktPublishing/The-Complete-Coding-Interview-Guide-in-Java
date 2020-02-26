@@ -9,6 +9,6 @@ public class Main {
         int max = Arrays.findMin(m);
 
         System.out.println("Array: " + java.util.Arrays.toString(m));
-        System.out.println("Max value is: " + max);
+        System.out.println("Min value is: " + max);
     }
 }
