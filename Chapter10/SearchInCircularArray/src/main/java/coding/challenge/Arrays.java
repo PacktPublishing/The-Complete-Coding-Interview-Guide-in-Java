@@ -20,7 +20,7 @@ public final class Arrays {
             // half the search space
             int middle = (left + right) / 2;           
 
-            // we found the searched value right in the middle
+            // we found the searched value
             if (m[middle] == x) {
                 return middle;
             }
