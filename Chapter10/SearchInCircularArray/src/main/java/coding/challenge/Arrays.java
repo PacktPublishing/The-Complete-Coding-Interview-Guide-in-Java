@@ -6,7 +6,7 @@ public final class Arrays {
         throw new AssertionError("Cannot be instantiated");
     }
 
-    public static int find(int[] m, int n) {
+    public static int find(int[] m, int x) {
 
         if (m == null || m.length == 0) {
             return -1;
@@ -18,10 +18,10 @@ public final class Arrays {
         while (left <= right) {
 
             // half the search space
-            int middle = (left + right) / 2;
+            int middle = (left + right) / 2;           
 
             // we found the searched value right in the middle
-            if (m[middle] == n) {
+            if (m[middle] == x) {
                 return middle;
             }
 
@@ -29,7 +29,7 @@ public final class Arrays {
             if (m[middle] <= m[right]) {
 
                 // check if n is in m[middle ... right]
-                if (n > m[middle] && n <= m[right]) {
+                if (x > m[middle] && x <= m[right]) {
                     left = middle + 1;  // search in the right-half
                 } else {
                     right = middle - 1;	// search in the left-half
@@ -38,7 +38,7 @@ public final class Arrays {
                 // compare key with A[left] and A[mid] to know
 
                 // check if n is in m[left ... middle]
-                if (n >= m[left] && n < m[middle]) {
+                if (x >= m[left] && x < m[middle]) {
                     right = middle - 1; // search in the left-half
                 } else {
                     left = middle + 1;	// search in the right-half
