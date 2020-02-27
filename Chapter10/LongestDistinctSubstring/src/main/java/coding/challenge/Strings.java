@@ -8,7 +8,7 @@ public final class Strings {
 
     private static final int ASCII_CODES = 256;
 
-    public static String longestSubstring(String str) {
+    public static String longestDistinctSubstring(String str) {
 
         // flag characters present in current window
         boolean[] flagWindow = new boolean[ASCII_CODES];

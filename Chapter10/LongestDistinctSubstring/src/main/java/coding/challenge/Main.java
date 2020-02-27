@@ -6,7 +6,7 @@ public class Main {
 
         String str = "abcc#$%^&ccdbeeebdd012333dbsssbesbaas";
 
-        String result = Strings.longestSubstring(str);
+        String result = Strings.longestDistinctSubstring(str);
 
         System.out.println("String: " + str);
         System.out.println("Result: " + result);
