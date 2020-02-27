@@ -1,2 +1,2 @@
-# Arrays and strings
+# Linked lists and maps
 This chapter...
