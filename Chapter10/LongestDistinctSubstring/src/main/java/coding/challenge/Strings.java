@@ -10,6 +10,10 @@ public final class Strings {
 
     public static String longestDistinctSubstring(String str) {
 
+        if (str == null || str.isBlank()) {
+            return "";
+        }
+
         // flag characters present in current window
         boolean[] flagWindow = new boolean[ASCII_CODES];
 
