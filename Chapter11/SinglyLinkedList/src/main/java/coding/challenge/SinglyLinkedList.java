@@ -87,7 +87,7 @@ public final class SinglyLinkedList {
         }
 
         // if index == size then last node itself is to be inserted         
-        if (index == size) {
+        if (index == size && currentNode != null) {
             insertLast(data);
             return;
         }
