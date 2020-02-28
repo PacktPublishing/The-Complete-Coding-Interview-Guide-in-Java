@@ -170,12 +170,6 @@ public final class DoublyLinkedList {
 
                 // unlink currentNode from next node
                 currentNode.next.prev = currentNode.prev;
-
-                // set the new size
-                size--;
-
-                return true;
-
             } else {
                 // unlink the tail
                 tail = currentNode.prev;
@@ -185,12 +179,13 @@ public final class DoublyLinkedList {
                 } else {
                     head = null;
                 }
-
-                // set the new size
-                size--;
-
-                return true;
             }
+
+            // set the new size
+            size--;
+
+            return true;
+
         }
 
         // we cannot find the given data
@@ -230,12 +225,6 @@ public final class DoublyLinkedList {
 
                     // unlink currentNode from next node
                     currentNode.next.prev = currentNode.prev;
-
-                    // set the new size
-                    size--;
-
-                    return true;
-
                 } else {
                     // unlink the tail
                     tail = currentNode.prev;
@@ -245,12 +234,13 @@ public final class DoublyLinkedList {
                     } else {
                         head = null;
                     }
-
-                    // set the new size
-                    size--;
-
-                    return true;
                 }
+
+                // set the new size
+                size--;
+
+                return true;
+
             } else {
                 // continue searching to next node 
                 currentNode = currentNode.next;
