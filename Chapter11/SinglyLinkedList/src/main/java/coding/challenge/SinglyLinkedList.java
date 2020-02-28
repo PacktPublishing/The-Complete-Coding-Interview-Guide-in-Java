@@ -86,10 +86,15 @@ public final class SinglyLinkedList {
             return;
         }
 
-        // if index > size then last node itself is to be inserted 
-        if (index > size) {
+        // if index == size then last node itself is to be inserted         
+        if (index == size) {
             insertLast(data);
             return;
+        }
+
+        // index cannot be larger than size
+        if (index > size) {
+            throw new RuntimeException("Index is larger than size!");
         }
 
         // if the index > 0 and index <= size
