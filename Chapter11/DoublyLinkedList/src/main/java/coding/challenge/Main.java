@@ -4,31 +4,26 @@ public class Main {
 
     public static void main(String[] args) {
 
-       SinglyLinkedList sll = new SinglyLinkedList();
+       DoublyLinkedList dll = new DoublyLinkedList();
+                    
+       dll.insertFirst(28);
+       dll.insertAt(0, -1);
+       dll.insertFirst(27);
+       dll.insertAt(2, -2);   
+       dll.delete(28);
+       dll.delete(27);
+       dll.delete(-2);
+       dll.delete(-1);
+      // dll.insertAt(0, 23);
+      // dll.insertFirst(2);
+      // boolean b2=dll.delete(27);
+       dll.printHeadToLast();
+      // boolean b1=dll.deleteByIndex(-1);
        
-       sll.insertFirst(2);
-       sll.insertLast(12);
-       sll.insertAt(1, 23);
-       sll.insertAt(0, -1);
-       sll.insertAt(2, -5);
-       sll.insertFirst(9);
-       sll.insertLast(44);
+       dll.printLastToHead();
+       //System.out.println("x="+b1);
        
-       sll.print();
-       
-       sll.delete(9);
-       sll.delete(44);
-       
-       sll.print();
-       
-       sll.deleteByIndex(0);
-       sll.deleteByIndex(sll.size() - 1);
-       
-       sll.print();
-       
-       sll.deleteByIndex(sll.size());
-       
-       System.out.println("\nSize: " + sll.size());
+      // System.out.println("\nSize: " + dll.size());
        
     }
 

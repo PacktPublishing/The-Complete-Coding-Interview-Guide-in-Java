@@ -15,6 +15,7 @@ public final class DoublyLinkedList {
     }
 
     private Node head;
+    private Node tail;
     private int size;
 
     public boolean isEmpty() {
@@ -32,7 +33,6 @@ public final class DoublyLinkedList {
 
         // link the new node to the list as the first node
         newNode.next = head;
-        newNode.prev = null;
 
         // if there is a head then link it to the new node
         if (head != null) {
@@ -42,19 +42,17 @@ public final class DoublyLinkedList {
         // this new node become the head
         head = newNode;
 
+        // if this is the first node then it is the tail as well
+        if (tail == null) {
+            tail = newNode;
+        }
+
         // set the new size
         size++;
     }
 
     // insert a node at the end of linked list
     public void insertLast(int data) {
-
-        Node current = head;
-
-        // loop until the last node
-        while (current.next != null) {
-            current = current.next;
-        }
 
         // create new node
         Node newNode = new Node();
@@ -63,7 +61,17 @@ public final class DoublyLinkedList {
         newNode.data = data;
 
         // link the new node to the list as the last node
-        current.next = newNode;
+        // if there is a tail then point to the newNode
+        if (tail != null) {
+            tail.next = newNode;
+            newNode.prev = tail;
+        }
+
+        tail = newNode;
+
+        if (head == null) {
+            head = newNode;
+        }
 
         // set the new size
         size++;
@@ -74,7 +82,6 @@ public final class DoublyLinkedList {
 
         // store head node 
         Node currentNode = head;
-        Node prev = null;
 
         // if index is 0 then head node itself is to be inserted 
         if (index == 0 && currentNode != null) {
@@ -99,17 +106,20 @@ public final class DoublyLinkedList {
                 // set the data of the new node
                 newNode.data = data;
 
-                // link the new node to the list
-                prev.next = newNode;
+                // link the new node to the previous node
+                currentNode.prev.next = newNode;
+                newNode.prev = currentNode.prev;
+
+                // link the new node to the next node
                 newNode.next = currentNode;
+                currentNode.prev = newNode;
 
                 // set the new size
                 size++;
 
                 return;
             } else {
-                // continue searching to next node 
-                prev = currentNode;
+                // continue searching to next node                
                 currentNode = currentNode.next;
 
                 pointer++;
@@ -121,11 +131,19 @@ public final class DoublyLinkedList {
 
         // store head node 
         Node currentNode = head;
-        Node prev = null;
 
         // check if data belongs to the head
         if (currentNode != null && currentNode.data == data) {
+
             head = currentNode.next;
+
+            if (head != null) {
+                head.prev = null;
+            } else {
+                tail = null;
+            }
+
+            currentNode = null;
 
             // set the new size
             size--;
@@ -134,24 +152,46 @@ public final class DoublyLinkedList {
         }
 
         // check if the data is somewhere other than at head 
-        // keep track of the previous node as it is needed to change currentNode.next 
         while (currentNode != null && currentNode.data != data) {
 
-            // go to the next node
-            prev = currentNode;
+            // go to the next node            
             currentNode = currentNode.next;
         }
 
-        // if the data was present, it should be at currentNode         
+        // if the data was present, it should be at currentNode                 
         if (currentNode != null) {
+            if (currentNode != tail) {
 
-            // unlink currentNode from linked list 
-            prev.next = currentNode.next;
+                // unlink currentNode from previous node
+                currentNode.prev.next = currentNode.next;
 
-            // set the new size
-            size--;
+                // unlink currentNode from next node
+                currentNode.next.prev = currentNode.prev;
 
-            return true;
+                currentNode = null;
+
+                // set the new size
+                size--;
+
+                return true;
+
+            } else {
+                // unlink the tail
+                tail = currentNode.prev;
+
+                if (tail != null) {
+                    tail.next = null;
+                } else {
+                    head = null;
+                }
+
+                currentNode = null;
+
+                // set the new size
+                size--;
+
+                return true;
+            }
         }
 
         // we cannot find the given data
@@ -162,11 +202,18 @@ public final class DoublyLinkedList {
 
         // store head node 
         Node currentNode = head;
-        Node prev = null;
 
         // if index is 0 then head node itself is to be deleted 
         if (index == 0 && currentNode != null) {
             head = currentNode.next;
+
+            if (head != null) {
+                head.prev = null;
+            } else {
+                tail = null;
+            }
+
+            currentNode = null;
 
             // set the new size
             size--;
@@ -179,16 +226,40 @@ public final class DoublyLinkedList {
         while (currentNode != null) {
 
             if (pointer == index) {
-                // unlink currentNode from linked list 
-                prev.next = currentNode.next;
+                if (pointer < (size - 1)) {
 
-                // set the new size
-                size--;
+                    // unlink currentNode from previous node
+                    currentNode.prev.next = currentNode.next;
 
-                return true;
+                    // unlink currentNode from next node
+                    currentNode.next.prev = currentNode.prev;
+
+                    currentNode = null;
+
+                    // set the new size
+                    size--;
+
+                    return true;
+
+                } else {
+                    // unlink the tail
+                    tail = currentNode.prev;
+
+                    if (tail != null) {
+                        tail.next = null;
+                    } else {
+                        head = null;
+                    }
+
+                    currentNode = null;
+
+                    // set the new size
+                    size--;
+
+                    return true;
+                }
             } else {
                 // continue searching to next node 
-                prev = currentNode;
                 currentNode = currentNode.next;
 
                 pointer++;
@@ -199,7 +270,7 @@ public final class DoublyLinkedList {
         return false;
     }
 
-    public void print() {
+    public void printHeadToLast() {
 
         System.out.println("\nHead ----------> Last:");
 
@@ -208,6 +279,20 @@ public final class DoublyLinkedList {
 
             System.out.print(currentNode);
             currentNode = currentNode.next;
+        }
+
+        System.out.println();
+    }
+
+    public void printLastToHead() {
+
+        System.out.println("\nLast ----------> Head:");
+
+        Node currentNode = tail;
+        while (currentNode != null) {
+
+            System.out.print(currentNode);
+            currentNode = currentNode.prev;
         }
 
         System.out.println();
