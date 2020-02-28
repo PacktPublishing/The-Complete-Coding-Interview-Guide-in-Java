@@ -10,7 +10,7 @@ public final class DoublyLinkedList {
 
         @Override
         public String toString() {
-            return data + "  ";
+            return " " + data + " ";
         }
     }
 
@@ -89,10 +89,15 @@ public final class DoublyLinkedList {
             return;
         }
 
-        // if index > size then last node itself is to be inserted 
-        if (index > size) {
+        // if index = size then last node itself is to be inserted 
+        if (index == size && currentNode != null) {
             insertLast(data);
             return;
+        }
+
+        // index cannot be larger than size
+        if (index > size) {
+            throw new RuntimeException("Index is larger than size!");
         }
 
         // if the index > 0 and index <= size
@@ -143,8 +148,6 @@ public final class DoublyLinkedList {
                 tail = null;
             }
 
-            currentNode = null;
-
             // set the new size
             size--;
 
@@ -168,8 +171,6 @@ public final class DoublyLinkedList {
                 // unlink currentNode from next node
                 currentNode.next.prev = currentNode.prev;
 
-                currentNode = null;
-
                 // set the new size
                 size--;
 
@@ -184,8 +185,6 @@ public final class DoublyLinkedList {
                 } else {
                     head = null;
                 }
-
-                currentNode = null;
 
                 // set the new size
                 size--;
@@ -212,8 +211,6 @@ public final class DoublyLinkedList {
             } else {
                 tail = null;
             }
-
-            currentNode = null;
 
             // set the new size
             size--;
@@ -251,8 +248,6 @@ public final class DoublyLinkedList {
                         head = null;
                     }
 
-                    currentNode = null;
-
                     // set the new size
                     size--;
 
@@ -272,7 +267,7 @@ public final class DoublyLinkedList {
 
     public void printHeadToLast() {
 
-        System.out.println("\nHead ----------> Last:");
+        System.out.println("\nHead (" + head + ") ----------> Last (" + tail + "):");
 
         Node currentNode = head;
         while (currentNode != null) {
@@ -286,7 +281,7 @@ public final class DoublyLinkedList {
 
     public void printLastToHead() {
 
-        System.out.println("\nLast ----------> Head:");
+        System.out.println("\nLast (" + tail + ") ----------> Head (" + head + "):");
 
         Node currentNode = tail;
         while (currentNode != null) {

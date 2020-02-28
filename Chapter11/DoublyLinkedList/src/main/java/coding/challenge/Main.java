@@ -4,27 +4,60 @@ public class Main {
 
     public static void main(String[] args) {
 
-       DoublyLinkedList dll = new DoublyLinkedList();
+       DoublyLinkedList sll = new DoublyLinkedList();
                     
-       dll.insertFirst(28);
-       dll.insertAt(0, -1);
-       dll.insertFirst(27);
-       dll.insertAt(2, -2);   
-       dll.delete(28);
-       dll.delete(27);
-       dll.delete(-2);
-       dll.delete(-1);
-      // dll.insertAt(0, 23);
-      // dll.insertFirst(2);
-      // boolean b2=dll.delete(27);
-       dll.printHeadToLast();
-      // boolean b1=dll.deleteByIndex(-1);
+       sll.insertFirst(2);       
+       sll.insertLast(12);
+       sll.insertAt(1, 23);
+       sll.insertAt(0, -1);
+       sll.insertAt(2, -5);
+       sll.insertFirst(9);
+       sll.insertLast(44);
+       sll.insertAt(sll.size(), -7);       
        
-       dll.printLastToHead();
-       //System.out.println("x="+b1);
+       sll.printHeadToLast();
+       sll.printLastToHead();
        
-      // System.out.println("\nSize: " + dll.size());
+       sll.delete(9);
+       sll.delete(44);
        
+       sll.printHeadToLast();
+       sll.printLastToHead();
+              
+       sll.deleteByIndex(0);
+       sll.deleteByIndex(sll.size() - 1);
+       
+       sll.printHeadToLast();
+       sll.printLastToHead();
+              
+       sll.deleteByIndex(sll.size());
+       sll.insertLast(5);  
+       sll.insertFirst(10);
+       sll.insertAt(2, -8);
+       
+       sll.printHeadToLast();
+       sll.printLastToHead();       
+              
+       sll.deleteByIndex(0);
+       sll.deleteByIndex(0);
+       sll.deleteByIndex(0);
+       
+       sll.printHeadToLast();
+       sll.printLastToHead();
+              
+       sll.deleteByIndex(sll.size() - 1);
+       sll.deleteByIndex(sll.size() - 1);
+       sll.deleteByIndex(sll.size() - 1);
+       
+       sll.printHeadToLast();
+       sll.printLastToHead();
+              
+       sll.delete(-5);
+       
+       sll.printHeadToLast();
+       sll.printLastToHead();      
+       
+       System.out.println("\nSize: " + sll.size());
     }
 
 }
