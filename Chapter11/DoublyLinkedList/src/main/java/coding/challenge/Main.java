@@ -4,60 +4,60 @@ public class Main {
 
     public static void main(String[] args) {
 
-       DoublyLinkedList sll = new DoublyLinkedList();
+       DoublyLinkedList dll = new DoublyLinkedList();
                     
-       sll.insertFirst(2);       
-       sll.insertLast(12);
-       sll.insertAt(1, 23);
-       sll.insertAt(0, -1);
-       sll.insertAt(2, -5);
-       sll.insertFirst(9);
-       sll.insertLast(44);
-       sll.insertAt(sll.size(), -7);       
+       dll.insertFirst(2);       
+       dll.insertLast(12);
+       dll.insertAt(1, 23);
+       dll.insertAt(0, -1);
+       dll.insertAt(2, -5);
+       dll.insertFirst(9);
+       dll.insertLast(44);
+       dll.insertAt(dll.size(), -7);       
        
-       sll.printHeadToLast();
-       sll.printLastToHead();
+       dll.printHeadToLast();
+       dll.printLastToHead();
        
-       sll.delete(9);
-       sll.delete(44);
+       dll.delete(9);
+       dll.delete(44);
        
-       sll.printHeadToLast();
-       sll.printLastToHead();
+       dll.printHeadToLast();
+       dll.printLastToHead();
               
-       sll.deleteByIndex(0);
-       sll.deleteByIndex(sll.size() - 1);
+       dll.deleteByIndex(0);
+       dll.deleteByIndex(dll.size() - 1);
        
-       sll.printHeadToLast();
-       sll.printLastToHead();
+       dll.printHeadToLast();
+       dll.printLastToHead();
               
-       sll.deleteByIndex(sll.size());
-       sll.insertLast(5);  
-       sll.insertFirst(10);
-       sll.insertAt(2, -8);
+       dll.deleteByIndex(dll.size());
+       dll.insertLast(5);  
+       dll.insertFirst(10);
+       dll.insertAt(2, -8);
        
-       sll.printHeadToLast();
-       sll.printLastToHead();       
+       dll.printHeadToLast();
+       dll.printLastToHead();       
               
-       sll.deleteByIndex(0);
-       sll.deleteByIndex(0);
-       sll.deleteByIndex(0);
+       dll.deleteByIndex(0);
+       dll.deleteByIndex(0);
+       dll.deleteByIndex(0);
        
-       sll.printHeadToLast();
-       sll.printLastToHead();
+       dll.printHeadToLast();
+       dll.printLastToHead();
               
-       sll.deleteByIndex(sll.size() - 1);
-       sll.deleteByIndex(sll.size() - 1);
-       sll.deleteByIndex(sll.size() - 1);
+       dll.deleteByIndex(dll.size() - 1);
+       dll.deleteByIndex(dll.size() - 1);
+       dll.deleteByIndex(dll.size() - 1);
        
-       sll.printHeadToLast();
-       sll.printLastToHead();
+       dll.printHeadToLast();
+       dll.printLastToHead();
               
-       sll.delete(-5);
+       dll.delete(-5);
        
-       sll.printHeadToLast();
-       sll.printLastToHead();      
+       dll.printHeadToLast();
+       dll.printLastToHead();      
        
-       System.out.println("\nSize: " + sll.size());
+       System.out.println("\nSize: " + dll.size());
     }
 
 }
