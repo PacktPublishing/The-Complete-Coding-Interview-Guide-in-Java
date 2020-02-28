@@ -9,7 +9,7 @@ public final class SinglyLinkedList {
 
         @Override
         public String toString() {
-            return data + "  ";
+            return " " + data + " ";
         }
     }
 
@@ -33,7 +33,7 @@ public final class SinglyLinkedList {
         // link the new node to the list as the first node
         // then newNode points to the current head (which can be null)
         newNode.next = head;
-        
+
         // the newNode become the head
         head = newNode;
 
@@ -60,10 +60,10 @@ public final class SinglyLinkedList {
         if (tail != null) {
             tail.next = newNode;
         }
-        
+
         // newNode becomes the tail
         tail = newNode;
-        
+
         // if this is the first node then it is the head as well
         if (head == null) {
             head = newNode;
@@ -131,6 +131,11 @@ public final class SinglyLinkedList {
         if (currentNode != null && currentNode.data == data) {
             head = currentNode.next;
 
+            // if head is null that tail is null as well
+            if (head == null) {
+                tail = null;
+            }
+
             // set the new size
             size--;
 
@@ -152,6 +157,11 @@ public final class SinglyLinkedList {
             // unlink currentNode from linked list 
             prev.next = currentNode.next;
 
+            // prev become tail
+            if (prev.next == null) {
+                tail = prev;
+            }
+
             // set the new size
             size--;
 
@@ -172,19 +182,29 @@ public final class SinglyLinkedList {
         if (index == 0 && currentNode != null) {
             head = currentNode.next;
 
+            // if head is null that tail is null as well
+            if (head == null) {
+                tail = null;
+            }
+
             // set the new size
             size--;
 
             return true;
         }
 
-        // if the index > 0 
+        // if index > 0 
         int pointer = 0;
         while (currentNode != null) {
 
             if (pointer == index) {
                 // unlink currentNode from linked list 
                 prev.next = currentNode.next;
+
+                // prev become null
+                if (prev.next == null) {
+                    tail = prev;
+                }
 
                 // set the new size
                 size--;
@@ -205,7 +225,7 @@ public final class SinglyLinkedList {
 
     public void print() {
 
-        System.out.println("\nHead ----------> Last:");
+        System.out.println("\nHead (" + head + ") ----------> Last (" + tail + "):");
 
         Node currentNode = head;
         while (currentNode != null) {

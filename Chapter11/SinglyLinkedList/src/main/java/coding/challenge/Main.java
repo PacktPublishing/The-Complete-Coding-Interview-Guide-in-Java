@@ -27,6 +27,21 @@ public class Main {
        sll.print();
        
        sll.deleteByIndex(sll.size());
+       sll.insertLast(5);  
+       sll.insertFirst(10);
+       sll.insertAt(2, -8);
+       
+       sll.print();
+              
+       sll.deleteByIndex(0);
+       sll.deleteByIndex(0);
+       sll.deleteByIndex(0);
+       
+       sll.print();
+       
+       sll.deleteByIndex(sll.size() - 1);
+       sll.deleteByIndex(sll.size() - 1);
+       sll.deleteByIndex(sll.size() - 1);
        
        sll.print();
        
