@@ -231,8 +231,6 @@ public final class DoublyLinkedList {
                     // unlink currentNode from next node
                     currentNode.next.prev = currentNode.prev;
 
-                    currentNode = null;
-
                     // set the new size
                     size--;
 
