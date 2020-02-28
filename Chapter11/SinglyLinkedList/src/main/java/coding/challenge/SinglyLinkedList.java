@@ -4,8 +4,8 @@ public final class SinglyLinkedList {
 
     private class Node {
 
-        public int data;
-        public Node next;
+        private int data;
+        private Node next;
 
         @Override
         public String toString() {
@@ -14,6 +14,7 @@ public final class SinglyLinkedList {
     }
 
     private Node head;
+    private Node tail;
     private int size;
 
     public boolean isEmpty() {
@@ -30,8 +31,16 @@ public final class SinglyLinkedList {
         newNode.data = data;
 
         // link the new node to the list as the first node
+        // then newNode points to the current head (which can be null)
         newNode.next = head;
+        
+        // the newNode become the head
         head = newNode;
+
+        // if this is the first node then it is the tail as well
+        if (tail == null) {
+            tail = newNode;
+        }
 
         // set the new size
         size++;
@@ -40,21 +49,25 @@ public final class SinglyLinkedList {
     // insert a node at the end of linked list
     public void insertLast(int data) {
 
-        Node current = head;
-
-        // loop until the last node
-        while (current.next != null) {
-            current = current.next;
-        }
-
         // create new node
         Node newNode = new Node();
 
         // set the data of the new node
         newNode.data = data;
 
-        // link the new node to the list as the last node
-        current.next = newNode;
+        // link the new node to the list as the last node  
+        // the current tail points to the new tail (newNode)
+        if (tail != null) {
+            tail.next = newNode;
+        }
+        
+        // newNode becomes the tail
+        tail = newNode;
+        
+        // if this is the first node then it is the head as well
+        if (head == null) {
+            head = newNode;
+        }
 
         // set the new size
         size++;
@@ -96,7 +109,7 @@ public final class SinglyLinkedList {
 
                 // set the new size
                 size++;
-                
+
                 return;
             } else {
                 // continue searching to next node 
@@ -191,16 +204,16 @@ public final class SinglyLinkedList {
     }
 
     public void print() {
-        
-        System.out.println("\nHead ----------> Last:");        
-        
+
+        System.out.println("\nHead ----------> Last:");
+
         Node currentNode = head;
         while (currentNode != null) {
-            
+
             System.out.print(currentNode);
             currentNode = currentNode.next;
         }
-        
+
         System.out.println();
     }
 

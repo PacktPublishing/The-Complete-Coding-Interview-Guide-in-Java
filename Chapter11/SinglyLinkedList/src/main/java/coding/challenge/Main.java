@@ -6,7 +6,7 @@ public class Main {
 
        SinglyLinkedList sll = new SinglyLinkedList();
        
-       sll.insertFirst(2);
+       sll.insertFirst(2);       
        sll.insertLast(12);
        sll.insertAt(1, 23);
        sll.insertAt(0, -1);
