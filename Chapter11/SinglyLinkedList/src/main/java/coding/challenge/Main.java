@@ -28,6 +28,8 @@ public class Main {
        
        sll.deleteByIndex(sll.size());
        
+       sll.print();
+       
        System.out.println("\nSize: " + sll.size());
        
     }
