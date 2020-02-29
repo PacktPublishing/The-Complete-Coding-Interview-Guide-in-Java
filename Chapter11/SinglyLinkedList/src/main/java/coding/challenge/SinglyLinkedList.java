@@ -80,6 +80,8 @@ public final class SinglyLinkedList {
 
         // store head node 
         Node currentNode = head;
+        
+        // store the previous node to the current node
         Node prev = null;
 
         // if index is 0 then head node itself is to be inserted 
@@ -182,6 +184,7 @@ public final class SinglyLinkedList {
         return false;
     }
 
+    // delete node by index (position)
     public boolean deleteByIndex(int index) {
 
         // store head node 
