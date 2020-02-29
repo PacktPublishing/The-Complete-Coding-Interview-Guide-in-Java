@@ -77,7 +77,7 @@ public final class SinglyLinkedList {
         Node currentNode = head;
         
         // store the previous node to the current node
-        Node prev = null;
+        Node prevNode = null;
 
         // if index is 0 then head node itself is to be inserted 
         if (index == 0 && currentNode != null) {
@@ -108,7 +108,7 @@ public final class SinglyLinkedList {
                 newNode.data = data;
 
                 // link the new node to the list (prev -> newNode -> currentNode)
-                prev.next = newNode;
+                prevNode.next = newNode;
                 newNode.next = currentNode;
 
                 // set the new size
@@ -117,7 +117,7 @@ public final class SinglyLinkedList {
                 return;
             } else {
                 // continue searching to next node 
-                prev = currentNode;
+                prevNode = currentNode;
                 currentNode = currentNode.next;
 
                 pointer++;
@@ -132,7 +132,7 @@ public final class SinglyLinkedList {
         Node currentNode = head;
         
         // store the previous node to the current node
-        Node prev = null;
+        Node prevNode = null;
 
         // check if data belongs to the head
         if (currentNode != null && currentNode.data == data) {
@@ -149,7 +149,7 @@ public final class SinglyLinkedList {
         while (currentNode != null && currentNode.data != data) {
 
             // go to the next node
-            prev = currentNode;
+            prevNode = currentNode;
             currentNode = currentNode.next;
         }
 
@@ -157,7 +157,7 @@ public final class SinglyLinkedList {
         if (currentNode != null) {
 
             // unlink currentNode from linked list 
-            prev.next = currentNode.next;
+            prevNode.next = currentNode.next;
 
             // set the new size
             size--;
@@ -176,7 +176,7 @@ public final class SinglyLinkedList {
         Node currentNode = head;
         
         // store the previous node to the current node
-        Node prev = null;
+        Node prevNode = null;
 
         // if index is 0 then head node itself is to be deleted 
         if (index == 0 && currentNode != null) {
@@ -194,7 +194,7 @@ public final class SinglyLinkedList {
 
             if (pointer == index) {
                 // unlink currentNode from linked list 
-                prev.next = currentNode.next;
+                prevNode.next = currentNode.next;
 
                 // set the new size
                 size--;
@@ -202,7 +202,7 @@ public final class SinglyLinkedList {
                 return true;
             } else {
                 // continue searching to next node 
-                prev = currentNode;
+                prevNode = currentNode;
                 currentNode = currentNode.next;
 
                 pointer++;
