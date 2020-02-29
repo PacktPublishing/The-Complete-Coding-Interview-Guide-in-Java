@@ -2,9 +2,7 @@ package coding.challenge;
 
 public class Main {
 
-    public static void main(String[] args) {
-
-        int n = 2;
+    public static void main(String[] args) {        
 
         SinglyLinkedList sll = new SinglyLinkedList();
 
@@ -22,7 +20,8 @@ public class Main {
 
         sll.print();
 
-        int result = sll.nthToLast(1);
+        int n = 3;
+        int result = sll.nthToLastIterative(n);
 
         System.out.println("\nThe " + n + "th to last node has the value: " + result);
 

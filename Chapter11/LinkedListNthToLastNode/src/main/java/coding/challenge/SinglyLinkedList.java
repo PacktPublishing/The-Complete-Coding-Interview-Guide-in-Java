@@ -30,7 +30,7 @@ public final class SinglyLinkedList {
     }
 
     // O(n) time and O(1) space
-    public int nthToLast(int n) {
+    public int nthToLastIterative(int n) {
 
         if (n <= 0) { // we could add n > size as well, but we consider the linked list size as unknown
             throw new IllegalArgumentException("The given n index is out of bounds");
