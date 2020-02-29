@@ -2,11 +2,12 @@ package coding.challenge;
 
 public final class DoublyLinkedList {
 
+    // this is a single node of a doubly linked list
     private final class Node {
 
-        private int data;
-        private Node next;
-        private Node prev;
+        private int data;  // the information
+        private Node next; // pointer to the next node
+        private Node prev; // pointer to the previous node
 
         @Override
         public String toString() {
@@ -14,9 +15,10 @@ public final class DoublyLinkedList {
         }
     }
 
-    private Node head;
-    private int size;
+    private Node head; // left-hand head of the linked list   
+    private int size;  // size of the linked list (number of nodes)
 
+    // if head is null then the linked list is empty
     public boolean isEmpty() {
         return (head == null);
     }
@@ -66,6 +68,7 @@ public final class DoublyLinkedList {
                 currentNode = currentNode.next;
             }
 
+            // link the newNode to the currentNode 
             currentNode.next = newNode;
             newNode.prev = currentNode;
         }
@@ -129,6 +132,7 @@ public final class DoublyLinkedList {
         }
     }
 
+    // delete node by data
     public boolean delete(int data) {
 
         // store head node 
@@ -179,6 +183,7 @@ public final class DoublyLinkedList {
         return false;
     }
 
+    // delete node by index (position)
     public boolean deleteByIndex(int index) {
 
         // store head node 
@@ -209,7 +214,7 @@ public final class DoublyLinkedList {
 
                     // unlink currentNode from next node
                     currentNode.next.prev = currentNode.prev;
-                } else {                   
+                } else {
                     // unlink currentNode from previous node
                     currentNode.prev.next = null;
                 }
