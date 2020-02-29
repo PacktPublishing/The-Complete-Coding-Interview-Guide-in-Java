@@ -2,11 +2,12 @@ package coding.challenge;
 
 public final class DoublyLinkedList {
 
+    // this is a single node of a doubly linked list
     private final class Node {
 
-        private int data;
-        private Node next;
-        private Node prev;
+        private int data;  // the information
+        private Node next; // pointer to the next node
+        private Node prev; // pointer to the previous node
 
         @Override
         public String toString() {
@@ -14,10 +15,11 @@ public final class DoublyLinkedList {
         }
     }
 
-    private Node head;
-    private Node tail;
-    private int size;
+    private Node head; // left-hand head of the linked list
+    private Node tail; // right-hand head of the linked list
+    private int size;  // size of the linked list (number of nodes)
 
+    // if head is null then the linked list is empty
     public boolean isEmpty() {
         return (head == null);
     }
@@ -132,6 +134,7 @@ public final class DoublyLinkedList {
         }
     }
 
+    // delete node by data
     public boolean delete(int data) {
 
         // store head node 
@@ -142,6 +145,7 @@ public final class DoublyLinkedList {
 
             head = currentNode.next;
 
+            // manage the head and the tail
             if (head != null) {
                 head.prev = null;
             } else {
@@ -174,6 +178,7 @@ public final class DoublyLinkedList {
                 // unlink the tail
                 tail = currentNode.prev;
 
+                // manage the head and the tail
                 if (tail != null) {
                     tail.next = null;
                 } else {
@@ -192,6 +197,7 @@ public final class DoublyLinkedList {
         return false;
     }
 
+    // delete node by index (position)
     public boolean deleteByIndex(int index) {
 
         // store head node 
@@ -201,6 +207,7 @@ public final class DoublyLinkedList {
         if (index == 0 && currentNode != null) {
             head = currentNode.next;
 
+            // manage the head and the tail
             if (head != null) {
                 head.prev = null;
             } else {
@@ -229,6 +236,7 @@ public final class DoublyLinkedList {
                     // unlink the tail
                     tail = currentNode.prev;
 
+                    // manage the head and the tail
                     if (tail != null) {
                         tail.next = null;
                     } else {
