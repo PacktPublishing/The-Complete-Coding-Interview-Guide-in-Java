@@ -1,7 +1,10 @@
 package coding.challenge;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public final class MyMap<K, V> {
@@ -42,6 +45,7 @@ public final class MyMap<K, V> {
     private MyEntry<K, V>[] entries = new MyEntry[DEFAULT_CAPACITY];
 
     public V get(K key) {
+
         for (int i = 0; i < size; i++) {
             if (entries[i] != null) {
                 if (entries[i].getKey().equals(key)) {
@@ -71,6 +75,7 @@ public final class MyMap<K, V> {
     }
 
     private void checkCapacity() {
+
         if (size == entries.length) {
             int newSize = entries.length * 2;
             entries = Arrays.copyOf(entries, newSize);
@@ -105,11 +110,23 @@ public final class MyMap<K, V> {
     }
 
     public Set<K> keySet() {
+
         Set<K> set = new HashSet<>();
         for (int i = 0; i < size; i++) {
             set.add(entries[i].getKey());
         }
+
         return set;
+    }
+
+    public Collection<V> values() {
+
+        List<V> list = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            list.add(entries[i].getValue());
+        }
+
+        return list;
     }
 
     @Override

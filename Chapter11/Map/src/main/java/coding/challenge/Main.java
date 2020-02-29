@@ -1,7 +1,7 @@
 package coding.challenge;
 
 public class Main {
-
+ 
     public static void main(String[] args) {
 
         MyMap<String, Integer> map = new MyMap<>();
