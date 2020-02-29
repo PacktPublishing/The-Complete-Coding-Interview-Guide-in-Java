@@ -20,10 +20,12 @@ public class Main {
 
         sll.print();
 
-        int n = 3;
-        int result = sll.nthToLastIterative(n);
+        int n = 1;
+        int resultIterative = sll.nthToLastIterative(n);
+        int resultRecursive = sll.nthToLastRecursive(n);
 
-        System.out.println("\nThe " + n + "th to last node has the value: " + result);
+        System.out.println("\nIterative: The " + n + "th to last node has the value: " + resultIterative);
+        System.out.println("\nRecursive: The " + n + "th to last node has the value: " + resultRecursive);
 
     }
 

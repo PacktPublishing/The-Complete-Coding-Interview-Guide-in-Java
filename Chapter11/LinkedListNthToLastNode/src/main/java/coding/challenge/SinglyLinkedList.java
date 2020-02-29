@@ -29,7 +29,7 @@ public final class SinglyLinkedList {
         }
     }
 
-    // O(n) time and O(1) space
+    // Iterative approach: O(n) time and O(1) space
     public int nthToLastIterative(int n) {
 
         if (n <= 0) { // we could add n > size as well, but we consider the linked list size as unknown
@@ -57,6 +57,35 @@ public final class SinglyLinkedList {
         }
 
         return secondRunner.data;
+    }
+
+    // Recursive approach: O(n) time and O(n) space
+    int nthToLastRecursive(int n) {
+
+        if (n <= 0) { // we could add n > size as well, but we consider the linked list size as unknown
+            throw new IllegalArgumentException("The given n index is out of bounds");
+        }
+
+        Node nodeResult = nthToLastRecursive(head, n);
+
+        return nodeResult.data;
+    }
+
+    private static int position;
+    private Node nthToLastRecursive(Node node, int n) {
+
+        if (node == null) {
+            return null;
+        }
+
+        Node nextNode = nthToLastRecursive(node.next, n);
+
+        position++;
+        if (position == n) {
+            return node;
+        }
+
+        return nextNode;
     }
 
     public void print() {
