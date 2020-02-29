@@ -20,28 +20,18 @@ public final class SinglyLinkedList {
     private Node tail;
     private int size;
 
-    // insert a node at the start of linked list
     public void insertFirst(int data) {
 
-        // create a new node
         Node newNode = new Node();
 
-        // set the data of the new node
         newNode.data = data;
-
-        // link the new node to the list as the first node
-        // then newNode points to the current head (which can be null)
         newNode.next = head;
-
-        // the newNode become the head
         head = newNode;
 
-        // if this is the first node then it is the tail as well
         if (tail == null) {
             tail = newNode;
         }
 
-        // set the new size
         size++;
     }
 
