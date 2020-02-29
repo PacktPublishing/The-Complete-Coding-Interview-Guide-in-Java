@@ -5,7 +5,7 @@ import java.util.Set;
 
 public final class SinglyLinkedList {
 
-    private class Node {
+    private final class Node {
 
         private int data;
         private Node next;
