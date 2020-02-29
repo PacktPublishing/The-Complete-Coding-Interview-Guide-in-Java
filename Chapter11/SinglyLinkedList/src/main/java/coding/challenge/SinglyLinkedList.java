@@ -2,10 +2,11 @@ package coding.challenge;
 
 public final class SinglyLinkedList {
 
+    // this is a single node of a singly linked list
     private final class Node {
 
-        private int data;
-        private Node next;
+        private int data;  // the information        
+        private Node next; // pointer to the next node
 
         @Override
         public String toString() {
@@ -13,10 +14,11 @@ public final class SinglyLinkedList {
         }
     }
 
-    private Node head;
-    private Node tail;
-    private int size;
+    private Node head; // left-hand head of the linked list
+    private Node tail; // right-hand head of the linked list
+    private int size;  // size of the linked list (number of nodes)
 
+    // if head is null then the linked list is empty
     public boolean isEmpty() {
         return (head == null);
     }
@@ -31,7 +33,7 @@ public final class SinglyLinkedList {
         newNode.data = data;
 
         // link the new node to the list as the first node
-        // then newNode points to the current head (which can be null)
+        // newNode points to the current head (which can be null if the linked list is empty)
         newNode.next = head;
 
         // the newNode become the head
@@ -86,7 +88,7 @@ public final class SinglyLinkedList {
             return;
         }
 
-        // if index == size then last node itself is to be inserted         
+        // if index = size then last node (the tail) itself is to be inserted         
         if (index == size && currentNode != null) {
             insertLast(data);
             return;
@@ -108,7 +110,7 @@ public final class SinglyLinkedList {
                 // set the data of the new node
                 newNode.data = data;
 
-                // link the new node to the list
+                // link the new node to the list (prev -> newNode -> currentNode)
                 prev.next = newNode;
                 newNode.next = currentNode;
 
@@ -126,17 +128,20 @@ public final class SinglyLinkedList {
         }
     }
 
+    // delete a node by data
     public boolean delete(int data) {
 
         // store head node 
         Node currentNode = head;
+
+        // store the previous node to the current node
         Node prev = null;
 
         // check if data belongs to the head
         if (currentNode != null && currentNode.data == data) {
             head = currentNode.next;
 
-            // if head is null that tail is null as well
+            // if the head is null then the tail is null as well
             if (head == null) {
                 tail = null;
             }
@@ -162,7 +167,7 @@ public final class SinglyLinkedList {
             // unlink currentNode from linked list 
             prev.next = currentNode.next;
 
-            // prev become tail
+            // prev becomes the tail
             if (prev.next == null) {
                 tail = prev;
             }
@@ -181,13 +186,15 @@ public final class SinglyLinkedList {
 
         // store head node 
         Node currentNode = head;
+
+        // store the previous node to the current one
         Node prev = null;
 
         // if index is 0 then head node itself is to be deleted 
         if (index == 0 && currentNode != null) {
             head = currentNode.next;
 
-            // if head is null that tail is null as well
+            // if the head is null then the tail is null as well
             if (head == null) {
                 tail = null;
             }
@@ -206,7 +213,7 @@ public final class SinglyLinkedList {
                 // unlink currentNode from linked list 
                 prev.next = currentNode.next;
 
-                // prev become null
+                // prev becomes null
                 if (prev.next == null) {
                     tail = prev;
                 }
