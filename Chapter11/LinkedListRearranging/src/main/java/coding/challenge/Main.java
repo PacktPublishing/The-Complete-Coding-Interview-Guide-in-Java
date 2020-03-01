@@ -24,7 +24,7 @@ public class Main {
 
         sll.print();    
         
-        sll.split(7);
+        sll.rearrange(7);
         
         sll.print();
     }

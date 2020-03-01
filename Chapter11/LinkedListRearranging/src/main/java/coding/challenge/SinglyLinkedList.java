@@ -29,7 +29,7 @@ public final class SinglyLinkedList {
         }
     }
 
-    public void split(int n) {
+    public void rearrange(int n) {
 
         Node currentNode = head;
         head = currentNode;
