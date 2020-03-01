@@ -59,16 +59,16 @@ public final class MyMap<K, V> {
 
     public void put(K key, V value) {
 
-        boolean inserted = true;
+        boolean success = true;
 
         for (int i = 0; i < size; i++) {
             if (entries[i].getKey().equals(key)) {
                 entries[i].setValue(value);
-                inserted = false;
+                success = false;
             }
         }
 
-        if (inserted) {
+        if (success) {
             checkCapacity();
             entries[size++] = new MyEntry<>(key, value);
         }
