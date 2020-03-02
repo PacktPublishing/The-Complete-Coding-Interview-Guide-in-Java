@@ -65,7 +65,7 @@ public final class SinglyLinkedList {
         Node slowRunner = head;
         Node fastRunner = head;
 
-        // fastRunner meets slowRunner at LOOP_SIZE - NON_LOOP_SIZE
+        // fastRunner meets slowRunner
         while (fastRunner != null && fastRunner.next != null) {
             slowRunner = slowRunner.next;
             fastRunner = fastRunner.next.next;
