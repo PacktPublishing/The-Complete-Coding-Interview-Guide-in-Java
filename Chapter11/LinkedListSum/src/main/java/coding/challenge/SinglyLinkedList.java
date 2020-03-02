@@ -48,6 +48,7 @@ public final class SinglyLinkedList {
         if (node1 != null) {
             value += node1.data;
         }
+        
         if (node2 != null) {
             value += node2.data;
         }
