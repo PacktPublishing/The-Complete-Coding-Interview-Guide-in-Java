@@ -41,22 +41,37 @@ public final class SinglyLinkedList {
         // consider two nodes at a time and swap their links
         while (currentNode != null && currentNode.next != null) {
 
-            Node auxNode = currentNode.next;
-            currentNode.next = auxNode.next;
-            auxNode.next = currentNode;
+            Node node1 = currentNode;           // first node
+            Node node2 = currentNode.next;      // second node                    
+            Node node3 = currentNode.next.next; // third node            
 
+            // swap the first node (node1) with the second node (node2)
+            Node auxNode = node1;
+            node1 = node2;
+            node2 = auxNode;
+
+            // repair the links broken by swapping
+            node1.next = node2;
+            node2.next = node3;
+
+            // if we are at the first swap we set the head
             if (prevNode == null) {
-                head = auxNode;
+                head = node1;
             } else {
-                prevNode.next = auxNode;
+                // we link the previous pair to this pair
+                prevNode.next = node1;
             }
 
+            // there are no more nodes, therefore set the tail
             if (currentNode.next == null) {
                 tail = currentNode;
             }
 
-            prevNode = currentNode;
-            currentNode = currentNode.next;
+            // prepare the prevNode of the current pair
+            prevNode = node2;
+
+            // advance to the next pair
+            currentNode = node3;
         }
     }
 

@@ -6,6 +6,7 @@ public class Main {
 
         SinglyLinkedList sll = new SinglyLinkedList();
                
+        // sll.insertFirst(11);
         sll.insertFirst(10);
         sll.insertFirst(9);
         sll.insertFirst(8);
