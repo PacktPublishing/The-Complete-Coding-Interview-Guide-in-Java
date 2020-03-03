@@ -41,7 +41,7 @@ public final class SinglyLinkedList {
         while (last != 0) {
             int p = 0;
             int q = last;
-
+ 
             // (p, q) forms a pair of linked lists
             while (p < q) {
                 // merge list p with list q and store the merged list in list p
