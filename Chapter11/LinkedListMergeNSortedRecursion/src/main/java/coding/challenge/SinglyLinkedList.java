@@ -33,7 +33,7 @@ public final class SinglyLinkedList {
         head = mergeLists(slls, n);
     }
 
-    private Node mergeLists(SinglyLinkedList list[], int n) {
+    private Node mergeLists(SinglyLinkedList linkedlists[], int n) {
         
         int last = n - 1;
 
@@ -45,7 +45,7 @@ public final class SinglyLinkedList {
             // (p, q) forms a pair of linked lists
             while (p < q) {
                 // merge list p with list q and store the merged list in list p
-                list[p].head = merge(list[p].head, list[q].head);
+                linkedlists[p].head = merge(linkedlists[p].head, linkedlists[q].head);
 
                 // go to the next pair
                 p++;
@@ -58,7 +58,7 @@ public final class SinglyLinkedList {
             }
         }
 
-        return list[0].head;
+        return linkedlists[0].head;
     }
 
     private Node merge(Node list1, Node list2) {
