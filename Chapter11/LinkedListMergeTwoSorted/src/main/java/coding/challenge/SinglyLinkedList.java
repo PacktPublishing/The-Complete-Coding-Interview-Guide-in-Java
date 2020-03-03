@@ -25,6 +25,10 @@ public final class SinglyLinkedList {
     }
 
     public void merge(SinglyLinkedList sll) {
+        
+        if(sll == null) {
+            throw new IllegalArgumentException("Cannot merge null linked list");
+        }
 
         // these are the two lists
         Node list1 = head;      // this is the merged linked list (the final result)
