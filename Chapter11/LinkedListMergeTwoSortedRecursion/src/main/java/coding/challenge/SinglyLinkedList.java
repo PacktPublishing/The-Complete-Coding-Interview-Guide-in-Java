@@ -24,9 +24,13 @@ public final class SinglyLinkedList {
         head = newNode;
     }
 
-    public void merge(SinglyLinkedList ssl) {
+    public void merge(SinglyLinkedList sll) {
+        
+        if(sll == null) {
+            throw new IllegalArgumentException("Cannot merge null linked list");
+        }
 
-        head = merge(head, ssl.head);
+        head = merge(head, sll.head);
     }
 
     private Node merge(Node list1, Node list2) {
