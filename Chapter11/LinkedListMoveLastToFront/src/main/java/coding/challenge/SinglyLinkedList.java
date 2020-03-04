@@ -24,7 +24,7 @@ public final class SinglyLinkedList {
         head = newNode;
     }
 
-    public void moveLastToFront() {
+    public void moveLastToFront1() {
 
         if (head == null || head.next == null) {
             throw new IllegalArgumentException("Linked list cannot be null or with a single node");
@@ -32,12 +32,11 @@ public final class SinglyLinkedList {
 
         Node currentNode = head;
 
-        // Move to second last node
+        // move to second last node
         while (currentNode.next.next != null) {
             currentNode = currentNode.next;
         }
 
-        // - approach 1
         // store currentNode.next
         Node nextNode = currentNode.next;
 
@@ -47,17 +46,29 @@ public final class SinglyLinkedList {
         // set the new head
         nextNode.next = head;
         head = nextNode;
+    }
 
-        /* - approach 2
+    public void moveLastToFront2() {
+
+        if (head == null || head.next == null) {
+            throw new IllegalArgumentException("Linked list cannot be null or with a single node");
+        }
+
+        Node currentNode = head;
+
+        // move to second last node
+        while (currentNode.next.next != null) {
+            currentNode = currentNode.next;
+        }
+
         // convert the linked list to circular list                
         currentNode.next.next = head;
-        
+
         // fix head
         head = currentNode.next;
 
         // break the chain
-        currentNode.next = null;        
-         */
+        currentNode.next = null;
     }
 
     public void print() {
