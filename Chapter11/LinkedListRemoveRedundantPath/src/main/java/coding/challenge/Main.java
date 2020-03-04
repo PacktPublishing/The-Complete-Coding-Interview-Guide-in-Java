@@ -6,17 +6,16 @@ public class Main {
 
         SinglyLinkedList sll = new SinglyLinkedList();
 
-        sll.insertFirst(7, 15);
-        sll.insertFirst(7, 14);
-        sll.insertFirst(7, 13);               
-        sll.insertFirst(5, 8);
-        sll.insertFirst(4, 8);
-        sll.insertFirst(3, 8);
-        sll.insertFirst(2, 8);
-        sll.insertFirst(2, 7);
-        sll.insertFirst(2, 6);
-        sll.insertFirst(2, 5);
-        sll.insertFirst(2, 4);
+        sll.insertFirst(4, 5);
+        sll.insertFirst(4, 4);
+        sll.insertFirst(4, 3);               
+        sll.insertFirst(4, 2);
+        sll.insertFirst(3, 2);
+        sll.insertFirst(2, 2);
+        sll.insertFirst(1, 2);
+        sll.insertFirst(0, 2);
+        sll.insertFirst(0, 1);
+        sll.insertFirst(0, 0);       
         
         System.out.println("\nInitial");
         sll.print();
