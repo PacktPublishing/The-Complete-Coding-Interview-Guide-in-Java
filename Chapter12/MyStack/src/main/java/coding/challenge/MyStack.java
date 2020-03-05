@@ -6,7 +6,7 @@ import java.util.EmptyStackException;
 
 public final class MyStack<E> {
 
-    private static final int DEFAULT_CAPACITY = 1;
+    private static final int DEFAULT_CAPACITY = 10;
 
     private int top;
     private E[] stack;
@@ -43,7 +43,7 @@ public final class MyStack<E> {
         return e;
     }
 
-    // return but not remove the top element in a stack
+    // return but not remove the top element in the stack
     public E peek() {
         if (!isEmpty()) {
             return stack[top - 1];
