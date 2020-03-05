@@ -40,7 +40,7 @@ public final class MyQueue<E> {
         count++;
     }
 
-    // pop front element from the queue
+    // remove and return the front element from the queue
     public E dequeue() {
 
         if (isEmpty()) {
@@ -54,7 +54,7 @@ public final class MyQueue<E> {
         return e;
     }
 
-    // return but not remove the top element in the queue
+    // return but not remove the front element in the queue
     public E peek() {
         if (!isEmpty()) {
             return queue[front];
