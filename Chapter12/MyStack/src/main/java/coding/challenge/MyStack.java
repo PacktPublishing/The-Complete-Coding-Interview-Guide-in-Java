@@ -8,18 +8,20 @@ public final class MyStack<E> {
 
     private static final int DEFAULT_CAPACITY = 10;
 
-    private int top;
-    private E[] stack;
+    private int top;   // the top element from the stack
+    private E[] stack; // the array that sits behind the stack
 
     // constructor to initialize the stack
     MyStack() {
+        
+        // we use Java Reflection since Java doesn't allow us to instantiate a generic array
         stack = (E[]) Array.newInstance(
                 Object[].class.getComponentType(), DEFAULT_CAPACITY);
 
         top = 0; // the initial size is 0
     }
 
-    // add an element e in the stack
+    // add an element 'e' in the stack
     public void push(E e) {
 
         // if the stack is full, we double its capacity
@@ -27,17 +29,22 @@ public final class MyStack<E> {
             ensureCapacity();
         }
 
+        // adding the element at the top of the stack
         stack[top++] = e;
     }
 
     // pop top element from the stack
     public E pop() {
 
+        // if the stack is empty then just throw a meaningful exception
         if (isEmpty()) {
             throw new EmptyStackException();
         }
 
+        // extract the top element from the stack                
         E e = stack[--top];
+        
+        // avoid memory leaks
         stack[top] = null;
 
         return e;
@@ -45,10 +52,13 @@ public final class MyStack<E> {
 
     // return but not remove the top element in the stack
     public E peek() {
+        
+        // if the stack is not empty then peek the top element
         if (!isEmpty()) {
             return stack[top - 1];
         }
 
+        // the stack is empty, therefore throw a meaningful exception
         throw new EmptyStackException();
     }
 
@@ -67,6 +77,7 @@ public final class MyStack<E> {
         return top == stack.length;
     }
 
+    // used internally for doubling the stack capacity
     private void ensureCapacity() {
         int newSize = stack.length * 2;
         stack = Arrays.copyOf(stack, newSize);
