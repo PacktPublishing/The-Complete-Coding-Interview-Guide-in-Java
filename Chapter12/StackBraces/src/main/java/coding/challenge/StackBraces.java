@@ -25,7 +25,7 @@ public final class StackBraces {
                     break;
 
                 case '}':
-                    if (stackBraces.isEmpty()) { // we find a mismatch
+                    if (stackBraces.isEmpty()) { // we found a mismatch
                         return false; 
                     }
                     
