@@ -19,18 +19,18 @@ public class StockSpan {
         for (int i = 1; i < stockPrices.length; i++) {
             
             // pop until the find a price on stack which is greater than 
-            // current day's price or there are no more days left
+            // the current day's price or there are no more days left
             while (!dayStack.empty() && stockPrices[i] > stockPrices[dayStack.peek()]) {
                 dayStack.pop();
             }
 
-            // if there is no price greater than current day's price 
-            // then the span then numbers of days + 1
+            // if there is no price greater than the current day's price 
+            // then the stock span is the numbers of days
             if (dayStack.empty()) {
                 spanResult[i] = i + 1;
             } else {
-                // if there is a price greater than current day's price
-                // then the span is the difference between the current day and that day
+                // if there is a price greater than the current day's price
+                // then the stock span is the difference between the current day and that day
                 spanResult[i] = i - dayStack.peek();
             }
 
