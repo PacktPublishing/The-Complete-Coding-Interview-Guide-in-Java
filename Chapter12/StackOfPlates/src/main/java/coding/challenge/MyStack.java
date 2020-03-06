@@ -52,7 +52,7 @@ public class MyStack {
         }
 
         if (stackIndex < 0 || stackIndex >= stacks.size()) {
-            throw new IllegalArgumentException("Th given index is out of bounds");
+            throw new IllegalArgumentException("The given index is out of bounds");
         }
 
         // get the value from the correspondind stack
