@@ -45,21 +45,21 @@ public class MyStack {
         return value;
     }
 
-    public Integer popAt(int index) {
+    public Integer popAt(int stackIndex) {
 
         if (stacks.isEmpty()) {
             throw new EmptyStackException();
         }
 
-        if (index < 0 || index >= stacks.size()) {
+        if (stackIndex < 0 || stackIndex >= stacks.size()) {
             throw new IllegalArgumentException("Th given index is out of bounds");
         }
 
         // get the value from the correspondind stack
-        int value = stacks.get(index).pop();
+        int value = stacks.get(stackIndex).pop();
 
         // since we pop an element we must shift the remaining elements        
-        shift(index);
+        shift(stackIndex);
 
         // if last stack is empty we can remove it from the list of stacks
         removeStackIfEmpty();
