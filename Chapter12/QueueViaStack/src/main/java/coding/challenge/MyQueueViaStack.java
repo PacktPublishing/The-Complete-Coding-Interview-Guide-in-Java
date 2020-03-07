@@ -4,15 +4,16 @@ import java.util.Stack;
 
 public class MyQueueViaStack<E> {
 
-    Stack<E> stackEnqueue, stackDequeue;
+    private final Stack<E> stackEnqueue;
+    private final Stack<E> stackDequeue;
 
     public MyQueueViaStack() {
         stackEnqueue = new Stack<>();
         stackDequeue = new Stack<>();
     }
 
-    public void enqueue(E value) {
-        stackEnqueue.push(value);
+    public void enqueue(E e) {
+        stackEnqueue.push(e);
     }
 
     public E dequeue() {

@@ -33,6 +33,6 @@ public class Main {
         System.out.println("Pop: " + stack.dequeue());
         System.out.println("Size: " + stack.size());
         System.out.println("Pop: " + stack.dequeue());
-        System.out.println("Size: " + stack.size());     
+        System.out.println("Size: " + stack.size());             
     }
 }
