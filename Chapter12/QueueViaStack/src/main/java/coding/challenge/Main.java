@@ -1,15 +1,38 @@
 package coding.challenge;
 
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        int stockPrices[] = {55, 34, 22, 23, 27, 88, 70, 42, 51, 100};
-        int[] spanResult = StockSpan.stockSpan(stockPrices);
+        MyQueueViaStack<Integer> stack = new MyQueueViaStack();
 
-        System.out.println("Stock prices: " + Arrays.toString(stockPrices));
-        System.out.println("Span results: " + Arrays.toString(spanResult));
+        stack.enqueue(25);
+        stack.enqueue(35);
+        stack.enqueue(15);
+
+        System.out.println("Size: " + stack.size());
+        System.out.println("Peek: " + stack.peek());
+        System.out.println("Size: " + stack.size());
+        System.out.println("Pop: " + stack.dequeue());
+        System.out.println("Size: " + stack.size());
+        System.out.println("Peek: " + stack.peek());
+        System.out.println("Size: " + stack.size());
+        System.out.println("Push 17");
+        stack.enqueue(17);
+        System.out.println("Peek: " + stack.peek());
+        System.out.println("Size: " + stack.size());
+        System.out.println("Pop: " + stack.dequeue());
+        System.out.println("Size: " + stack.size());
+        System.out.println("Pop: " + stack.dequeue());
+        System.out.println("Size: " + stack.size());
+        System.out.println("Push 55");
+        stack.enqueue(55);
+        System.out.println("Size: " + stack.size());
+        System.out.println("Peek: " + stack.peek());
+        System.out.println("Size: " + stack.size());
+        System.out.println("Pop: " + stack.dequeue());
+        System.out.println("Size: " + stack.size());
+        System.out.println("Pop: " + stack.dequeue());
+        System.out.println("Size: " + stack.size());     
     }
 }
