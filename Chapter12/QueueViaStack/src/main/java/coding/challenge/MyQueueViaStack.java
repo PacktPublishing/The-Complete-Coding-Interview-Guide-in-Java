@@ -16,12 +16,12 @@ public class MyQueueViaStack<E> {
     }
 
     public E dequeue() {
-        shiftStacksContent();
+        reverseStackEnqueue();
         return stackDequeue.pop();
     }
 
     public E peek() {
-        shiftStacksContent();
+        reverseStackEnqueue();
         return stackDequeue.peek();
     }
 
@@ -29,7 +29,7 @@ public class MyQueueViaStack<E> {
         return stackEnqueue.size() + stackDequeue.size();
     }
 
-    private void shiftStacksContent() {
+    private void reverseStackEnqueue() {
         if (stackDequeue.isEmpty()) {
             while (!stackEnqueue.isEmpty()) {
                 stackDequeue.push(stackEnqueue.pop());
