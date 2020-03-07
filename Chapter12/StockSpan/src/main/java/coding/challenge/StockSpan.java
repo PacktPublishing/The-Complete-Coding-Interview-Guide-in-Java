@@ -18,7 +18,7 @@ public class StockSpan {
 
         for (int i = 1; i < stockPrices.length; i++) {
             
-            // pop until the find a price on stack which is greater than 
+            // pop until we find a price on stack which is greater than 
             // the current day's price or there are no more days left
             while (!dayStack.empty() && stockPrices[i] > stockPrices[dayStack.peek()]) {
                 dayStack.pop();
