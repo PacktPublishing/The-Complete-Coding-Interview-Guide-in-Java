@@ -4,6 +4,10 @@ import java.util.Stack;
 
 public class StockSpan {
 
+    private StockSpan() {
+        throw new AssertionError("Cannot be instantiated");
+    }
+
     public static int[] stockSpan(int[] stockPrices) {
 
         if (stockPrices == null) {
@@ -12,12 +16,12 @@ public class StockSpan {
 
         Stack<Integer> dayStack = new Stack();
         int[] spanResult = new int[stockPrices.length];
-        
+
         spanResult[0] = 1; // first day has span 1
         dayStack.push(0);
 
         for (int i = 1; i < stockPrices.length; i++) {
-            
+
             // pop until we find a price on stack which is greater than 
             // the current day's price or there are no more days left
             while (!dayStack.empty() && stockPrices[i] > stockPrices[dayStack.peek()]) {
@@ -36,8 +40,8 @@ public class StockSpan {
 
             // push current day onto top of stack
             dayStack.push(i);
-        }   
-        
+        }
+
         return spanResult;
     }
 }
