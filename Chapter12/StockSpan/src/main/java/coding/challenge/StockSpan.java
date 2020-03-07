@@ -36,8 +36,7 @@ public class StockSpan {
 
             // push current day onto top of stack
             dayStack.push(i);
-
-        }
+        }   
         
         return spanResult;
     }
