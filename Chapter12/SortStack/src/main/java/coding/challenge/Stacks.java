@@ -15,7 +15,7 @@ public final class Stacks {
         while (!stack.isEmpty()) {
 
             int t = stack.pop();
-            while (!auxStack.isEmpty() && auxStack.peek() > t) {
+            while (!auxStack.isEmpty() && auxStack.peek() < t) {
                 stack.push(auxStack.pop());
             }
             auxStack.push(t);
