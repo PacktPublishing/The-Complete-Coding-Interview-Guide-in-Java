@@ -76,10 +76,10 @@ public final class Queues {
 
     // check if it is valid to go to cell (r, c) from current position
     private static boolean isValid(int[][] matrix, int r, int c,
-            boolean[][] processed) {
+            boolean[][] flagged) {
 
-        return (r >= 0) && (r < processed.length)
-                && (c >= 0) && (c < processed[0].length)
-                && (matrix[r][c] == 1 && !processed[r][c]);
+        return (r >= 0) && (r < flagged.length)
+                && (c >= 0) && (c < flagged[0].length)
+                && (matrix[r][c] == 1 && !flagged[r][c]);
     }
 }
