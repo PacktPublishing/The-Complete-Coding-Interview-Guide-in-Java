@@ -13,7 +13,7 @@ public final class MyStack<E> {
 
     // constructor to initialize the stack
     MyStack() {
-        
+
         // we use Java Reflection since Java doesn't allow us to instantiate a generic array
         stack = (E[]) Array.newInstance(
                 Object[].class.getComponentType(), DEFAULT_CAPACITY);
@@ -43,7 +43,7 @@ public final class MyStack<E> {
 
         // extract the top element from the stack                
         E e = stack[--top];
-        
+
         // avoid memory leaks
         stack[top] = null;
 
@@ -52,14 +52,13 @@ public final class MyStack<E> {
 
     // return but not remove the top element in the stack
     public E peek() {
-        
-        // if the stack is not empty then peek the top element
-        if (!isEmpty()) {
-            return stack[top - 1];
+
+        // if the stack is empty then just throw a meaningful exception
+        if (isEmpty()) {
+            throw new EmptyStackException();
         }
 
-        // the stack is empty, therefore throw a meaningful exception
-        throw new EmptyStackException();
+        return stack[top - 1];
     }
 
     // size of the stack
