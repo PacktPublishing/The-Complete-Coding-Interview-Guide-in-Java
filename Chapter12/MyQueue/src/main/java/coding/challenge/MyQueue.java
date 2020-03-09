@@ -37,7 +37,7 @@ public final class MyQueue<E> {
         }
 
         // adding the element in the rear of the queue
-        rear = (rear + 1) % capacity;
+        rear = (rear + 1) % capacity;       
         queue[rear] = e;
         
         // update the size of the queue
@@ -53,10 +53,11 @@ public final class MyQueue<E> {
         }
 
         // extract the element from the front
-        E e = queue[front];
+        E e = queue[front];    
+        queue[front] = null;        
         
         // set the new front
-        front = (front + 1) % capacity;
+        front = (front + 1) % capacity;      
         
         // decrease the size of the queue
         count--;
@@ -67,13 +68,12 @@ public final class MyQueue<E> {
     // return but not remove the front element in the queue
     public E peek() {
         
-        // if the queue is not empty then extract the element from the front
-        if (!isEmpty()) {
-            return queue[front];
+        // if the queue is empty we just throw a meaningful exception
+        if (isEmpty()) {
+            throw new EmptyStackException();
         }
-
-        // the queue is empty, therefore throw a meaningful exception
-        throw new EmptyStackException();
+        
+            return queue[front];        
     }
 
     // size of the queue
