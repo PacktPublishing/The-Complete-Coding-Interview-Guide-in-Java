@@ -65,7 +65,7 @@ public final class Queues {
             // check for all 8 possible movements from current cell and enqueue each valid movement
             for (int k = 0; k < POSSIBLE_MOVEMENTS; k++) {
 
-                // skip if location is invalid or already flagged or has water
+                // skip this cell if the location is invalid
                 if (isValid(matrix, r + ROW[k], c + COL[k], flagged)) {
                     flagged[r + ROW[k]][c + COL[k]] = true;
                     queue.add(new Cell(r + ROW[k], c + COL[k]));
