@@ -10,7 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class BinaryTree<T extends Comparable<T>> {
+public class BinaryTree<T> {
 
     private int nodeCount;
     private Node root = null;
@@ -61,6 +61,7 @@ public class BinaryTree<T extends Comparable<T>> {
         return true;
     }
 
+    // insert via Breadth-first Search (BFS) algorithm
     private void insert(Node node, T element) {
 
         Queue<Node> queue = new LinkedList<>();
