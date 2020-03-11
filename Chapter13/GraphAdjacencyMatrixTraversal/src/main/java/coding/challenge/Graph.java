@@ -10,7 +10,7 @@ import java.util.Stack;
 
 public class Graph<T> {
 
-    // the adjacency list is represented as a map
+    // the vertices list
     private final List<T> elements;
 
     public Graph() {
