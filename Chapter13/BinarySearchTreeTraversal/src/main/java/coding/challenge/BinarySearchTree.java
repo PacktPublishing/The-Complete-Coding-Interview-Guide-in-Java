@@ -34,7 +34,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         LEVEL
     }
 
-    public boolean add(T element) {
+    public boolean insert(T element) {
 
         if (element == null) {
             return false;
@@ -44,22 +44,22 @@ public class BinarySearchTree<T extends Comparable<T>> {
             return false;
         }
 
-        root = addRecursive(root, element);
+        root = insert(root, element);
         nodeCount++;
 
         return true;
     }
 
-    private Node addRecursive(Node current, T element) {
+    private Node insert(Node current, T element) {
 
         if (current == null) {
             return new Node(null, null, element);
         }
 
         if (element.compareTo(current.element) < 0) {
-            current.left = addRecursive(current.left, element);
+            current.left = insert(current.left, element);
         } else {
-            current.right = addRecursive(current.right, element);
+            current.right = insert(current.right, element);
         }
 
         return current;
@@ -67,10 +67,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
     public boolean contains(T element) {
 
-        return containsNodeRecursive(root, element);
+        return contains(root, element);
     }
 
-    private boolean containsNodeRecursive(Node current, T element) {
+    private boolean contains(Node current, T element) {
 
         if (current == null || element == null) {
             return false;
@@ -81,14 +81,14 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
 
         return element.compareTo(current.element) < 0
-                ? containsNodeRecursive(current.left, element)
-                : containsNodeRecursive(current.right, element);
+                ? contains(current.left, element)
+                : contains(current.right, element);
     }
 
     public boolean delete(T element) {
 
         if (contains(element)) {
-            root = deleteRecursive(root, element);
+            root = delete(root, element);
             nodeCount--;
 
             return true;
@@ -97,16 +97,16 @@ public class BinarySearchTree<T extends Comparable<T>> {
         return false;
     }
 
-    private Node deleteRecursive(Node node, T element) {
+    private Node delete(Node node, T element) {
 
         if (node == null) {
             return null;
         }
 
         if (element.compareTo(node.element) < 0) {
-            node.left = deleteRecursive(node.left, element);
+            node.left = delete(node.left, element);
         } else if (element.compareTo(node.element) > 0) {
-            node.right = deleteRecursive(node.right, element);
+            node.right = delete(node.right, element);
         }
 
         if (element.compareTo(node.element) == 0) {
@@ -125,7 +125,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
                 Node leftmost = findLeftmostNode(node.right);
 
                 node.element = leftmost.element;
-                node.right = deleteRecursive(node.right, node.element);
+                node.right = delete(node.right, node.element);
             }
 
         }
@@ -201,7 +201,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
             System.out.println("empty");
             return;
         }
-        
+
         switch (to) {
             case IN:
                 printInOrder(root);

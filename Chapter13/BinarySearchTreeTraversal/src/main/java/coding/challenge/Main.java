@@ -17,17 +17,17 @@ public class Main {
 
         BinarySearchTree<Integer> bt = new BinarySearchTree<>();
         
-        bt.add(40);
-        bt.add(30);
-        bt.add(45);
-        bt.add(15);
-        bt.add(33);
-        bt.add(42);
-        bt.add(56);
-        bt.add(5);
-        bt.add(17);
-        bt.add(41);
-        bt.add(67);             
+        bt.insert(40);
+        bt.insert(30);
+        bt.insert(45);
+        bt.insert(15);
+        bt.insert(33);
+        bt.insert(42);
+        bt.insert(56);
+        bt.insert(5);
+        bt.insert(17);
+        bt.insert(41);
+        bt.insert(67);             
                   
         System.out.println("Root: " + bt.root());
         System.out.println("Root Height: " + bt.height());
