@@ -3,6 +3,9 @@ package coding.challenge;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.ConcurrentModificationException;
+import java.util.Deque;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -39,6 +42,7 @@ public class BinaryTree<T extends Comparable<T>> {
         LEVEL
     }
 
+    // insert a node into the tree via Breadth-First Search (BFS)
     public boolean insert(T element) {
 
         if (element == null) {
@@ -84,19 +88,7 @@ public class BinaryTree<T extends Comparable<T>> {
         }
     }
 
-    public T root() {
-
-        if (root == null) {
-            return null;
-        }
-
-        return root.element;
-    }
-
-    public int size() {
-        return nodeCount;
-    }
-
+    // print tree via Depth-First Search (DFS) and Breadth-First Search (BFS) 
     public void print(TraversalOrder to) {
 
         if (size() == 0) {
@@ -105,6 +97,7 @@ public class BinaryTree<T extends Comparable<T>> {
         }
 
         switch (to) {
+            // DFS
             case IN:
                 printInOrder(root);
                 break;
@@ -114,6 +107,7 @@ public class BinaryTree<T extends Comparable<T>> {
             case POST:
                 printPostOrder(root);
                 break;
+            // BFS
             case LEVEL:
                 printLevelOrder(root);
                 break;
@@ -168,6 +162,7 @@ public class BinaryTree<T extends Comparable<T>> {
         }
     }
 
+    // tree Depth-First Search (DFS) and Breadth-First Search (BFS) traversal returning a list
     public List<T> asList(TraversalOrder to) {
 
         if (size() == 0) {
@@ -177,6 +172,7 @@ public class BinaryTree<T extends Comparable<T>> {
         List<T> treeList = new ArrayList<>(size());
 
         switch (to) {
+            // DFS
             case IN:
                 traverseInOrderAsList(root, treeList);
                 break;
@@ -186,6 +182,7 @@ public class BinaryTree<T extends Comparable<T>> {
             case POST:
                 traversePostOrderAsList(root, treeList);
                 break;
+            // BFS    
             case LEVEL:
                 traverseLevelOrderAsList(root, treeList);
                 break;
@@ -242,4 +239,230 @@ public class BinaryTree<T extends Comparable<T>> {
         }
     }
 
+    // tree Depth-First Search (DFS) and Breadth-First Search (BFS) traversal via a Java Iterator
+    public Iterator<T> iterator(TraversalOrder to) {
+
+        if (size() == 0) {
+            return Collections.emptyIterator();
+        }
+
+        switch (to) {
+            // DFS
+            case IN:
+                return traverseInOrderAsIterator(root);
+            case PRE:
+                return traversePreOrderAsIterator(root);
+            case POST:
+                return traversePostOrderAsIterator(root);
+            // BFS    
+            case LEVEL:
+                return traverseLevelOrderAsIterator(root);
+            default:
+                throw new IllegalArgumentException("Unrecognized traversal order");
+        }
+    }
+
+    private Iterator<T> traverseInOrderAsIterator(Node node) {
+
+        final int expectedNodeCount = size();
+
+        final Deque<Node> stack = new ArrayDeque<>();
+
+        stack.push(node);
+
+        return new Iterator<T>() {
+            Node cursor = node;
+
+            @Override
+            public boolean hasNext() {
+                if (expectedNodeCount != nodeCount) {
+                    throw new ConcurrentModificationException();
+                }
+
+                return node != null && !stack.isEmpty();
+            }
+
+            @Override
+            public T next() {
+
+                if (expectedNodeCount != nodeCount) {
+                    throw new ConcurrentModificationException();
+                }
+
+                while (cursor != null && cursor.left != null) {
+                    stack.push(cursor.left);
+                    cursor = cursor.left;
+                }
+
+                Node current = stack.pop();
+
+                if (current.right != null) {
+                    stack.push(current.right);
+                    cursor = current.right;
+                }
+
+                return current.element;
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+        };
+    }
+
+    private Iterator<T> traversePreOrderAsIterator(Node node) {
+
+        final int expectedNodeCount = size();
+
+        final Deque<Node> stack = new ArrayDeque<>();
+
+        stack.push(node);
+
+        return new Iterator<T>() {
+
+            @Override
+            public boolean hasNext() {
+                if (expectedNodeCount != nodeCount) {
+                    throw new ConcurrentModificationException();
+                }
+
+                return node != null && !stack.isEmpty();
+            }
+
+            @Override
+            public T next() {
+
+                if (expectedNodeCount != nodeCount) {
+                    throw new ConcurrentModificationException();
+                }
+
+                Node current = stack.pop();
+
+                if (current.right != null) {
+                    stack.push(current.right);
+                }
+
+                if (current.left != null) {
+                    stack.push(current.left);
+                }
+
+                return current.element;
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+        };
+    }
+
+    private Iterator<T> traversePostOrderAsIterator(Node node) {
+
+        final int expectedNodeCount = size();
+
+        final Deque<Node> stacka = new ArrayDeque<>();
+        final Deque<Node> stackb = new ArrayDeque<>();
+
+        stacka.push(node);
+
+        while (!stacka.isEmpty()) {
+            Node nodea = stacka.pop();
+            if (nodea != null) {
+                stackb.push(nodea);
+                if (nodea.left != null) {
+                    stacka.push(nodea.left);
+                }
+                if (nodea.right != null) {
+                    stacka.push(nodea.right);
+                }
+            }
+        }
+
+        return new Iterator<T>() {
+
+            @Override
+            public boolean hasNext() {
+                if (expectedNodeCount != nodeCount) {
+                    throw new ConcurrentModificationException();
+                }
+
+                return node != null && !stackb.isEmpty();
+            }
+
+            @Override
+            public T next() {
+
+                if (expectedNodeCount != nodeCount) {
+                    throw new ConcurrentModificationException();
+                }
+
+                return stackb.pop().element;
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+        };
+    }
+
+    private Iterator<T> traverseLevelOrderAsIterator(Node node) {
+
+        final int expectedNodeCount = size();
+
+        final Queue<Node> queue = new ArrayDeque<>();
+
+        queue.offer(node);
+
+        return new Iterator<T>() {
+
+            @Override
+            public boolean hasNext() {
+                if (expectedNodeCount != nodeCount) {
+                    throw new ConcurrentModificationException();
+                }
+
+                return node != null && !queue.isEmpty();
+            }
+
+            @Override
+            public T next() {
+
+                if (expectedNodeCount != nodeCount) {
+                    throw new ConcurrentModificationException();
+                }
+
+                Node current = queue.poll();
+
+                if (current.left != null) {
+                    queue.offer(current.left);
+                }
+
+                if (current.right != null) {
+                    queue.offer(current.right);
+                }
+
+                return current.element;
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+        };
+    }
+
+    public T root() {
+
+        if (root == null) {
+            return null;
+        }
+
+        return root.element;
+    }
+
+    public int size() {
+        return nodeCount;
+    }
 }
