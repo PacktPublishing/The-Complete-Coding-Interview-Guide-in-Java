@@ -69,7 +69,7 @@ public class BinaryTree<T> {
 
         while (!queue.isEmpty()) {
             node = queue.peek();
-            queue.remove();
+            queue.poll();
 
             if (node.left == null) {
                 node.left = new Node(element);
@@ -149,7 +149,7 @@ public class BinaryTree<T> {
 
         while (!queue.isEmpty()) {
 
-            Node current = queue.remove();
+            Node current = queue.poll();
 
             System.out.print(" " + current.element);
 
@@ -226,7 +226,7 @@ public class BinaryTree<T> {
 
         while (!queue.isEmpty()) {
 
-            Node current = queue.remove();
+            Node current = queue.poll();
 
             treeList.add(current.element);
 
