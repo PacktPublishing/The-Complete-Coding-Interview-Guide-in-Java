@@ -44,12 +44,13 @@ public class Graph<T> {
             // Step 2: Pop the current node from the queue
             T element = queue.poll();
 
+            // Step 3: Visit the current node
             System.out.print(element + " ");
 
-            // Step 3: Get the adjacent nodes of the current node 
+            // Step 4: Get the adjacent nodes of the current node 
             List<T> adjacents = findAdjacents(adjacencyMatrix, element);
             if (adjacents != null) {
-                // Step 4: Loop the adjacent nodes and for each non-null and unvisited node:
+                // Step 5: Loop the adjacent nodes and for each non-null and unvisited node:
                 //      a. Mark as visited (add it in the collection of visited nodes)
                 //      b. Add it the queue
                 for (T t : adjacents) {
