@@ -82,19 +82,26 @@ public class MaxHeap<T extends Comparable<T>> {
         System.out.println();
     }
 
+    // fix the heap after polling an element
     private void heapifyDown() {
+        
+        // Step 1: Start from the root of the heap as the current node
         int index = 0;
 
         while (hasLeftChild(index)) {
+            
+            // Step 2: Determine the largest node between the children of the current node
             int largestChildIndex = getLeftChildIndex(index);
-
             if (hasRightChild(index) && rightChild(index).compareTo(leftChild(index)) > 0) {
                 largestChildIndex = getRightChildIndex(index);
             }
 
+            // Step 3: If the current node is less than its largest children 
+            //         then swap these two nodes and continue
             if (heap[index].compareTo(heap[largestChildIndex]) < 0) {
                 swap(index, largestChildIndex);
             } else {
+            // Step 3: there is nothing else to do, so stop
                 break;
             }
 
@@ -102,9 +109,14 @@ public class MaxHeap<T extends Comparable<T>> {
         }
     }
 
+    // fix the heap after adding a new element
     private void heapifyUp() {
+        
+        // Step 1: Start from the end of the heap as the current node
         int index = size - 1;
 
+        // Step 2: While the current node has parent and the parent is less than the 
+        //         current node swap these nodes
         while (hasParent(index) && parent(index).compareTo(heap[index]) < 0) {
             swap(getParentIndex(index), index);
             index = getParentIndex(index);
