@@ -44,8 +44,8 @@ public class Graph<T> {
     }
 
     public boolean isPath(T from, T to) {
-        
-    Queue<T> queue = new ArrayDeque<>();
+
+        Queue<T> queue = new ArrayDeque<>();
         Set<T> visited = new HashSet<>();
 
         // we start from the 'from' node
@@ -53,45 +53,27 @@ public class Graph<T> {
         queue.add(from);
 
         while (!queue.isEmpty()) {
-                   
+
             T element = queue.poll();
-            
+
             List<T> adjacents = adjacencyList.get(element);
             if (adjacents != null) {
-                
+
                 for (T t : adjacents) {
                     if (t != null && !visited.contains(t)) {
                         visited.add(t);
                         queue.add(t);
-                     
+
                         // we reached the destination (the 'to' node)
-                        if(t.equals(to)) {                           
+                        if (t.equals(to)) {
                             return true;
                         }
                     }
                 }
             }
-        }    
-        
+        }
+
         return false;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }
