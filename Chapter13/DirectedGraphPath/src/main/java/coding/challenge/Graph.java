@@ -45,6 +45,14 @@ public class Graph<T> {
 
     public boolean isPath(T from, T to) {
 
+        if (from == null || to == null) {
+            return false;
+        }
+
+        if (from == to) {
+            return true;
+        }
+
         Queue<T> queue = new ArrayDeque<>();
         Set<T> visited = new HashSet<>();
 
