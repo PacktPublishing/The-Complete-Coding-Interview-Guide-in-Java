@@ -50,18 +50,26 @@ public class Graph<T> {
         Queue<T> queue = new ArrayDeque<>();
         Set<T> visited = new HashSet<>();
 
-        // mark the start element as visited and add it into the queue
+        // Step 1: Mark the start node (current node) as visited 
+        //         (add it in the collection of visited nodes) and add it into the BFS queue
         visited.add(startElement);
         queue.add(startElement);
 
         while (!queue.isEmpty()) {
+            
+            // Step 2: Pop the current node from the queue
             T element = queue.poll();
 
+            // Step 3: Visit the current node
             System.out.print(element + " ");
 
-            // mark as visited and add in the queue every unvisited adjacent
+            // Step 4: Get the adjacent nodes of the current node 
             List<T> adjacents = adjacencyList.get(element);
             if (adjacents != null) {
+                
+                // Step 5: Loop the adjacent nodes and for each non-null and unvisited node:
+                //      a. Mark as visited (add it in the collection of visited nodes)
+                //      b. Add it the queue
                 for (T t : adjacents) {
                     if (t != null && !visited.contains(t)) {
                         visited.add(t);
@@ -78,18 +86,27 @@ public class Graph<T> {
         Stack<T> stack = new Stack<>();
         Set<T> visited = new HashSet<>();
 
-        // push the start element into the stack
+        // Step 1: Start from the current node (the given node)
+        //         and push the current node into Stack
         stack.add(startElement);
 
+        // Step 2: While Stack not empty
         while (!stack.isEmpty()) {
 
+            // Step 2(a): Pop the current node from the Stack
             T element = stack.pop();
+            
             if (!visited.contains(element)) {
+                
+                // Step 2(b): Visit current node
                 System.out.print(element + " ");
+                
+                // Step 2(c): Mark the current node as visited (add it in the 
+                //            collection of visited nodes)
                 visited.add(element);
             }
 
-            // push unvisited adjacent vertices
+            // Step 2(d): Push unvisited adjacent vertices
             List<T> adjacents = adjacencyList.get(element);
             if (adjacents != null) {
                 for (T t : adjacents) {
@@ -110,12 +127,15 @@ public class Graph<T> {
 
     private void dfsRecursion(T currentElement, Set<T> visited) {
 
-        // mark element as visited
+        // Step 1: Start from the current node (the given node) 
+        //         and mark the current node as visited (add it in 
+        //         the collection of visited nodes)
         visited.add(currentElement);
 
+        // Step 2: Visit current node
         System.out.print(currentElement + " ");
 
-        // visit each element via recursion
+        // Step 3: Traverse unvisited adjacent vertices via recursionS
         List<T> adjacents = adjacencyList.get(currentElement);
         if (adjacents != null) {
             for (T t : adjacents) {
