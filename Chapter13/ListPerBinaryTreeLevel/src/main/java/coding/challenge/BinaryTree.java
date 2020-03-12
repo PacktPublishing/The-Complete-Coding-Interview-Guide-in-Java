@@ -2,6 +2,7 @@ package coding.challenge;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -75,6 +76,10 @@ public class BinaryTree<T> {
     }
 
     public List<List<T>> fetchAllLevels() {
+
+        if (root == null) {
+            return Collections.emptyList();
+        }
 
         // each queue holds a level
         List<List<T>> allLevels = new ArrayList<>();
