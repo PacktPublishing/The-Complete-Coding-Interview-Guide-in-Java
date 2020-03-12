@@ -149,14 +149,18 @@ public class BinaryTree<T> {
 
         while (!queue.isEmpty()) {
 
+            // Step 1: Pop the first node from the queue as the current node
             Node current = queue.poll();
 
+            // Step 2: Visit the current node
             System.out.print(" " + current.element);
 
+            // Step 3: If the current node has a left node then enqueue that left node
             if (current.left != null) {
                 queue.add(current.left);
             }
 
+            // Step 4: If the current node has a right node then enqueue that right node
             if (current.right != null) {
                 queue.add(current.right);
             }
