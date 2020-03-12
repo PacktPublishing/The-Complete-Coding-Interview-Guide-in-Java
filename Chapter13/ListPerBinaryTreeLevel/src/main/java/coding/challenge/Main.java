@@ -11,8 +11,8 @@ public class Main {
           -47-       -45-
          /    \     /    \
         11     13  44    88
-       /  \   /  \
-      3    1 5    9
+       /  \   
+      3    1 
     */
 
         BinaryTree<Integer> bt = new BinaryTree<>();
@@ -25,9 +25,7 @@ public class Main {
         bt.insert(44);
         bt.insert(88);
         bt.insert(3);
-        bt.insert(1);
-        bt.insert(5);
-        bt.insert(9);
+        bt.insert(1);        
           
         System.out.println(bt.fetchAllLevels());
     }
