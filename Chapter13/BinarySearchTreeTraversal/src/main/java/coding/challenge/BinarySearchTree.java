@@ -252,7 +252,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
         while (!queue.isEmpty()) {
 
-            Node current = queue.remove();
+            Node current = queue.poll();
 
             System.out.print(" " + current.element);
 
@@ -326,7 +326,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
         while (!queue.isEmpty()) {
 
-            Node current = queue.remove();
+            Node current = queue.poll();
 
             treeList.add(current.element);
 
