@@ -82,12 +82,12 @@ public class Graph<T> {
                 // Step 2(b): Visit current node
                 System.out.print(element + " ");
                 
-                // Step 3(c): Mark the current node as visited (add it in the 
+                // Step 2(c): Mark the current node as visited (add it in the 
                 //            collection of visited nodes)
                 visited.add(element);
             }
 
-            // Step 3(d): Push unvisited adjacent vertices
+            // Step 2(d): Push unvisited adjacent vertices
             List<T> adjacents = findAdjacents(adjacencyMatrix, element);
             if (adjacents != null) {
                 for (T t : adjacents) {
