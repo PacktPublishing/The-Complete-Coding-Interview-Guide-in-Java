@@ -1,2 +1,2 @@
-# Linked lists and maps
+# Trees and graphs
 This chapter...
