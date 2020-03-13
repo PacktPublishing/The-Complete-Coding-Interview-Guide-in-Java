@@ -81,7 +81,7 @@ public class BinaryTree<T> {
             return Collections.emptyList();
         }
 
-        // each queue holds a level
+        // each list holds a level
         List<List<T>> allLevels = new ArrayList<>();
 
         // first level (containing only the root)
