@@ -82,6 +82,7 @@ public class BinaryTree<T> {
             return false;
         }
 
+        // if the roots don't match
         if (!match(p, q)) {
             return (isSubtree(p.left, q) || isSubtree(p.right, q));
         }
