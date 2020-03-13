@@ -20,7 +20,7 @@ public class Main {
         bst.insert(LocalTime.of(10, 16), 2); // cannot do reservation
         bst.insert(LocalTime.of(10, 22), 1);
         
-        System.out.println("The landing schedule is:");
+        System.out.println("\nThe landing schedule is:");
         bst.printInOrder();
     }
 }
