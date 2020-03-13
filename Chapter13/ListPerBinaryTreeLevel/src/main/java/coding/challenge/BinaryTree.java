@@ -110,6 +110,7 @@ public class BinaryTree<T> {
                     currentLevelOfNodes.add(parent.left);
                     currentLevelOfElements.add(parent.left.element);
                 }
+                
                 if (parent.right != null) {
                     currentLevelOfNodes.add(parent.right);
                     currentLevelOfElements.add(parent.right.element);
