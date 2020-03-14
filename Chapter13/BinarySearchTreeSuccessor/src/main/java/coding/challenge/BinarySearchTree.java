@@ -103,6 +103,7 @@ public class BinarySearchTree {
         while (node.parent != null && node.parent.right == node) {
             node = node.parent;
         }
+        
         return node.parent;
     }
 
