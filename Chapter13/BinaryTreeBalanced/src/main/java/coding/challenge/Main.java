@@ -27,7 +27,7 @@ public class Main {
         bt.insert(52);
         bt.insert(34);
         bt.insert(37);
-        bt.insert(36);
+        bt.insert(36); // if you comment this line the tree is balanced
                   
         System.out.println("Balanced (approach 1)? " + bt.isBalanced1());              
         System.out.println("Balanced (approach 2)? " + bt.isBalanced2());              
