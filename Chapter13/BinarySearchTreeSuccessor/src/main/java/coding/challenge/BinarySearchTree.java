@@ -94,11 +94,11 @@ public class BinarySearchTree {
         // case (b.1): 'node' is the left child of its parent:
         //               - return its parent
         //
-        // case (b.1): 'node' is the right child of its parent:
+        // case (b.2): 'node' is the right child of its parent:
         //               - 'node' traverse upwards until 'node' is the left child of its parent
         //               - then return this parent
         //
-        // case (b.2): 'node' is the last node in traversal:
+        // case (c):   'node' is the last node in traversal:
         //               - return the root's parent (e.g., null)
         while (node.parent != null && node.parent.right == node) {
             node = node.parent;
