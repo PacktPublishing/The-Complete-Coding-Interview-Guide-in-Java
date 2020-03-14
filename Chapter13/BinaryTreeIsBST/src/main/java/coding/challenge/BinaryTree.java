@@ -91,6 +91,7 @@ public class BinaryTree<T extends Comparable<T>> {
                 || !isBinarySearchTree(node.right, node.element, maxElement)) {
             return false;
         }
+        
         return true;
     }
 
