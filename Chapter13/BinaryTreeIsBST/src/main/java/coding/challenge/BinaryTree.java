@@ -77,7 +77,7 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     private boolean isBinarySearchTree(Node node, T minElement, T maxElement) {
-
+        
         if (node == null) {
             return true;
         }
