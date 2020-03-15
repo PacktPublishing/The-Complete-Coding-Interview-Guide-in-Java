@@ -6,20 +6,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Graph<Integer> graph = new Graph();
+        Graph<String> graph = new Graph();
 
-        graph.addEdge(40, 20);
-        graph.addEdge(40, 10);
-        graph.addEdge(10, 30);
-        graph.addEdge(20, 10);
-        graph.addEdge(20, 30);
-        graph.addEdge(20, 60);
-        graph.addEdge(20, 50);
-        graph.addEdge(30, 60);
-        graph.addEdge(60, 70);
-        graph.addEdge(50, 70);        
-
-        Stack<Integer> ts = graph.topologicalSort(40);
+        graph.addEdge("D", "B");
+        graph.addEdge("D", "A");
+        graph.addEdge("B", "A");
+        graph.addEdge("B", "C");
+        graph.addEdge("B", "F");
+        graph.addEdge("B", "E");
+        graph.addEdge("E", "G");
+        graph.addEdge("G", "H");
+        graph.addEdge("A", "C");
+        graph.addEdge("C", "F");
+        graph.addEdge("F", "G");        
+        
+        Stack<String> ts = graph.topologicalSort("D");
 
         while (ts.empty() == false) {
             System.out.print(ts.pop() + " ");
