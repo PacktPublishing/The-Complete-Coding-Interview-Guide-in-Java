@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BinaryTree {
-
+ 
     private Node root = null;
     private int max;
 
