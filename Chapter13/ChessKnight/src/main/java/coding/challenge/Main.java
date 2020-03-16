@@ -8,6 +8,6 @@ public class Main {
 
         int movesNr = ck.countknightMoves(0, 7, 7, 0, 8);
 
-        System.out.println("Minimum number of required moves: " + movesNr);
+        System.out.println("Minimum number of needed moves: " + movesNr);
     }
 }

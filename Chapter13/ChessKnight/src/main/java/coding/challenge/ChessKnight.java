@@ -31,20 +31,20 @@ public class ChessKnight {
     private static final int[] ROW = {2, 2, -2, -2, 1, 1, -1, -1};
     private static final int[] COL = {-1, 1, 1, -1, 2, -2, 2, -2};
 
-    public int countknightMoves(int rs, int cs, int rd, int cd, int n) {
+    public int countknightMoves(int rs, int cs, int rt, int ct, int n) {
 
         // source (start cell) coordinates
         Node startCell = new Node(rs, cs);
 
         // destination (end cell) coordinates
-        Node endCell = new Node(rd, cd);
+        Node targetCell = new Node(rt, ct);
 
-        return countknightMoves(startCell, endCell, n);
+        return countknightMoves(startCell, targetCell, n);
     }
 
     // Find minimum number of steps taken by the knight
-    // from the start cell to the end cell using BFS
-    private int countknightMoves(Node startCell, Node endCell, int n) {
+    // from the start cell to the target cell using BFS
+    private int countknightMoves(Node startCell, Node targetCell, int n) {
 
         // store the visited cells
         Set<Node> visited = new HashSet<>();
@@ -62,7 +62,7 @@ public class ChessKnight {
             int distance = cell.distance;
 
             // if destination is reached, return the distance
-            if (r == endCell.r && c == endCell.c) {
+            if (r == targetCell.r && c == targetCell.c) {
                 return distance;
             }
 
@@ -76,8 +76,7 @@ public class ChessKnight {
                 for (int i = 0; i < 8; ++i) {
 
                     // get the new valid position of knight from current
-                    // position on chessboard and enqueue it in the
-                    // queue with +1 distance
+                    // position on chessboard and enqueue it in the queue with +1 distance
                     int rt = r + ROW[i];
                     int ct = c + COL[i];
 
