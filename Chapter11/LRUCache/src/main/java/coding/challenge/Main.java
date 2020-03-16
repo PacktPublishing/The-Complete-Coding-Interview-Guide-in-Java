@@ -28,7 +28,7 @@ public class Main {
         System.out.println("\nGet key 6: " + cache.getEntry(6));        
         cache.print();
         
-        System.out.println("\nGet key 2: " + cache.getEntry(2));                
+        System.out.println("\nGet key 2 (-1 means data not found): " + cache.getEntry(2));                
         cache.print();               
         
         System.out.println("\nGet key 6: " + cache.getEntry(6));                

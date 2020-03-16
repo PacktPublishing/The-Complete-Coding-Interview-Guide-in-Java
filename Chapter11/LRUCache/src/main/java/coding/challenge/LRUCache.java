@@ -42,6 +42,7 @@ public final class LRUCache {
             return node.value;
         }
 
+        // by convention, data not found is marked as -1
         return -1;
     }
 
