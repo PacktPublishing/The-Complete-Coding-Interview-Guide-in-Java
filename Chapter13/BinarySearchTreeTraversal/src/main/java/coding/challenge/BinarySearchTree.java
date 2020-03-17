@@ -231,15 +231,15 @@ public class BinarySearchTree<T extends Comparable<T>> {
     private void printPreOrder(Node node) {
         if (node != null) {
             System.out.print(" " + node.element);
-            printInOrder(node.left);
-            printInOrder(node.right);
+            printPreOrder(node.left);
+            printPreOrder(node.right);
         }
     }
 
     private void printPostOrder(Node node) {
         if (node != null) {
-            printInOrder(node.left);
-            printInOrder(node.right);
+            printPostOrder(node.left);
+            printPostOrder(node.right);
             System.out.print(" " + node.element);
         }
     }
@@ -305,15 +305,15 @@ public class BinarySearchTree<T extends Comparable<T>> {
     private void traversePreOrderAsList(Node node, List<T> treeList) {
         if (node != null) {
             treeList.add(node.element);
-            traverseInOrderAsList(node.left, treeList);
-            traverseInOrderAsList(node.right, treeList);
+            traversePreOrderAsList(node.left, treeList);
+            traversePreOrderAsList(node.right, treeList);
         }
     }
 
     private void traversePostOrderAsList(Node node, List<T> treeList) {
         if (node != null) {
-            traverseInOrderAsList(node.left, treeList);
-            traverseInOrderAsList(node.right, treeList);
+            traversePostOrderAsList(node.left, treeList);
+            traversePostOrderAsList(node.right, treeList);
             treeList.add(node.element);
         }
     }
