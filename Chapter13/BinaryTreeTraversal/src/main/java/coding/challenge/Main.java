@@ -33,6 +33,6 @@ public class Main {
         bt.print(BinaryTree.TraversalOrder.PRE);        
         
         System.out.println("\n\nTraversal POST-ORDER: ");
-        bt.print(BinaryTree.TraversalOrder.POST);                        
+        bt.asList(BinaryTree.TraversalOrder.POST);                        
     }
 }
