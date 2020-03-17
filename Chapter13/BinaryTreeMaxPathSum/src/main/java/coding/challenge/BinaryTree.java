@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BinaryTree {
- 
+
     private Node root = null;
     private int max;
 
@@ -80,15 +80,16 @@ public class BinaryTree {
             return 0;
         }
 
-        int left = maxPathSum(root.left);
-        int right = maxPathSum(root.right);
+        // maximum of the left child and 0
+        int left = Math.max(0, maxPathSum(root.left));
 
-        int sum = root.element + Math.max(left, 0) + Math.max(right, 0);
+        // maximum of the right child and 0
+        int right = Math.max(0, maxPathSum(root.right));
 
-        max = Math.max(sum, max);
+        // maximum at the current node (all four cases 1,2,3 and 4)
+        max = Math.max(max, left + right + root.element);
 
-        sum = root.element + Math.max(0, Math.max(left, right));
-
-        return sum;
+        //return the maximum from left, right along with current               
+        return Math.max(left, right) + root.element;
     }
 }
