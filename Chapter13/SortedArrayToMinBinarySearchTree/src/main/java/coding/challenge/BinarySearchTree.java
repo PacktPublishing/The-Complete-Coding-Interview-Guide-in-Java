@@ -123,15 +123,15 @@ public class BinarySearchTree<T extends Comparable<T>> {
     private void printPreOrder(Node node) {
         if (node != null) {
             System.out.print(" " + node.element);
-            printInOrder(node.left);
-            printInOrder(node.right);
+            printPreOrder(node.left);
+            printPreOrder(node.right);
         }
     }
 
     private void printPostOrder(Node node) {
         if (node != null) {
-            printInOrder(node.left);
-            printInOrder(node.right);
+            printPostOrder(node.left);
+            printPostOrder(node.right);
             System.out.print(" " + node.element);
         }
     }
