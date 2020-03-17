@@ -54,16 +54,7 @@ public class BinaryTree {
         nOne2.left = nOne5;
         nOne4.left = nOne6;
         nOne5.left = nOne7;
-        /*  Tree One       Tree Two
-                A                A
-             /     \          /     \
-            B       C        C       B
-           / \     /        /       / \ 
-          D   E   G        G       E   D
-             /   /          \     /        
-            F   H            H   F      
-         */
-       
+
         rootTwo = new Node("A");
         Node nTwo1 = new Node("C");
         Node nTwo2 = new Node("B");
