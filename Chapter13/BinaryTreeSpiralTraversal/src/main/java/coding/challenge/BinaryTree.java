@@ -126,10 +126,10 @@ public class BinaryTree<T> {
             return;
         }
 
-        printSpiral(root);
+        printSpiralTwoStacks(root);
     }
 
-    private void printSpiral(Node node) {
+    private void printSpiralTwoStacks(Node node) {
         
         if (node == null) {
             return;
@@ -190,10 +190,10 @@ public class BinaryTree<T> {
             return;
         }
 
-        spiralOrderTraversalDeque(root);
+        printSpiralDeque(root);
     }
 
-    private void spiralOrderTraversalDeque(Node root) {
+    private void printSpiralDeque(Node root) {
 
         if (root == null) {
             return;
