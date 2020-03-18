@@ -29,7 +29,7 @@ public class Main {
         bt.insert(41);
         bt.insert(67);             
 
-        bt.kthLargest(8);
+        bt.kthLargest(3);
     }
 }
 

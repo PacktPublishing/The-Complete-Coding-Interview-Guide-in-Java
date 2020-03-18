@@ -67,30 +67,26 @@ public class BinarySearchTree<T extends Comparable<T>> {
                 : contains(current.right, element);
     }
 
-    private class Counter {
-
-        int c;
-    }
-
     public void kthLargest(int k) {
 
-        kthLargest(root, k, new Counter());
+        kthLargest(root, k);
     }
 
-    private void kthLargest(Node root, int k, Counter counter) {
+    private int c;
+    private void kthLargest(Node root, int k) {
 
-        if (root == null || counter.c >= k) {
+        if (root == null || c >= k) {
             return;
         }
 
-        kthLargest(root.right, k, counter);
-        counter.c++;
+        kthLargest(root.right, k);
+        c++;
 
         // we found the kth largest value
-        if (counter.c == k) {
+        if (c == k) {
             System.out.println(root.element);
         }
 
-        kthLargest(root.left, k, counter);
+        kthLargest(root.left, k);
     }
 }
