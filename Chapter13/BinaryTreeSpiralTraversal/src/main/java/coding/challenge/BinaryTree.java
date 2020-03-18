@@ -76,6 +76,7 @@ public class BinaryTree<T> {
 
     /* START: Recursive approach in O(n^2) */
     public void spiralOrderTraversalRecursive() {
+        
         if (root == null) {
             return;
         }
@@ -92,6 +93,7 @@ public class BinaryTree<T> {
 
     // print all nodes of a given level 
     private boolean printLevel(Node root, int level, boolean flip) {
+        
         if (root == null) {
             return false;
         }
@@ -115,11 +117,11 @@ public class BinaryTree<T> {
             return right || left;
         }
     }
-
     /* END: Recursive approach in O(n^2) */
 
     /* START: Two stacks approach in O(n) and O(n) extra space */
     public void spiralOrderTraversalTwoStacks() {
+        
         if (root == null) {
             return;
         }
@@ -128,6 +130,7 @@ public class BinaryTree<T> {
     }
 
     void printSpiral(Node node) {
+        
         if (node == null) {
             return;
         }
@@ -182,6 +185,7 @@ public class BinaryTree<T> {
 
     /* START: Deque approach in O(n) and O(n) extra space */
     public void spiralOrderTraversalDeque() {
+        
         if (root == null) {
             return;
         }
