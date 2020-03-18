@@ -129,7 +129,7 @@ public class BinaryTree<T> {
         printSpiral(root);
     }
 
-    void printSpiral(Node node) {
+    private void printSpiral(Node node) {
         
         if (node == null) {
             return;
