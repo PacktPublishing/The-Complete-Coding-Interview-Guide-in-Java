@@ -180,7 +180,6 @@ public class BinaryTree<T> {
             }
         }
     }
-
     /* END: Two stacks approach in O(n) and O(n) extra space */
 
     /* START: Deque approach in O(n) and O(n) extra space */
