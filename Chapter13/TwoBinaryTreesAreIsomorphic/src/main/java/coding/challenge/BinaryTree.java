@@ -82,14 +82,17 @@ public class BinaryTree {
 
     private boolean isIsomorphic(Node treeOne, Node treeTwo) {
 
+        // if T1 and T2 are null, then they are isomorphic, return true
         if (treeOne == null && treeTwo == null) {
             return true;
         }
 
+        // if T1 or T2 is null, then they are not isomorphic, return false
         if ((treeOne == null || treeTwo == null)) {
             return false;
         }
         
+        // if T1 data is not equal with T2 data then they are not isomorphic, return false
         if (!treeOne.element.equals(treeTwo.element)) {
             return false;
         }
