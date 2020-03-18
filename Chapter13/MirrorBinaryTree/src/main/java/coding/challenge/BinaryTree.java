@@ -118,7 +118,7 @@ public class BinaryTree<T> {
         }
 
         Node auxNode;
-
+ 
         mirrorTreeInPlace(node.left);
         mirrorTreeInPlace(node.right);
 

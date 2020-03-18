@@ -26,7 +26,7 @@ public class Main {
         
         System.out.println("\nTraversal LEVEL: ");
         bt.print(BinaryTree.TraversalOrder.LEVEL);
-        
+         
         System.out.println("\n\nTraversal IN-ORDER: ");
         bt.print(BinaryTree.TraversalOrder.IN);        
         
