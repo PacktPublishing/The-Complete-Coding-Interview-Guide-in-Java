@@ -3,7 +3,7 @@ package coding.challenge;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
-public class MinHeap<T extends Comparable<T>> {
+public class MinHeap {
 
     private static final int DEFAULT_CAPACITY = 5;
 
