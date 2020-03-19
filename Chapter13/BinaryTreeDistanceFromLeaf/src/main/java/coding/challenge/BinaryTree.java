@@ -88,16 +88,14 @@ public class BinaryTree<T> {
             return;
         }
 
-        // add the current node into the current path
-        System.out.println("Add:"+node.element);
+        // add the current node into the current path        
         pathToLeaf.add(node);
 
         // go  to left and right subtree via recursion
         leafDistance(node.left, pathToLeaf, nodesAtDist, dist);
         leafDistance(node.right, pathToLeaf, nodesAtDist, dist);
 
-        // remove the current node from the current path
-        System.out.println("Remove:"+node.element);
+        // remove the current node from the current path       
         pathToLeaf.remove(node);
     }
 
