@@ -149,7 +149,7 @@ public class RedBlackTree {
         
         print(node.left);
         System.out.print(((node.color == RED) ? "Color: Red " : "Color: Black ")
-                + "Key: " + node.element + "\n");
+                + "Element: " + node.element + "\n");
         print(node.right);
     }
 
