@@ -5,7 +5,7 @@ public class RedBlackTree {
     private static final int RED = 0;
     private static final int BLACK = 1;
 
-    private final Node nil = new Node(-1);
+    private final Node nil = new Node(-999);
     private Node root = nil;
 
     private class Node {
