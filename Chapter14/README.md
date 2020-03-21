@@ -1,2 +1,2 @@
-# Trees and graphs
+# Sorting and searching
 This chapter...
