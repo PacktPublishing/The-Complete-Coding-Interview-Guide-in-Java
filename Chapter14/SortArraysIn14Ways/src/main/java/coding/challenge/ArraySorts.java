@@ -565,10 +565,10 @@ public final class ArraySorts {
     public static void quickSort(int[] arr, int left, int right) {
 
         if (left < right) {
-            int pivot = partition(arr, left, right);
+            int m = partition(arr, left, right);
 
-            quickSort(arr, left, pivot - 1);
-            quickSort(arr, pivot + 1, right);
+            quickSort(arr, left, m - 1);
+            quickSort(arr, m + 1, right);
         }
     }
 
@@ -592,10 +592,10 @@ public final class ArraySorts {
             T[] arr, int left, int right, Comparator<? super T> c) {
 
         if (left < right) {
-            int pivot = partitionWithComparator(arr, left, right, c);
+            int m = partitionWithComparator(arr, left, right, c);
 
-            quickSortWithComparator(arr, left, pivot - 1, c);
-            quickSortWithComparator(arr, pivot + 1, right, c);
+            quickSortWithComparator(arr, left, m - 1, c);
+            quickSortWithComparator(arr, m + 1, right, c);
         }
     }
 
