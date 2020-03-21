@@ -10,7 +10,7 @@ public class Main {
         Comparator<Melon> byType = Comparator.comparing(Melon::getType);
 
         // initialize an array integers        
-        int[] integers = {4, 5, 2, 7, 1};
+        int[] integers = {4, 2, 5, 1, 6, 7, 3};
 
         // initialize an array of Melons
         Melon[] melons = {new Melon("Watermelon", 3300), new Melon("Cantaloupe", 4500),
