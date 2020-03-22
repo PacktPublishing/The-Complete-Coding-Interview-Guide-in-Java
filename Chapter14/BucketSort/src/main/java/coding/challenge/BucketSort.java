@@ -27,7 +27,7 @@ public final class BucketSort {
             buckets[hash(e, hashes)].add(e);
         }
 
-        // sort each bucket, O(n) 
+        // sort each bucket
         for (List bucket : buckets) {
             Collections.sort(bucket);
         }
