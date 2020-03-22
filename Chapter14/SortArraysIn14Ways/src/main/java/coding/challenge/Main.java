@@ -148,10 +148,10 @@ public class Main {
         System.out.println("\n\nSort via Bucket sort:");
         System.out.println("----------------------");
 
-        System.out.println("\nSorting numbers ...");
+        System.out.println("\nSorting numbers (SG) ...");
         int[] cloneIntegersBks = integers.clone();
         long startTimeV13 = clock.millis();
-        ArraySorts.bucketSort(cloneIntegersBks);
+        ArraySorts.bucketSortSG(cloneIntegersBks); // or use bucketSortSSG()
         displayExecutionTime(clock.millis() - startTimeV13);
         displayIntSortedArray(cloneIntegersBks);
 

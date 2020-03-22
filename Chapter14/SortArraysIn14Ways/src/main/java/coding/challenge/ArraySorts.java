@@ -1,6 +1,9 @@
 package coding.challenge;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public final class ArraySorts {
 
@@ -444,8 +447,59 @@ public final class ArraySorts {
         }
     }
 
-    /* Bucket sort */
-    public static void bucketSort(int[] arr) {
+    /* Bucket sort - Scatter-Sort-Gather approach */
+    public static void bucketSortSSG(int[] arr) {
+
+        if (arr == null) {
+            throw new IllegalArgumentException("Array cannot be null");
+        }
+
+        // get the hash codes 
+        int[] hashes = hash(arr);
+
+        // create and initialize buckets
+        List<Integer>[] buckets = new List[hashes[1]];
+        for (int i = 0; i < hashes[1]; i++) {
+            buckets[i] = new ArrayList();
+        }
+
+        // scatter elements into buckets
+        for (int e : arr) {
+            buckets[hash(e, hashes)].add(e);
+        }
+
+        // sort each bucket
+        for (List bucket : buckets) {
+            Collections.sort(bucket);
+        }
+
+        // gather elements from the buckets
+        int p = 0;
+        for (List<Integer> bucket : buckets) {
+            for (int j : bucket) {
+                arr[p++] = j;
+            }
+        }
+    }
+
+    private static int[] hash(int[] arr) {
+
+        int m = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (m < arr[i]) {
+                m = arr[i];
+            }
+        }
+
+        return new int[]{m, (int) Math.sqrt(arr.length)};
+    }
+
+    private static int hash(int num, int[] hashes) {
+        return (int) ((double) num / hashes[0] * (hashes[1] - 1));
+    }
+
+    /* Bucket sort - Scatter-Gather approach */
+    public static void bucketSortSG(int[] arr) {
 
         if (arr == null) {
             throw new IllegalArgumentException("Array cannot be null");
