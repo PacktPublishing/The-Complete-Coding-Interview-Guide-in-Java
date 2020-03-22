@@ -13,6 +13,10 @@ public final class BucketSort {
     /* Scatter-Sort-Gather approach */
     public static void sort1(int[] arr) {
 
+        if (arr == null) {
+            throw new IllegalArgumentException("Array cannot be null");
+        }
+
         // get the hash codes 
         int[] hashes = hash(arr);
 
