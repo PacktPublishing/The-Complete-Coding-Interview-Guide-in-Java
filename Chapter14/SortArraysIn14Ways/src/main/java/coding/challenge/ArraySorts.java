@@ -453,27 +453,22 @@ public final class ArraySorts {
         if (arr == null) {
             throw new IllegalArgumentException("Array cannot be null");
         }
-
-        // get the hash codes 
+    
         int[] hashes = hash(arr);
 
-        // create and initialize buckets
         List<Integer>[] buckets = new List[hashes[1]];
         for (int i = 0; i < hashes[1]; i++) {
             buckets[i] = new ArrayList();
         }
 
-        // scatter elements into buckets
         for (int e : arr) {
             buckets[hash(e, hashes)].add(e);
         }
 
-        // sort each bucket
         for (List bucket : buckets) {
             Collections.sort(bucket);
         }
 
-        // gather elements from the buckets
         int p = 0;
         for (List<Integer> bucket : buckets) {
             for (int j : bucket) {
