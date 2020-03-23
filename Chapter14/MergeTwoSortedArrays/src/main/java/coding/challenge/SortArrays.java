@@ -6,7 +6,18 @@ public final class SortArrays {
         throw new AssertionError("Cannot be instantiated");
     }
 
-    public static void merge(int[] p, int[] q, int pLast, int qLast) {
+    public static void merge(int[] p, int[] q) {
+
+        if (p == null || q == null) {
+            throw new IllegalArgumentException("The given p and q cannot be null");
+        }
+
+        int pLast = p.length - q.length;
+        int qLast = q.length;
+
+        if (pLast < 0) {
+            throw new IllegalArgumentException("The given p cannot fit q");
+        }
 
         int pIdx = pLast - 1;
         int qIdx = qLast - 1;
