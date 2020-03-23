@@ -16,7 +16,7 @@ public class Anagrams implements Comparator<String> {
     }
 
     /* Group anagrams via Map */
-    void printAnagrams(String arr[]) {
+    public void printAnagrams(String arr[]) {
 
         Map<String, List<String>> map = new HashMap<>();
 
