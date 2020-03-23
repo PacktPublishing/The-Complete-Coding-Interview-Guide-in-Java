@@ -20,7 +20,7 @@ public class Main {
         System.out.println("\n\nVia hashing (O(nm)): ");
         anagrams.printAnagramsOptimized(words);
 
-        System.out.println("\n\nVia Comparator: ");
+        System.out.println("\n\nVia Comparator (O(nm log m)): ");
         Arrays.sort(words, new Anagrams());
         System.out.println(Arrays.toString(words));
     }
