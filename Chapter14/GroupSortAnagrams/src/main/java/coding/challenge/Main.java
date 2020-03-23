@@ -11,12 +11,15 @@ public class Main {
             "last", "salt", "bowel", "crate", "loop", "polo", "thickest",
             "below", "thickets", "pool", "elbow", "replicas"
         };
-        
+
         Anagrams anagrams = new Anagrams();
-        
-        System.out.println("\n\nVia hashing: ");
-        anagrams.printAnagrams(words);        
-  
+
+        System.out.println("\n\nVia hashing (O(nm log m)): ");
+        anagrams.printAnagrams(words);
+
+        System.out.println("\n\nVia hashing (O(nm)): ");
+        anagrams.printAnagramsOptimized(words);
+
         System.out.println("\n\nVia Comparator: ");
         Arrays.sort(words, new Anagrams());
         System.out.println(Arrays.toString(words));

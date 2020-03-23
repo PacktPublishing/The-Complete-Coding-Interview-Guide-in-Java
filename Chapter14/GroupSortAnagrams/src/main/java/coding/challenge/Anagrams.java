@@ -9,47 +9,75 @@ import java.util.Map;
 
 public class Anagrams implements Comparator<String> {
 
+    // this can be increased for supporting more characters
+    private final static int RANGE_a_z = 26;
+
     /* Group anagrams via Comparator */
     @Override
-    public int compare(String sl, String s2) {
-        return sortStringChars(sl).compareTo(sortStringChars(s2));
+    public int compare(String wordl, String word2) {
+        return sortWordChars(wordl).compareTo(sortWordChars(word2));
     }
 
-    /* Group anagrams via Map */
-    public void printAnagrams(String arr[]) {
+    /* Group anagrams via hashing (O(nm log m) */
+    public void printAnagrams(String words[]) {
 
-        Map<String, List<String>> map = new HashMap<>();
+        Map<String, List<String>> result = new HashMap<>();
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < words.length; i++) {
 
             // sort the chars of each string
-            String anagram = arr[i];
-            String sortedAnagram = sortStringChars(anagram);
+            String word = words[i];
+            String sortedWord = sortWordChars(word);
 
-            if (map.containsKey(sortedAnagram)) {
-                map.get(sortedAnagram).add(anagram);
+            if (result.containsKey(sortedWord)) {
+                result.get(sortedWord).add(word);
             } else {
                 // start a new group of anagrams
                 List<String> anagrams = new ArrayList<>();
-                anagrams.add(anagram);
-                map.put(sortedAnagram, anagrams);
+                anagrams.add(word);
+                result.put(sortedWord, anagrams);
             }
         }
 
         // print the result
-        for (String sortedAnagram : map.keySet()) {
-            List<String> anagrams = map.get(sortedAnagram);
-            if (anagrams.size() > 1) {
-                System.out.print(anagrams);
-            }
-        }
+        System.out.println(result.values());
     }
 
-    // helper method for sorting the chars of a string
-    private static String sortStringChars(String str) {
+    /* Group anagrams via hashing (O(nm) */
+    public void printAnagramsOptimized(String[] words) {
 
-        char[] strToChar = str.toCharArray();
-        Arrays.sort(strToChar);
-        return String.valueOf(strToChar);
+        Map<String, ArrayList<String>> result = new HashMap<>();
+
+        for (int i = 0; i < words.length; i++) {
+
+            String word = words[i];
+            char[] wordToChar = new char[RANGE_a_z];
+
+            // count up the number of occurrences (frequency) of each letter in 'word'
+            for (int j = 0; j < word.length(); j++) {
+                wordToChar[word.charAt(j) - 'a']++;
+            }
+
+            String computedWord = String.valueOf(wordToChar);
+
+            if (result.containsKey(computedWord)) {
+                result.get(computedWord).add(word);
+            } else {
+                ArrayList<String> anagrams = new ArrayList<>();
+                anagrams.add(word);
+                result.put(computedWord, anagrams);
+            }
+        }
+
+        System.out.println(result.values());
+    }
+
+    // helper method for sorting the chars of a word
+    private static String sortWordChars(String word) {
+
+        char[] wordToChar = word.toCharArray();
+        Arrays.sort(wordToChar);
+        
+        return String.valueOf(wordToChar);
     }
 }
