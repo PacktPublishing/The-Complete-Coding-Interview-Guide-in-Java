@@ -6,14 +6,14 @@ public final class Matrices {
         throw new AssertionError("Cannot be instantiated");
     }
 
-    public static boolean search(int[][] m, int element) {
+    public static boolean search(int[][] matrix, int element) {
 
-        if (m == null || m.length == 0) {
+        if (matrix== null || matrix.length == 0) {
             return false;
         }
 
-        int rows = m.length;    // number of rows
-        int cols = m[0].length; // number of columns
+        int rows = matrix.length;    // number of rows
+        int cols = matrix[0].length; // number of columns
 
         // search space is an array as [0, (rows * cols) - 1]
         int left = 0;
@@ -23,7 +23,7 @@ public final class Matrices {
         while (left <= right) {
 
             int mid = (left + right) / 2;
-            int midElement = m[mid / cols][mid % cols];
+            int midElement = matrix[mid / cols][mid % cols];
 
             if (element == midElement) {
                 return true;
