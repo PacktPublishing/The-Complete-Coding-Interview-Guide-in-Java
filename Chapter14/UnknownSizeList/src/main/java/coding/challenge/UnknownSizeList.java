@@ -8,6 +8,14 @@ public final class UnknownSizeList {
 
     public static int search(SizelessList sl, int element) {
 
+        if (sl == null) {
+            throw new IllegalArgumentException("The given list cannot be null");
+        }
+
+        if (element < 0) {
+            throw new IllegalArgumentException("The searched element cannot be negative");
+        }
+
         int index = 1;
         while (sl.peekAt(index) != -1 && sl.peekAt(index) < element) {
             index *= 2;
