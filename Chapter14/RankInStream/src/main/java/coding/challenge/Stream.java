@@ -15,13 +15,7 @@ public class Stream {
             this.element = element;
             this.left = null;
             this.right = null;
-        }
-
-        private Node(Node left, Node right, int element) {
-            this.element = element;
-            this.left = left;
-            this.right = right;
-        }
+        }     
     }
 
     /* add a new node into the tree */
