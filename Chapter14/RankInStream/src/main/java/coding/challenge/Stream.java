@@ -7,7 +7,7 @@ public class Stream {
     private class Node {
 
         private final int element;
-        public int leftTreeSize;
+        private int leftTreeSize;
         private Node left;
         private Node right;        
 
