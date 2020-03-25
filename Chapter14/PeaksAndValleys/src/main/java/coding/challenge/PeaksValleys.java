@@ -1,7 +1,5 @@
 package coding.challenge;
 
-import java.util.Arrays;
-
 public final class PeaksValleys {
 
     private PeaksValleys() {
