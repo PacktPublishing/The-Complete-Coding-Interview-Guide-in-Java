@@ -37,7 +37,7 @@ public final class DoublyLinkedList {
         size++;
     }
 
-// sort the given linked list via the Merge sort algorithm
+    // sort the given linked list via the Merge sort algorithm
     public void sort() {
 
         head = sort(head);
