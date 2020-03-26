@@ -48,7 +48,7 @@ public final class SinglyLinkedList {
 
         Node head1 = headsOfSublists[0];  // head of the first sublist
         Node head2 = headsOfSublists[1];  // head of the second sublist
-        
+
         // recursively sort the sublists
         head1 = sort(head1);
         head2 = sort(head2);
@@ -67,23 +67,23 @@ public final class SinglyLinkedList {
             return new Node[]{sourceNode, null};
         }
 
-        Node firstRunner = sourceNode.next;  // this is the fast runner
-        Node secondRunner = sourceNode;      // this is the slow runner
+        Node fastRunner = sourceNode.next;  // this is the fast runner
+        Node slowRunner = sourceNode;       // this is the slow runner
 
         // advance 'firstRunner' two nodes, 
         // and advance 'secondRunner' one node
-        while (firstRunner != null) {
-            firstRunner = firstRunner.next;
-            if (firstRunner != null) {
-                secondRunner = secondRunner.next;
-                firstRunner = firstRunner.next;
+        while (fastRunner != null) {
+            fastRunner = fastRunner.next;
+            if (fastRunner != null) {
+                slowRunner = slowRunner.next;
+                fastRunner = fastRunner.next;
             }
         }
 
         // 'secondRunner' is just before the middle point 
         // in the list, so split it in two at that point
-        Node[] headsOfSublists = new Node[]{sourceNode, secondRunner.next};
-        secondRunner.next = null;
+        Node[] headsOfSublists = new Node[]{sourceNode, slowRunner.next};
+        slowRunner.next = null;
 
         return headsOfSublists;
     }
