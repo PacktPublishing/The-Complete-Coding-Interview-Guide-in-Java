@@ -14,7 +14,7 @@ public final class Queues {
         if (queue == null || queue.size() < 2) {
             return;
         }
-
+ 
         // this is the extra queue
         Queue<Integer> extraQueue = new ArrayDeque();
 
