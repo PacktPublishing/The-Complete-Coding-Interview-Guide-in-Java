@@ -18,7 +18,7 @@ public class Main {
         queue.add(1);
         queue.add(0);
         queue.add(14);
-
+ 
         System.out.println("Given queue: " + queue);
 
         Queues.sort(queue);

@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public final class Queues {
-
+ 
     private Queues() {
         throw new AssertionError("Cannot be instantiated");
     }
