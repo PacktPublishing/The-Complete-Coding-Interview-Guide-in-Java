@@ -1,5 +1,5 @@
 package coding.challenge;
- 
+
 import java.util.ArrayDeque;
 import java.util.Queue;
 
@@ -10,14 +10,19 @@ public class Main {
         Queue<Integer> queue = new ArrayDeque<>();
         queue.add(7);
         queue.add(1);
-        queue.add(4);
-        queue.add(0);       
-        queue.add(-1);
+        queue.add(-7);
+        queue.add(3);
         queue.add(9);
-        queue.add(14);
-        queue.add(4);
-        queue.add(8);
- 
+        queue.add(2);
+        queue.add(1);
+        queue.add(-1);
+        queue.add(0);
+        queue.add(0);
+        queue.add(9);
+        queue.add(2);
+        queue.add(3);
+        queue.add(1);
+
         System.out.println("Given queue: " + queue);
 
         Queues.sort(queue);

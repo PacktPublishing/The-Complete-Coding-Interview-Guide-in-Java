@@ -14,20 +14,19 @@ public final class Queues {
             return;
         }
 
-        // find (in the unsorted part) the index having the minimum 
-        // element and move this element to the rear of the queue
+        // traverse the unsorted part of the queue
         for (int i = 1; i <= queue.size(); i++) {
-            
-            int minIndex = minIndex(queue, queue.size() - i);
-            moveMinElementToRear(queue, minIndex);
+
+            moveMinToRear(queue, queue.size() - i);
         }
     }
 
-    // find the index of the minimum element between the front and the sortIndex 
-    private static int minIndex(Queue<Integer> queue, int sortIndex) {
+    // find (in the unsorted part) the minimum
+    // element and move this element to the rear of the queue
+    private static void moveMinToRear(Queue<Integer> queue, int sortIndex) {
 
-        int minIndex = -1;
         int minElement = Integer.MAX_VALUE;
+        boolean flag = false;
 
         int queueSize = queue.size();
         for (int i = 0; i < queueSize; i++) {
@@ -39,36 +38,23 @@ public final class Queues {
 
             // avoid traversing the sorted part of the queue            
             if (currentElement <= minElement && i <= sortIndex) {
-                minIndex = i;
+
+                // if we found earlier a minimum then 
+                // we put it back into the queue since
+                // we just found a new minimum
+                if (flag) {
+                    queue.add(minElement);
+                }
+
+                flag = true;
                 minElement = currentElement;
-            }
-
-            // enqueue back
-            queue.add(currentElement);
-        }
-
-        return minIndex;
-    }
-
-    // move the given minimum element to rear of the queue 
-    private static void moveMinElementToRear(Queue<Integer> queue, int minIndex) {
-
-        int minElement = 0;
-
-        int queueSize = queue.size();
-        for (int i = 0; i < queueSize; i++) {
-
-            int currentElement = queue.peek();
-            queue.poll();
-
-            if (i != minIndex) {
-                queue.add(currentElement);
             } else {
-                minElement = currentElement;
+                // enqueue the current element which is not the minimum
+                queue.add(currentElement);
             }
         }
 
-        // enqueue the minimum element at the rear of the queue
+        // enqueue the minimum element
         queue.add(minElement);
     }
 }
