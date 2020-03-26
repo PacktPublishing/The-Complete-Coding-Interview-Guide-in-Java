@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public final class Queues {
- 
+
     private Queues() {
         throw new AssertionError("Cannot be instantiated");
     }
@@ -22,18 +22,20 @@ public final class Queues {
         boolean sorted = false;   // flag when sorting is done
 
         int queueSize = queue.size();   // size of the given queue
-        int lastElement = queue.peek(); // we start from the top of the given queue
+        int lastElement = queue.peek(); // we start from the front of the given queue
 
         while (!sorted) {
-            // if the last element is smaller than the top element in 
-            // the given queue then poll it from the given 
-            // queue and push it into the extra queue
+            // if the last element added in the extra queue 
+            // is smaller (or equal) than the front element in the given 
+            // queue then poll the front element from the given 
+            // queue and push it into the extra queue        
             if (lastElement <= queue.peek()) {
                 lastElement = queue.poll();
                 extraQueue.add(lastElement);
-            } // if the last element is bigger than the top element 
-            // in the given queue then we poll it and put it back to the rear 
-            // of the given queue (it will be processed later)
+            } // if the last element added in the extra queue is bigger than 
+              // the front element in the given queue then we poll the front element
+              // from the given queue and put it back to the rear of the given queue 
+              // (it will be processed later)
             else {
                 queue.add(queue.poll());
             }
