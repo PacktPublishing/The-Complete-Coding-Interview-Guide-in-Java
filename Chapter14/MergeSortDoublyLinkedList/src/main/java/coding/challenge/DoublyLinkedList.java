@@ -72,20 +72,20 @@ public final class DoublyLinkedList {
     // the extra node will go in the first sublist
     private Node divide(Node sourceNode) {
 
-        Node firstRunner = sourceNode.next;  // this is the fast runner
-        Node secondRunner = sourceNode;      // this is the slow runner 
+        Node fastRunner = sourceNode.next;  // this is the fast runner
+        Node slowRunner = sourceNode;       // this is the slow runner 
 
         // advance 'firstRunner' two nodes, 
         // and advance 'secondRunner' one node
-        while (firstRunner != null) {
-            firstRunner = firstRunner.next;
-            if (firstRunner != null) {
-                secondRunner = secondRunner.next;
-                firstRunner = firstRunner.next;
+        while (fastRunner != null) {
+            fastRunner = fastRunner.next;
+            if (fastRunner != null) {
+                slowRunner = slowRunner.next;
+                fastRunner = fastRunner.next;
             }
         }
 
-        return secondRunner;
+        return slowRunner;
     }
 
     // takes two lists sorted in increasing order, and merge 
