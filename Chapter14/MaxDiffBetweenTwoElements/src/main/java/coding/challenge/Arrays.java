@@ -10,16 +10,16 @@ public final class Arrays {
 
         int len = arr.length;
         int maxDiff = arr[1] - arr[0];
-        int pivot = arr[0];
+        int marker = arr[0];
         
         for (int i = 1; i < len; i++) {
             
-            if (arr[i] - pivot > maxDiff) {
-                maxDiff = arr[i] - pivot;
+            if (arr[i] - marker > maxDiff) {
+                maxDiff = arr[i] - marker;
             }
             
-            if (arr[i] < pivot) {
-                pivot = arr[i];
+            if (arr[i] < marker) {
+                marker = arr[i];
             }
         }
         
