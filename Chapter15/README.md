@@ -1,2 +1,2 @@
-# Sorting and searching
+# Math and logical puzzles
 This chapter...
