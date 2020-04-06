@@ -18,7 +18,7 @@ public final class Chocolates {
 
         if (width * height == nTiles) {
             return 0;
-        }
+        } 
 
         if ((nTiles % width == 0 && (nTiles / width) < height)
                 || (nTiles % height == 0 && (nTiles / height) < width)) {
