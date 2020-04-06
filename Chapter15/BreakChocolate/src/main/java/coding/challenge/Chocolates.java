@@ -12,19 +12,23 @@ public final class Chocolates {
             return -1;
         }
 
+        // Case 1
         if (width * height < nTiles) {
             return -1;
         }
 
+        // Case 4
         if (width * height == nTiles) {
             return 0;
         } 
 
+        // Cases 5 and 6
         if ((nTiles % width == 0 && (nTiles / width) < height)
                 || (nTiles % height == 0 && (nTiles / height) < width)) {
             return 1;
         }
 
+        // Case 7
         for (int i = 1; i <= Math.sqrt(nTiles); i++) {
             if (nTiles % i == 0) {
                 int a = i;
@@ -36,6 +40,7 @@ public final class Chocolates {
             }
         }
 
+        // Cases 2 and 3
         return -1;
     }
 }
