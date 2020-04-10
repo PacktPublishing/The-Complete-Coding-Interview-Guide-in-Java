@@ -27,7 +27,7 @@ public final class Sequences {
 
             // if 'elem-1' is not in the set then start a new sequence
             if (!sequenceSet.contains(elem - 1)) {
-                
+
                 int sequenceLength = 1;
 
                 // lookup in the set for elements 'elem + 1', 'elem + 2', 'elem + 3' ...
