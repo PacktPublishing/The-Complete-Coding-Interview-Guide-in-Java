@@ -2,9 +2,9 @@ package coding.challenge;
 
 import java.util.Stack;
 
-public final class Containers {
+public final class Bars {
 
-    private Containers() {
+    private Bars() {
         throw new AssertionError("Cannot be instantiated");
     }
 

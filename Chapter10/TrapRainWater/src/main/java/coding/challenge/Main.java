@@ -12,9 +12,9 @@ public class Main {
         // int[] bars = {4, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}; // 14
         // int[] bars = {0, 1, 2}; // 0
 
-        int water1 = Containers.trapViaArray(bars);
-        int water2 = Containers.trapViaStack(bars);
-        int water3 = Containers.trapOptimized(bars);
+        int water1 = Bars.trapViaArray(bars);
+        int water2 = Bars.trapViaStack(bars);
+        int water3 = Bars.trapOptimized(bars);
         System.out.println("Result: " + water1 + " | " + water2 + " | " + water3);
     }
 
