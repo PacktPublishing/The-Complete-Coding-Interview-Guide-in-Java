@@ -23,6 +23,7 @@ public class Expressions {
                 }
                 return b / a;
         }
+        
         return 0.0;
     }
 
@@ -63,6 +64,7 @@ public class Expressions {
                 stack.push(num);
             }
         }
+        
         double result = stack.pop();
 
         return result;
