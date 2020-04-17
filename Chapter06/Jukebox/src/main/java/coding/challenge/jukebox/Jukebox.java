@@ -1,5 +1,5 @@
 package coding.challenge.jukebox;
-
+ 
 public class Jukebox implements Selector {
 
     private final CDPlayer cdPlayer;   

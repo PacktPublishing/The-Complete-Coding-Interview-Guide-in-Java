@@ -1,5 +1,5 @@
 package coding.challenge.jukebox;
-
+ 
 public interface Selector {
     
     public void nextSongBtn();

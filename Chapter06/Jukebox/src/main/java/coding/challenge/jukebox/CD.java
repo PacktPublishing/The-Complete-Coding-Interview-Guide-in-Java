@@ -1,5 +1,5 @@
 package coding.challenge.jukebox;
-
+ 
 import java.util.List;
 
 public class CD {

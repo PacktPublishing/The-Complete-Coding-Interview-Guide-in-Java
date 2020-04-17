@@ -1,5 +1,5 @@
 package coding.challenge.jukebox;
-
+ 
 public class Song {
     
     private final String title;
