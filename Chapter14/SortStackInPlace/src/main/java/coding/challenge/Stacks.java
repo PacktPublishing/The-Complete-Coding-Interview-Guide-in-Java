@@ -9,6 +9,10 @@ public final class Stacks {
     }
 
     public static void sort(Stack<Integer> stack) {
+        
+        if(stack == null) {
+            throw new IllegalArgumentException("The given stack cannot be empty");
+        }
 
         // stack is empty (base case)
         if (stack.isEmpty()) {
@@ -17,12 +21,10 @@ public final class Stacks {
 
         // remove the top element
         int top = stack.pop();
-        
+
         // apply recursion for the remaining elements in the stack
         sort(stack);
 
-        System.out.println("S: " + stack +" T: "+top);
-        
         // insert the popped element back in the sorted stack
         sortedInsert(stack, top);
     }
@@ -39,8 +41,6 @@ public final class Stacks {
         // the element is smaller than the top element, so remove the top element       
         int top = stack.pop();
 
-        System.out.println("SXX: " + stack +" TXX: "+top);
-        
         // apply recursion for the remaining elements in the stack
         sortedInsert(stack, element);
 
