@@ -24,6 +24,8 @@ public class RunnableThread {
         System.out.println("RunnableThread t2: " + t2.getState());
 
         Thread t3 = new Thread(new Runnable() {
+            
+            @Override
             public void run() {
             }
         });
@@ -31,6 +33,8 @@ public class RunnableThread {
         System.out.println("RunnableThread t3: " + t3.getState());
 
         Thread t4 = new Thread(new Thread() {
+            
+            @Override
             public void run() {
             }
         });

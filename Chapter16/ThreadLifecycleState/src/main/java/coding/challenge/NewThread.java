@@ -25,6 +25,8 @@ public class NewThread {
 
         // construction 3
         Thread t3 = new Thread(new Runnable() {
+            
+            @Override
             public void run() {
             }
         });
@@ -32,6 +34,8 @@ public class NewThread {
         
         // construction 4
         Thread t4 = new Thread(new Thread() {
+            
+            @Override
             public void run() {
             }
         });
