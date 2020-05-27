@@ -1,2 +1,2 @@
-# Math and logical puzzles
+# Concurrency (multithreading)
 This chapter...
