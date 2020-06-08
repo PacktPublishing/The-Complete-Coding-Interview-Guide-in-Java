@@ -6,7 +6,10 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class BeforeAfterTest {
 
     private static final Logger log = Logger.getLogger(BeforeAfterTest.class.getName());
