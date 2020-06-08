@@ -5,12 +5,16 @@
     <artifactId>TestingExceptions</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
+    <name>TestingExceptions</name>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>14</maven.compiler.source>
         <maven.compiler.target>14</maven.compiler.target>       
         <junit.jupiter.version>5.6.2</junit.jupiter.version>
         <junit.platform.version>1.6.2</junit.platform.version>
+        <maven.surfire.version>2.19.1</maven.surfire.version>
+        <junit.platform.version>1.1.0</junit.platform.version>
     </properties>
     
     <dependencies>
@@ -26,6 +30,21 @@
             <version>${junit.platform.version}</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
-    <name>TestingExceptions</name>
+    </dependencies>       
+    
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surfire.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>${junit.platform.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 </project>
