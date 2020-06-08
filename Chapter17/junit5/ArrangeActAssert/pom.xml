@@ -5,6 +5,8 @@
     <artifactId>ArrangeActAssert</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
+    <name>BeforeAfterAnnotations</name>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>14</maven.compiler.source>
@@ -28,9 +30,7 @@
             <version>${junit.platform.version}</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
-    
-    <name>BeforeAfterAnnotations</name>
+    </dependencies>      
     
     <build>
         <plugins>
