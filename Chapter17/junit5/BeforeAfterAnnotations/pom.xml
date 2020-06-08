@@ -13,8 +13,7 @@
         <maven.compiler.target>14</maven.compiler.target>       
         <junit.jupiter.version>5.6.2</junit.jupiter.version>
         <junit.platform.version>1.6.2</junit.platform.version>
-        <maven.surfire.version>2.19.1</maven.surfire.version>
-        <junit.platform.version>1.1.0</junit.platform.version>
+        <maven.surfire.version>2.22.2</maven.surfire.version>        
     </properties>
     
     <dependencies>
@@ -36,14 +35,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven.surfire.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>${junit.platform.version}</version>
-                    </dependency>
-                </dependencies>
+                <version>${maven.surfire.version}</version>                
             </plugin>
         </plugins>
     </build>
