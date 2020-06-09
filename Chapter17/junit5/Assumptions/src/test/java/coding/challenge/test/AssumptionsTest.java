@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 public class AssumptionsTest {
 
     @Test
-    public void givenCurrentFolderWhenGetAbsolutePathThenSuccess() {
+    public void givenFolderWhenGetAbsolutePathThenSuccess() {
 
         assumingThat(File.separatorChar == '/',
                 () -> {
