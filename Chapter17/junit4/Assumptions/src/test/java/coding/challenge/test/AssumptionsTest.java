@@ -12,7 +12,7 @@ import org.junit.runners.JUnit4;
 public class AssumptionsTest {
      
     @Test
-    public void givenCurrentFolderWhenGetAbsolutePathThenSuccess() {
+    public void givenFolderWhenGetAbsolutePathThenSuccess() {
 
         assumeThat(File.separatorChar, is('/'));
         assertThat(new File(".").getAbsolutePath(), is("C:/SBPBP/GitHub/Chapter17/junit4"));
