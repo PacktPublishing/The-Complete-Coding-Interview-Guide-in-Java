@@ -15,7 +15,7 @@ public class AssumptionsTest {
     public void givenCurrentFolderWhenGetAbsolutePathThenSuccess() {
 
         assumeThat(File.separatorChar, is('/'));
-        assertThat(new File(".").getAbsolutePath(), is("C:/SBPBP/GitHub//Chapter17/junit4"));
+        assertThat(new File(".").getAbsolutePath(), is("C:/SBPBP/GitHub/Chapter17/junit4"));
     }
 
 }
