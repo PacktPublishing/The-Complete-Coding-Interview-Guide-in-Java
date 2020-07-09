@@ -18,7 +18,7 @@ public class AssumptionsTest {
         assumingThat(File.separatorChar == '/',
                 () -> {
                     assertThat(new File(".").getAbsolutePath(), 
-                            is("C:/SBPBP/GitHub/Chapter17/junit5"));
+                            is("C:/SBPBP/GitHub/Chapter18/junit5"));
                 });
         
         // run these assertions always, just like normal test
