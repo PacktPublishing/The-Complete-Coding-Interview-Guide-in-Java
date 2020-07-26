@@ -32,7 +32,7 @@ public final class BucketSort {
         }
 
         // sort each bucket
-        for (List bucket : buckets) {
+        for (List<Integer> bucket : buckets) {
             Collections.sort(bucket);
         }
 
