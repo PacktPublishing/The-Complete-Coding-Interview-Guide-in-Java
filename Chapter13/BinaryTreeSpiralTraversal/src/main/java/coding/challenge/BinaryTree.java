@@ -85,8 +85,7 @@ public class BinaryTree<T> {
         boolean flip = false;
 
         // as long as printLevel() returns true there are more levels to print
-        while (printLevel(root, level++, flip = !flip)
-                && printLevel(root, level++, flip = !flip)) {
+        while (printLevel(root, level++, flip = !flip)) {
             // there is nothing to do
         };
     }
