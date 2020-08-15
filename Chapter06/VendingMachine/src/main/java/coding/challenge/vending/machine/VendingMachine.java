@@ -3,7 +3,7 @@ package coding.challenge.vending.machine;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
+ 
 public class VendingMachine implements Selector {
 
     private final Inventory<Coin> coinInventory = new Inventory<>();

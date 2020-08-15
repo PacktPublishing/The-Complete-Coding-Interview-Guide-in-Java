@@ -2,7 +2,7 @@ package coding.challenge.vending.machine;
 
 import java.util.List;
 import java.util.Map;
-
+ 
 public interface Selector {
 
     public int checkPriceBtn(Item item);

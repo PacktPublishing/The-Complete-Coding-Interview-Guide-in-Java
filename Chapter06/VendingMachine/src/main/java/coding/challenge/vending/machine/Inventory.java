@@ -2,7 +2,7 @@ package coding.challenge.vending.machine;
 
 import java.util.HashMap;
 import java.util.Map;
-
+ 
 public final class Inventory<T> {
 
     private Map<T, Integer> inventory = new HashMap<>();
