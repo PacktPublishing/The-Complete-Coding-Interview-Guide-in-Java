@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 public class Main {
     
     public static final int GRID_SIZE = 5; // minim 5

@@ -1,7 +1,7 @@
 package coding.challenge;
 
 public class KnightTour {
-
+ 
     private final int n;
 
     public KnightTour(int n) {
