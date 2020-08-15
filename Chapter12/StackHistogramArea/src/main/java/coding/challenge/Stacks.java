@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 import java.util.Stack;
 
 public final class Stacks {
