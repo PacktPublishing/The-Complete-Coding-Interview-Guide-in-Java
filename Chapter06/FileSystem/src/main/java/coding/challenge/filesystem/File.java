@@ -1,7 +1,7 @@
 package coding.challenge.filesystem;
 
 public class File extends Item {
-
+ 
     private String content;
     private int size;
     
