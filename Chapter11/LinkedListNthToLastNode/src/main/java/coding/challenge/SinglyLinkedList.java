@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 public final class SinglyLinkedList {
 
     private final class Node {
