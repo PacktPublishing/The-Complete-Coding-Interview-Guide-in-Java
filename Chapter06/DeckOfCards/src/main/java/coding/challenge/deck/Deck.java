@@ -5,7 +5,7 @@ import coding.challenge.card.Pack;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-
+ 
 public class Deck<T extends Card> implements Iterable<T> {
 
     private final List<T> cards; // all cards    
