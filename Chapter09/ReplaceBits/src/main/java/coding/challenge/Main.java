@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 public class Main {
 
     private static final int Q = 4914;
