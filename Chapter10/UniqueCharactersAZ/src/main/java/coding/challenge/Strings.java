@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 public final class Strings {
 
     private static final char A_CHAR = 'a';
