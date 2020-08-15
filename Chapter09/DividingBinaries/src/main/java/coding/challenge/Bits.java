@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 public final class Bits {
 
     private static final int MAX_BIT = 31;
