@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 public class BinaryTree {
 
     private Node rootOne = null;
