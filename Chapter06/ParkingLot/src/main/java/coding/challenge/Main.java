@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 import coding.challenge.parking.ParkingFloor;
 import coding.challenge.parking.ParkingLot;
 import coding.challenge.parking.ParkingTicket;

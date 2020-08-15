@@ -1,5 +1,5 @@
 package coding.challenge.parking;
-
+ 
 import java.util.Map;
 
 public class ParkingLot {

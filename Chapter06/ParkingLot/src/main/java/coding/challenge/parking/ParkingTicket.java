@@ -1,5 +1,5 @@
 package coding.challenge.parking;
-
+ 
 import java.time.LocalDateTime;
 import java.util.List;
 

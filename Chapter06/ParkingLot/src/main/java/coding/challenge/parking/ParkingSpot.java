@@ -1,5 +1,5 @@
 package coding.challenge.parking;
-
+ 
 public class ParkingSpot {
     
     private boolean free = true;

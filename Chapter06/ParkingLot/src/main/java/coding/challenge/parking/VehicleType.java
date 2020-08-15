@@ -1,5 +1,5 @@
 package coding.challenge.parking;
-
+ 
 public enum VehicleType {
 
     CAR(1), VAN(2), TRUCK(5);
