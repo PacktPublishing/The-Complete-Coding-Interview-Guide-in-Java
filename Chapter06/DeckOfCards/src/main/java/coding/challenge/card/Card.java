@@ -1,5 +1,5 @@
 package coding.challenge.card;
-
+ 
 public abstract class Card {
 
     private final Enum suit;

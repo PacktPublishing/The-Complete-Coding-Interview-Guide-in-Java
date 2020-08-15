@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 import coding.challenge.card.Card;
 import coding.challenge.card.Pack;
 import coding.challenge.card.StandardCard;

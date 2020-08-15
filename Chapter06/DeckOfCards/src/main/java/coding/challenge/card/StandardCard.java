@@ -1,5 +1,5 @@
 package coding.challenge.card;
-
+ 
 public class StandardCard extends Card {
 
     private static final int MIN_VALUE = 1;
