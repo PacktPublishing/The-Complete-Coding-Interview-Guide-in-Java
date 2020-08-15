@@ -1,7 +1,7 @@
 package coding.challenge.cinema;
 
 import java.util.Objects;
-
+ 
 public class Movie {
 
     private final int id;

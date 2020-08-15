@@ -2,7 +2,7 @@ package coding.challenge.cinema;
 
 import java.time.LocalTime;
 import java.util.List;
-
+ 
 public final class MovieTicket {
     
     private final Movie movie;

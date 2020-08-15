@@ -1,7 +1,7 @@
 package coding.challenge.cinema;
 
 public class Seat {
-    
+     
     private final CinemaRoom room;
     private final String number;
     private final SeatType type;
