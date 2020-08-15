@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 import java.util.Stack;
 
 public class MyStack extends Stack<Integer> {
