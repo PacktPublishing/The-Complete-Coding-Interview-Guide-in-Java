@@ -1,7 +1,7 @@
 package coding.challenge;
 
 public class HashTable<K, V> {
-
+ 
     private static final int SIZE = 10;
 
     private static class HashEntry<K, V> {
