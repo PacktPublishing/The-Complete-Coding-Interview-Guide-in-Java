@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 import java.util.Random;
 
 public final class SinglyLinkedList {
