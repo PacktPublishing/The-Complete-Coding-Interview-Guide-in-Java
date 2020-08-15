@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 public class MergeArrays {
 
     public static int[] merge(int[][] arrs, int k) {
