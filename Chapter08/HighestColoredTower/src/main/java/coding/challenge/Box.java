@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 public class Box {
 
     private final int width;
