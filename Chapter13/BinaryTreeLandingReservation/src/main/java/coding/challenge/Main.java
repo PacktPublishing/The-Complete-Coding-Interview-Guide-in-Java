@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 import java.time.LocalTime;
 
 public class Main {
