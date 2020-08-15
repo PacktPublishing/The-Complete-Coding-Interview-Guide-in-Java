@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 import java.util.regex.Pattern;
 
 public final class Strings {
