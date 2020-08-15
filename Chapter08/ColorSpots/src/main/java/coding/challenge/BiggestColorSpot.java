@@ -1,7 +1,7 @@
 package coding.challenge;
 
 public class BiggestColorSpot {
-
+ 
     private int currentColorSpot;
 
     void determineBiggestColorSpot(int cols, int rows, int a[][]) {
