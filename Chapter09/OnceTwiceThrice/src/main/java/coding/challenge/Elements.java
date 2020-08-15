@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 public final class Elements {
 
     private static final int INT_SIZE = 32;
