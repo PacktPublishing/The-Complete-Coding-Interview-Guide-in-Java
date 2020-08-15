@@ -20,7 +20,7 @@ public final class NutsBolts {
         }
 
         // in this map, each nut is a key and its position is as value
-        HashMap<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < nuts.length; i++) {
             map.put(nuts[i], i);
         }
