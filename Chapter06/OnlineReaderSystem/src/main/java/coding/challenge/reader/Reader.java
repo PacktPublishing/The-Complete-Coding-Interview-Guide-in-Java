@@ -1,5 +1,5 @@
 package coding.challenge.reader;
-
+ 
 import java.util.Objects;
 
 public class Reader {

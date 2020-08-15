@@ -2,7 +2,7 @@ package coding.challenge.reader;
 
 import java.util.HashMap;
 import java.util.Map;
-
+ 
 public class Library {
 
     private final Map<String, Book> books = new HashMap<>();

@@ -1,7 +1,7 @@
 package coding.challenge.reader;
 
 import java.util.Objects;
-
+ 
 public class Book {
     
     private final String author;

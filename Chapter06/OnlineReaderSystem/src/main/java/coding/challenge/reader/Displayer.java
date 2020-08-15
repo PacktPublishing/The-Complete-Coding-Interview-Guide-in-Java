@@ -1,7 +1,7 @@
 package coding.challenge.reader;
 
 public class Displayer {
-
+ 
     private Book book;
     private Reader reader;
     private String page;

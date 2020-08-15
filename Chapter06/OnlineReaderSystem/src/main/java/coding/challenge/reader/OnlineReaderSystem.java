@@ -1,5 +1,5 @@
 package coding.challenge.reader;
-
+ 
 public class OnlineReaderSystem {
 
     private final Displayer displayer;
