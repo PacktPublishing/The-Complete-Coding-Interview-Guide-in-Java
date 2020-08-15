@@ -46,7 +46,7 @@ public class Anagrams implements Comparator<String> {
     /* Group anagrams via hashing (O(nm) */
     public void printAnagramsOptimized(String[] words) {
 
-        Map<String, ArrayList<String>> result = new HashMap<>();
+        Map<String, List<String>> result = new HashMap<>();
 
         for (int i = 0; i < words.length; i++) {
 
@@ -63,7 +63,7 @@ public class Anagrams implements Comparator<String> {
             if (result.containsKey(computedWord)) {
                 result.get(computedWord).add(word);
             } else {
-                ArrayList<String> anagrams = new ArrayList<>();
+                List<String> anagrams = new ArrayList<>();
                 anagrams.add(word);
                 result.put(computedWord, anagrams);
             }
