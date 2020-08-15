@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 import java.util.BitSet;
 
 public final class Bits {
