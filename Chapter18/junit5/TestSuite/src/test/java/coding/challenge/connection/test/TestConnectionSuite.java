@@ -1,5 +1,5 @@
 package coding.challenge.connection.test;
-
+ 
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.SuiteDisplayName;
