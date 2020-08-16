@@ -1,2 +1,2 @@
 # Unit testing
-This chapter...
+This chapter talks about unit-testing interview problems that you may encounter if you apply for a position such as a developer or software engineer. Of course, if you are looking for a tester (manual/automation) position, then this chapter may represent just another perspective on testing. Therefore, do not expect to see questions here specific to manual/automation tester positions.
