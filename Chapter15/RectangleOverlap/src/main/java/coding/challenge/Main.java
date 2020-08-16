@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 import java.awt.Point;
 
 public class Main {
