@@ -11,4 +11,4 @@
         <maven.compiler.target>13</maven.compiler.target>
     </properties>
     <name>NextElementSameDigits</name>
-</project>
+</project> 
