@@ -1,5 +1,5 @@
 package coding.challenge;
-
+ 
 import java.util.Queue;
 
 public final class Queues {
