@@ -1,5 +1,5 @@
 package coding.challenge.test;
-
+ 
 import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
