@@ -34,8 +34,7 @@ public final class Arrays {
                 } else {
                     right = middle - 1;	// search in the left-half
                 }
-            } else { // we conclude that the left-half is sorted (A[left ... middle])
-                // compare key with A[left] and A[mid] to know
+            } else { // we conclude that the left-half is sorted (A[left ... middle])               
 
                 // check if n is in m[left ... middle]
                 if (x >= m[left] && x < m[middle]) {
