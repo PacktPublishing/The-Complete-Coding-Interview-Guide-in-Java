@@ -1,5 +1,4 @@
 # The-Complete-Coding-Interview-Guide-in-Java
-The Complete Coding Interview Guide in Java, published by Packt
 
 <a href="https://www.amazon.com/gp/product/B08DSJZG38/ref=dbs_a_def_rwt_bibl_vppi_i2"><p align="center"><img src="https://m.media-amazon.com/images/I/51n2T-Y0DEL.jpg" height="350" width="300"/></p></a>
 
