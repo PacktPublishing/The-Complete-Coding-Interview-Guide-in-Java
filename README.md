@@ -1,6 +1,8 @@
 # The-Complete-Coding-Interview-Guide-in-Java
 The Complete Coding Interview Guide in Java, published by Packt
 
+[The Complete Coding Interview Guide in Java](https://m.media-amazon.com/images/I/51n2T-Y0DEL.jpg)
+
 Who this book is for
 --------------------
 The Complete Coding Interview Guide in Java is a comprehensive resource for those who
