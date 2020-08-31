@@ -18,10 +18,6 @@ Solve various concurrent programming, functional programming, and unit testing p
 
 If you feel this book is for you, get your [copy](https://www.packtpub.com/product/the-complete-coding-interview-guide-in-java/9781839212062) today!
 
-<a href="https://www.packtpub.com/product/the-complete-coding-interview-guide-in-java/9781839212062"><img 
-src="https://static.packt cdn.com/products/9781839212062/cover/smaller"
-alt="https://www.packtpub.com/" border="5" /></a>
-
 ## Instructions and Navigations
 All of the code is organized into folders. For example, Chapter02.
 
