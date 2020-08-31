@@ -1,8 +1,8 @@
 # The Complete Coding Interview Guide in Java	 
 
-<a href="https://www.packtpub.com/programming/mastering-asp-net-core-3-0-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789619768"><img src="https://www.packtpub.com/media/catalog/product/cache/bf3310292d6e1b4ca15aeea773aca35e/9/7/9781789619768-original_53.png" alt="Mastering ASP.NET Core 3.0 - Second Edition " height="256px" align="right"></a>
+<a href="https://www.packtpub.com/product/the-complete-coding-interview-guide-in-java/9781839212062"><img src="https://static.packt-cdn.com/products/9781839212062/cover/smaller" alt="The Complete Coding Interview Guide in Java " height="256px" align="right"></a>
 
-This is the code repository for [Mastering ASP.NET Core 3.0 - Second Edition ](https://www.packtpub.com/programming/mastering-asp-net-core-3-0-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789619768), published by Packt.
+This is the code repository for [The Complete Coding Interview Guide in Java ](https://www.packtpub.com/product/the-complete-coding-interview-guide-in-java/9781839212062), published by Packt.
 
 **An effective guide for aspiring Java developers to ace their programming interviews**
 
@@ -16,7 +16,7 @@ Practice answering commonly asked non-technical interview questions that can mak
 Get an overall picture of prospective employers' expectations from a Java developer
 Solve various concurrent programming, functional programming, and unit testing problems
 
-If you feel this book is for you, get your [copy]https://www.amazon.com/Complete-Coding-Interview-Guide-Java-ebook/dp/B08DSJZG38) today!
+If you feel this book is for you, get your [copy]https://www.packtpub.com/product/the-complete-coding-interview-guide-in-java/9781839212062) today!
 
 <a href="https://www.packtpub.com/product/the-complete-coding-interview-guide-in-java/9781839212062"><img src="https://static.packt-cdn.com/products/9781839212062/cover/smaller" 
 alt="https://www.packtpub.com/" border="5" /></a>
