@@ -29,9 +29,9 @@ public final class Strings {
             int index = 0;
             for (int i = 0; i < str.length; i++) {
                 if (Character.isWhitespace(str[i])) {
-                    encodedStr[index] = '0';
+                    encodedStr[index] = '%';
                     encodedStr[index + 1] = '2';
-                    encodedStr[index + 2] = '%';
+                    encodedStr[index + 2] = '0';
                     index = index + 3;
                 } else {
                     encodedStr[index] = str[i];
