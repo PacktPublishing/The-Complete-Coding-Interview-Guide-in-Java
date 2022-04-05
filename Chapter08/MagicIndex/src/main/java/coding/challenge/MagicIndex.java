@@ -23,14 +23,15 @@ public final class MagicIndex {
 
         int middleIndex = (startIndex + endIndex) / 2;   // halved the indexes        
         int value = arr[middleIndex];                    // value of middle index        
-        if (value == middleIndex) {                      // if the value and index are equal then this is a magic index
-            return middleIndex;
-        }
 
         // search from middle of the array to the left       
         int leftIndex = find(arr, startIndex, Math.min(middleIndex - 1, value));
         if (leftIndex >= 0) {
             return leftIndex;
+        }
+     
+        if (value == middleIndex) {                      // if the value and index are equal then this is a magic index
+            return middleIndex;
         }
 
         // search from middle of the array to the right               
