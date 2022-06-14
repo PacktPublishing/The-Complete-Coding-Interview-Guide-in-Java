@@ -1,7 +1,3 @@
-## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/B15403?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
------
-For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
-
 # The Complete Coding Interview Guide in Java	 
 
 <a href="https://www.packtpub.com/product/the-complete-coding-interview-guide-in-java/9781839212062"><img src="https://static.packt-cdn.com/products/9781839212062/cover/smaller" alt="The Complete Coding Interview Guide in Java " height="256px" align="right"></a>
