@@ -1,3 +1,15 @@
+
+### Get this product for $5
+
+<i>Packt is having its biggest sale of the year. Get this eBook or any other book, video, or course that you like just for $5 each</i>
+
+
+<b><p align='center'>[Buy now](https://packt.link/9781839212062)</p></b>
+
+
+<b><p align='center'>[Buy similar titles for just $5](https://subscription.packtpub.com/search)</p></b>
+
+
 # The Complete Coding Interview Guide in Java	 
 
 <a href="https://www.packtpub.com/product/the-complete-coding-interview-guide-in-java/9781839212062"><img src="https://static.packt-cdn.com/products/9781839212062/cover/smaller" alt="The Complete Coding Interview Guide in Java " height="256px" align="right"></a>
